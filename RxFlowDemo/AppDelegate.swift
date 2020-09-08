@@ -21,13 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                              userDefaults: UserDefaultsStorage(),
                              keychain: KeyChainStorage())
     let countriesService = CountriesService()
-    let moviesService = MoviesService()
     let preferencesService = PreferencesService()
+
     lazy var appServices = {
-        return AppServices(store: self.store,
+        return AppServices(preferencesService: self.preferencesService,
                            countriesService: self.countriesService,
-                           moviesService: self.moviesService,
-                           preferencesService: self.preferencesService)
+                           store: self.store)
     }()
 
     func application(_ application: UIApplication,
@@ -70,9 +69,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 }
 
-struct AppServices: HasCountriesService, HasMoviesService, HasPreferencesService {
-    var store: StoreServiceType
-    let countriesService: CountriesService
-    let moviesService: MoviesService
+struct AppServices: HasPreferencesService, HasCountriesService {
     let preferencesService: PreferencesService
+    let countriesService: CountriesService
+    let store: StoreServiceType
 }

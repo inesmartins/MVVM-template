@@ -6,7 +6,7 @@ final class CoreDataStorage {
     // MARK: - CoreData Entities
 
     private lazy var context: NSManagedObjectContext = {
-        let container = NSPersistentContainer(name: "VIPERBoilerplate")
+        let container = NSPersistentContainer(name: "RxFlowDemo")
         container.loadPersistentStores(completionHandler: { (_, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
