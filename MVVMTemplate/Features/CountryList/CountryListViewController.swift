@@ -1,4 +1,11 @@
 import UIKit
+import Toast_Swift
+
+protocol CountryListViewControllerType: AnyObject {
+    func updateCountryList(_ countries: [Country])
+    func showSaveResult(_ result: Bool)
+    func showSavedCountry(_ country: Country)
+}
 
 class CountryListViewController: UIViewController {
 
@@ -6,18 +13,56 @@ class CountryListViewController: UIViewController {
 
     private static let tableCellId = "tableCell"
 
+    // MARK: - UI components
+
+    private lazy var countriesTable: UITableView = {
+        let table = UITableView(frame: .zero)
+        table.translatesAutoresizingMaskIntoConstraints = false
+        table.dataSource = self
+        table.delegate = self
+        table.register(
+            CountryListTableViewCell.self,
+            forCellReuseIdentifier: CountryListViewController.tableCellId)
+        return table
+    }()
+
+    private lazy var storeSelector: UIPickerView = {
+        let picker = UIPickerView(frame: .zero)
+        picker.translatesAutoresizingMaskIntoConstraints = false
+        picker.dataSource = self
+        picker.delegate = self
+        picker.backgroundColor = .white
+        return picker
+    }()
+
+    private lazy var saveCountryButton: UIButton = {
+        let button = UIButton(frame: .zero)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self,
+                         action: #selector(self.handleSaveCountryButtonClick), for: .touchUpInside)
+        button.backgroundColor = .green
+        button.setTitle("Save Country", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        return button
+    }()
+
+    private lazy var getSavedCountryButton: UIButton = {
+        let button = UIButton(frame: .zero)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self,
+                        action: #selector(self.handleGetSavedCountryButtonClick),
+                        for: .touchUpInside)
+        button.backgroundColor = .gray
+        button.setTitle("Get Saved Country", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        return button
+    }()
+    
     // MARK: - UIViewController Properties
 
     private var countries = [Country]()
 
-    // MARK: - UI components
-
-    private lazy var countriesTable = UITableView(frame: .zero)
-    private lazy var storeSelector = UIPickerView(frame: .zero)
-    private lazy var saveCountryButton = UIButton(frame: .zero)
-    private lazy var getSavedCountryButton = UIButton(frame: .zero)
-
-    // MARK: - UIViewController Lifecycle
+    // MARK: - Lifecycle Methods
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -79,7 +124,7 @@ extension CountryListViewController: UITableViewDelegate, UITableViewDataSource 
     }
 }
 
-extension CountryListViewController {
+extension CountryListViewController: CountryListViewControllerType {
 
     func updateCountryList(_ countries: [Country]) {
         self.countries = countries
@@ -106,51 +151,15 @@ private extension CountryListViewController {
 
     func setupView() {
         self.addSubviews()
-        self.setupUIComponents()
         self.addConstraints()
     }
 
-    func setupUIComponents() {
-
-        // countriesTable UITableView
-        self.countriesTable.translatesAutoresizingMaskIntoConstraints = false
-        self.countriesTable.dataSource = self
-        self.countriesTable.delegate = self
-        self.countriesTable.register(
-            CountryListTableViewCell.self,
-            forCellReuseIdentifier: CountryListViewController.tableCellId)
-
-        // storeSelector UIPickerView
-        self.storeSelector.translatesAutoresizingMaskIntoConstraints = false
-        self.storeSelector.dataSource = self
-        self.storeSelector.delegate = self
-        self.storeSelector.backgroundColor = .white
-
-        // saveCountryButton UIButton
-        self.saveCountryButton.translatesAutoresizingMaskIntoConstraints = false
-        self.saveCountryButton.addTarget(
-            self,
-            action: #selector(self.handleSaveCountryButtonClick), for: .touchUpInside)
-        self.saveCountryButton.backgroundColor = .green
-        self.saveCountryButton.setTitle("Save Country", for: .normal)
-        self.saveCountryButton.setTitleColor(.black, for: .normal)
-
-        // getSavedCountryButton UIButton
-        self.getSavedCountryButton.translatesAutoresizingMaskIntoConstraints = false
-        self.getSavedCountryButton.addTarget(self,
-                                             action: #selector(self.handleGetSavedCountryButtonClick),
-                                             for: .touchUpInside)
-        self.getSavedCountryButton.backgroundColor = .gray
-        self.getSavedCountryButton.setTitle("Get Saved Country", for: .normal)
-        self.getSavedCountryButton.setTitleColor(.black, for: .normal)
-    }
-
     @objc func handleSaveCountryButtonClick() {
-        // TODO
+        // TODO: implement
     }
 
     @objc func handleGetSavedCountryButtonClick() {
-        // TODO
+        // TODO: implement
     }
 
     func addSubviews() {

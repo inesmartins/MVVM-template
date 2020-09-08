@@ -5,6 +5,8 @@ import RxCocoa
 
 final class AuthViewController: KeyboardAwareViewController {
 
+    // MARK: - UI Components
+
     private lazy var titleLabelContainer: UIView = {
         let view = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false

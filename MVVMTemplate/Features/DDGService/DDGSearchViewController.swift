@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 import Toast_Swift
 
-protocol DDGSearchViewControllerType {
+protocol DDGSearchViewControllerType: AnyObject {
     func showResult(_ searchResult: SearchResult)
     func showNoResultsFound()
 }
@@ -10,6 +10,7 @@ protocol DDGSearchViewControllerType {
 final class DDGSearchViewController: KeyboardAwareViewController {
 
     // MARK: - UIViewController Properties
+
     private var searchTerm: String?
 
     // MARK: - UI components
@@ -84,7 +85,7 @@ private extension DDGSearchViewController {
 
     @objc func handleSearchButtonClick() {
         if let searchTerm = self.textField.text {
-            // TODO
+            // todo: implement
         }
     }
 

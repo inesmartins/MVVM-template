@@ -247,12 +247,12 @@
 		4D6B10AF2506B3CC00BCA7A1 /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				4D6B115C25077E3800BCA7A1 /* AppKey.swift */,
 				4D6B10CF2506B7F800BCA7A1 /* Store.swift */,
 				4D6B113D25077C6F00BCA7A1 /* StoreService.swift */,
 				4D6B115A25077E3200BCA7A1 /* Cache.swift */,
 				4D6B115625077E3000BCA7A1 /* CoreDataStorage.swift */,
 				4D6B115725077E3000BCA7A1 /* DBLocalStorage.swift */,
-				4D6B115C25077E3800BCA7A1 /* AppKey.swift */,
 				4D6B115D25077E3800BCA7A1 /* KeychainStorage.swift */,
 				4D6B115F25077E3800BCA7A1 /* KeyValueLocalStorage.swift */,
 				4D6B115E25077E3800BCA7A1 /* UserDefaultsStorage.swift */,
