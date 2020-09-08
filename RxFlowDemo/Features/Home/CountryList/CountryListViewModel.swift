@@ -2,12 +2,16 @@ import RxFlow
 import RxSwift
 import RxCocoa
 
+protocol CountryListViewModelType {
+    func pickCountry(withName: String)
+}
+
 class CountryListViewModel: ServicesViewModel, Stepper {
 
+    let steps = PublishRelay<Step>()
     typealias Services = HasCountriesService
 
     private(set) var countries = [CountryDetailViewModel]()
-    let steps = PublishRelay<Step>()
 
     var services: Services! {
         didSet {
@@ -17,7 +21,11 @@ class CountryListViewModel: ServicesViewModel, Stepper {
         }
     }
 
-    public func pickCountry(withName: String) {
+}
+
+extension CountryListViewModel: CountryListViewModelType {
+
+    func pickCountry(withName: String) {
         self.steps.accept(AppStep.countryIsPicked(withName: withName))
     }
 

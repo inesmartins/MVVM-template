@@ -43,12 +43,13 @@ class CountryDetailViewController: UIViewController, ViewModelBased {
 
 }
 
-extension CountryDetailViewController: UIActionSheetDelegate {
+private extension CountryDetailViewController {
 
     @objc func handleSaveCountryButtonClick() {
-        let actionSheet = UIAlertController(title: "Choose Option",
-                                            message: "Please select where country should be stored",
-                                            preferredStyle: .actionSheet)
+        let actionSheet = UIAlertController(
+            title: "Choose Option",
+            message: "Please select where country should be stored",
+            preferredStyle: .actionSheet)
         for store in self.viewModel.stores {
             actionSheet.addAction(UIAlertAction(title: store.rawValue, style: .default, handler: { _ in
                 self.didSelectStore(store)
@@ -57,27 +58,12 @@ extension CountryDetailViewController: UIActionSheetDelegate {
         self.present(actionSheet, animated: true, completion: nil)
     }
 
-    private func didSelectStore(_ store: Store) {
+    func didSelectStore(_ store: Store) {
         self.viewModel.pickStore(store)
     }
 
-    func showSaveResult(_ result: Bool) {
-        DispatchQueue.main.async {
-            self.view.makeToast(result ? "Saved" : "Not Saved", duration: 0.5, position: .top)
-        }
-    }
-
-    func showSavedCountry(_ country: Country) {
-        DispatchQueue.main.async {
-            self.view.makeToast("Saved Country: \(country.name) - \(country.code)", duration: 1.0, position: .top)
-        }
-    }
-
-}
-
-extension CountryDetailViewController {
-
     func setupView() {
+        self.view.backgroundColor = .white
         self.addSubviews()
         self.addConstraints()
     }

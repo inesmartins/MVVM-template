@@ -223,8 +223,8 @@
 		1A8FBE3F1FF84B9600389464 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				4DC745982507EAAC004A9C16 /* DDGSearch */,
 				4DC745972507EA84004A9C16 /* CountryList */,
+				4DC745982507EAAC004A9C16 /* DDGSearch */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -278,11 +278,11 @@
 		4DC745972507EA84004A9C16 /* CountryList */ = {
 			isa = PBXGroup;
 			children = (
-				4DC745B42507ECBD004A9C16 /* CountryListTableViewCell.swift */,
 				4DC745B22507ECB0004A9C16 /* CountryListViewController.swift */,
+				4DC745B42507ECBD004A9C16 /* CountryListTableViewCell.swift */,
 				4DC745B92507EDDE004A9C16 /* CountryListViewModel.swift */,
-				4DC745C62507F0FB004A9C16 /* CountryDetailViewModel.swift */,
 				4DC745CB2507FF27004A9C16 /* CountryDetailViewController.swift */,
+				4DC745C62507F0FB004A9C16 /* CountryDetailViewModel.swift */,
 			);
 			path = CountryList;
 			sourceTree = "<group>";

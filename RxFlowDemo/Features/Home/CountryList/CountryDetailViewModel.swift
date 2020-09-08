@@ -1,9 +1,11 @@
 import RxCocoa
 import RxFlow
 
-class CountryDetailViewModel: ServicesViewModel, Stepper {
+protocol CountryDetailViewModelType {
+    func pickStore(_ store: Store)
+}
 
-    let stores = Store.allCases
+class CountryDetailViewModel: ServicesViewModel, Stepper {
 
     let steps = PublishRelay<Step>()
     typealias Services = HasCountriesService
@@ -15,18 +17,26 @@ class CountryDetailViewModel: ServicesViewModel, Stepper {
         }
     }
 
+    let stores = Store.allCases
     let name: String
-    var code: String?
+    private(set) var code: String?
 
     init(name: String, code: String? = nil) {
         self.name = name
         self.code = code
     }
+}
 
-    public func pickStore(_ store: Store) {
-        let country = Country(name: self.name, code: self.code!)
-        self.services.store.save(object: country, withKey: "SelectedStore", inStore: store, onCompletion: { _ in
+extension CountryDetailViewModel: CountryDetailViewModelType {
 
+    func pickStore(_ store: Store) {
+        guard let countryCode = self.code else {
+            // TODO: implement error message
+            return
+        }
+        let country = Country(name: self.name, code: countryCode)
+        self.services.store.save(object: country, withKey: "SelectedStore", inStore: store, onCompletion: { result in
+            print(result)
         })
     }
 
