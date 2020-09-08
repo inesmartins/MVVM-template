@@ -16,7 +16,7 @@ class AuthViewController: UIViewController, StoryboardBased, Stepper {
         // Do any additional setup after loading the view.
         _ = proceedButton.rx.tap
             .takeUntil(self.rx.deallocating)
-            .map { AppStep.userIsLoggedIn }
+            .map { AppStep.userIsAuthenticated }
             .bind(to: self.steps)
     }
 

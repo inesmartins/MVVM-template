@@ -3,6 +3,7 @@ import UIKit.UINavigationController
 import RxFlow
 
 class AuthFlow: Flow {
+
     var root: Presentable {
         return self.rootViewController
     }
@@ -27,10 +28,10 @@ class AuthFlow: Flow {
         guard let step = step as? AppStep else { return .none }
 
         switch step {
-        case .loginIsRequired:
+        case .authenticationRequired:
             return navigationToLoginScreen()
-        case .userIsLoggedIn:
-            return .end(forwardToParentFlowWithStep: AppStep.onboardingIsComplete)
+        case .userIsAuthenticated:
+            return .end(forwardToParentFlowWithStep: AppStep.userIsAuthenticated)
         default:
             return .none
         }

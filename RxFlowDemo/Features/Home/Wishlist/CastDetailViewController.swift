@@ -1,11 +1,3 @@
-//
-//  DashboardViewController1.swift
-//  RxFlowDemo
-//
-//  Created by Thibault Wittemberg on 17-07-26.
-//  Copyright (c) RxSwiftCommunity. All rights reserved.
-//
-
 import UIKit
 import Reusable
 import RxFlow

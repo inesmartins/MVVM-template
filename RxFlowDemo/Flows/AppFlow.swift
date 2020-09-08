@@ -1,11 +1,3 @@
-//
-//  AppFlow.swift
-//  RxFlowDemo
-//
-//  Created by Thibault Wittemberg on 18-02-08.
-//  Copyright © 2018 RxSwiftCommunity. All rights reserved.
-//
-
 import Foundation
 import UIKit
 import RxFlow
@@ -38,41 +30,35 @@ class AppFlow: Flow {
         guard let step = step as? AppStep else { return .none }
 
         switch step {
-        case .dashboardIsRequired:
-            return navigationToDashboardScreen()
-        case .onboardingIsRequired:
+        case .homeIsRequired:
+            return navigationToHomeScreen()
+        case .authenticationRequired:
             return navigationToOnboardingScreen()
-        case .onboardingIsComplete:
+        case .userIsAuthenticated:
             return self.dismissOnboarding()
         default:
             return .none
         }
     }
 
-    private func navigationToDashboardScreen() -> FlowContributors {
-
-        let dashboardFlow = DashboardFlow(withServices: self.services)
-
-        Flows.use(dashboardFlow, when: .created) { [unowned self] root in
+    private func navigationToHomeScreen() -> FlowContributors {
+        let homeFlow = HomeFlow(withServices: self.services)
+        Flows.use(homeFlow, when: .created) { [unowned self] root in
             self.rootViewController.pushViewController(root, animated: false)
         }
-
-        return .one(flowContributor: .contribute(withNextPresentable: dashboardFlow,
-                                                 withNextStepper: OneStepper(withSingleStep: AppStep.dashboardIsRequired)))
+        return .one(flowContributor: .contribute(withNextPresentable: homeFlow,
+                                                 withNextStepper: OneStepper(withSingleStep: AppStep.homeIsRequired)))
     }
 
     private func navigationToOnboardingScreen() -> FlowContributors {
-
-        let onboardingFlow = OnboardingFlow(withServices: self.services)
-
+        let onboardingFlow = AuthFlow(withServices: self.services)
         Flows.use(onboardingFlow, when: .created) { [unowned self] root in
             DispatchQueue.main.async {
                 self.rootViewController.present(root, animated: true)
             }
         }
-
         return .one(flowContributor: .contribute(withNextPresentable: onboardingFlow,
-                                                 withNextStepper: OneStepper(withSingleStep: AppStep.loginIsRequired)))
+                                                 withNextStepper: OneStepper(withSingleStep: AppStep.authenticationRequired)))
     }
 
     private func dismissOnboarding() -> FlowContributors {
@@ -94,7 +80,7 @@ class AppStepper: Stepper {
     }
 
     var initialStep: Step {
-        return AppStep.dashboardIsRequired
+        return AppStep.homeIsRequired
     }
 
     /// callback used to emit steps once the FlowCoordinator is ready to listen to them to contribute to the Flow
@@ -102,7 +88,7 @@ class AppStepper: Stepper {
         self.appServices
             .preferencesService.rx
             .isOnboarded
-            .map { $0 ? AppStep.onboardingIsComplete : AppStep.onboardingIsRequired }
+            .map { $0 ? AppStep.userIsAuthenticated : AppStep.authenticationRequired }
             .bind(to: self.steps)
             .disposed(by: self.disposeBag)
     }

@@ -9,4 +9,5 @@ target 'RxFlowDemo' do
   pod "RxFlow"
   pod "RxAlamofire"
   pod "Reusable"
+  pod "Toast-Swift"
 end

@@ -1,11 +1,3 @@
-//
-//  WishlistFlow.swift
-//  RxFlowDemo
-//
-//  Created by Thibault Wittemberg on 17-09-05.
-//  Copyright (c) RxSwiftCommunity. All rights reserved.
-//
-
 import RxFlow
 import RxSwift
 import RxCocoa

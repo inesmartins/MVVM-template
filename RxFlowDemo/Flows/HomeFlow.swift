@@ -1,16 +1,9 @@
-//
-//  DashboardFlow.swift
-//  RxFlowDemo
-//
-//  Created by Thibault Wittemberg on 18-02-14.
-//  Copyright © 2018 RxSwiftCommunity. All rights reserved.
-//
-
 import Foundation
 import UIKit
 import RxFlow
 
-class DashboardFlow: Flow {
+class HomeFlow: Flow {
+
     var root: Presentable {
         return self.rootViewController
     }
@@ -30,14 +23,14 @@ class DashboardFlow: Flow {
         guard let step = step as? AppStep else { return .none }
 
         switch step {
-        case .dashboardIsRequired:
-            return navigateToDashboard()
+        case .homeIsRequired:
+            return navigateToHome()
         default:
             return .none
         }
     }
 
-    private func navigateToDashboard() -> FlowContributors {
+    private func navigateToHome() -> FlowContributors {
         let wishlistStepper = WishlistStepper()
 
         let wishListFlow = WishlistFlow(withServices: self.services, andStepper: wishlistStepper)

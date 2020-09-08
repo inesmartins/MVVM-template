@@ -1,20 +1,17 @@
 import RxFlow
 
 enum AppStep: Step {
+
     // Global
+    case authenticationRequired
+    case userIsAuthenticated
     case logoutIsRequired
-    case dashboardIsRequired
     case alert(String)
     case fakeStep
     case unauthorized
 
-    // Login
-    case loginIsRequired
-    case userIsLoggedIn
-
-    // Onboarding
-    case onboardingIsRequired
-    case onboardingIsComplete
+    // Home
+    case homeIsRequired
 
     // Movies
     case moviesAreRequired

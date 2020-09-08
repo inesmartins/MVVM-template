@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		1A25DE81202D3CFE00F1C4B8 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A25DE80202D3CFE00F1C4B8 /* AppFlow.swift */; };
 		1A25DE83202FB62500F1C4B8 /* PreferencesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A25DE82202FB62500F1C4B8 /* PreferencesService.swift */; };
-		1A25DE85203129F200F1C4B8 /* OnboardingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A25DE84203129F200F1C4B8 /* OnboardingFlow.swift */; };
+		1A25DE85203129F200F1C4B8 /* AuthFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A25DE84203129F200F1C4B8 /* AuthFlow.swift */; };
 		1A25DE872035185000F1C4B8 /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A25DE862035185000F1C4B8 /* AuthViewController.storyboard */; };
 		1A25DE8920351B8F00F1C4B8 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A25DE8820351B8F00F1C4B8 /* AuthViewController.swift */; };
-		1A25DE8B20351E1D00F1C4B8 /* DashboardFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A25DE8A20351E1D00F1C4B8 /* DashboardFlow.swift */; };
+		1A25DE8B20351E1D00F1C4B8 /* HomeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A25DE8A20351E1D00F1C4B8 /* HomeFlow.swift */; };
 		1A8FBE101FF845EE00389464 /* Reusable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8FBE0D1FF845EE00389464 /* Reusable.framework */; };
 		1A8FBE111FF845EE00389464 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8FBE0E1FF845EE00389464 /* RxSwift.framework */; };
 		1A8FBE121FF845EE00389464 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8FBE0F1FF845EE00389464 /* RxCocoa.framework */; };
@@ -52,6 +52,24 @@
 		1AF854BA1FF832AE00271B52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AF854B91FF832AE00271B52 /* Assets.xcassets */; };
 		1AF854BD1FF832AE00271B52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AF854BB1FF832AE00271B52 /* LaunchScreen.storyboard */; };
 		237522387F6F14416B5A0225 /* Pods_RxFlowDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA60738343472EFAF6EF062D /* Pods_RxFlowDemo.framework */; };
+		4DC7459A2507EAFE004A9C16 /* DDGSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745992507EAFE004A9C16 /* DDGSearchViewController.swift */; };
+		4DC745A52507EC00004A9C16 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC7459D2507EC00004A9C16 /* Country.swift */; };
+		4DC745A62507EC00004A9C16 /* SearchResultAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC7459E2507EC00004A9C16 /* SearchResultAnswer.swift */; };
+		4DC745A72507EC00004A9C16 /* SearchResultRelatedTopicIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC7459F2507EC00004A9C16 /* SearchResultRelatedTopicIcon.swift */; };
+		4DC745A82507EC00004A9C16 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745A02507EC00004A9C16 /* SearchResult.swift */; };
+		4DC745A92507EC00004A9C16 /* SearchResultDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745A12507EC00004A9C16 /* SearchResultDefinition.swift */; };
+		4DC745AA2507EC00004A9C16 /* SearchResultAbstract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745A22507EC00004A9C16 /* SearchResultAbstract.swift */; };
+		4DC745AB2507EC00004A9C16 /* SearchParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745A32507EC00004A9C16 /* SearchParams.swift */; };
+		4DC745AC2507EC00004A9C16 /* SearchResultRelatedTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745A42507EC00004A9C16 /* SearchResultRelatedTopic.swift */; };
+		4DC745AF2507EC2D004A9C16 /* KeyboardAwareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745AE2507EC2D004A9C16 /* KeyboardAwareViewController.swift */; };
+		4DC745B32507ECB0004A9C16 /* CountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745B22507ECB0004A9C16 /* CountryListViewController.swift */; };
+		4DC745B52507ECBD004A9C16 /* CountryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745B42507ECBD004A9C16 /* CountryListTableViewCell.swift */; };
+		4DC745B82507ED81004A9C16 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745B72507ED81004A9C16 /* Store.swift */; };
+		4DC745BA2507EDDE004A9C16 /* CountryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745B92507EDDE004A9C16 /* CountryListViewModel.swift */; };
+		4DC745BE2507EEAB004A9C16 /* CountriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745BD2507EEAB004A9C16 /* CountriesService.swift */; };
+		4DC745C32507EF09004A9C16 /* CountriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745C22507EF09004A9C16 /* CountriesRepository.swift */; };
+		4DC745C52507F001004A9C16 /* CountryList.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DC745C42507F001004A9C16 /* CountryList.json */; };
+		4DC745C72507F0FB004A9C16 /* CountryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745C62507F0FB004A9C16 /* CountryViewModel.swift */; };
 		74C6AD35227BC52B00B16A95 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74C6AD34227BC52B00B16A95 /* RxRelay.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,10 +89,10 @@
 /* Begin PBXFileReference section */
 		1A25DE80202D3CFE00F1C4B8 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		1A25DE82202FB62500F1C4B8 /* PreferencesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesService.swift; sourceTree = "<group>"; };
-		1A25DE84203129F200F1C4B8 /* OnboardingFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFlow.swift; sourceTree = "<group>"; };
+		1A25DE84203129F200F1C4B8 /* AuthFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlow.swift; sourceTree = "<group>"; };
 		1A25DE862035185000F1C4B8 /* AuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthViewController.storyboard; sourceTree = "<group>"; };
 		1A25DE8820351B8F00F1C4B8 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
-		1A25DE8A20351E1D00F1C4B8 /* DashboardFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardFlow.swift; sourceTree = "<group>"; };
+		1A25DE8A20351E1D00F1C4B8 /* HomeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlow.swift; sourceTree = "<group>"; };
 		1A8FBE0D1FF845EE00389464 /* Reusable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reusable.framework; path = Carthage/Build/iOS/Reusable.framework; sourceTree = "<group>"; };
 		1A8FBE0E1FF845EE00389464 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		1A8FBE0F1FF845EE00389464 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -116,6 +134,24 @@
 		1AF854BC1FF832AE00271B52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1AF854BE1FF832AE00271B52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32DF1AFB988965A2A9C94FB4 /* Pods-RxFlowDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxFlowDemo.release.xcconfig"; path = "Target Support Files/Pods-RxFlowDemo/Pods-RxFlowDemo.release.xcconfig"; sourceTree = "<group>"; };
+		4DC745992507EAFE004A9C16 /* DDGSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DDGSearchViewController.swift; sourceTree = "<group>"; };
+		4DC7459D2507EC00004A9C16 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		4DC7459E2507EC00004A9C16 /* SearchResultAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultAnswer.swift; sourceTree = "<group>"; };
+		4DC7459F2507EC00004A9C16 /* SearchResultRelatedTopicIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultRelatedTopicIcon.swift; sourceTree = "<group>"; };
+		4DC745A02507EC00004A9C16 /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		4DC745A12507EC00004A9C16 /* SearchResultDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultDefinition.swift; sourceTree = "<group>"; };
+		4DC745A22507EC00004A9C16 /* SearchResultAbstract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultAbstract.swift; sourceTree = "<group>"; };
+		4DC745A32507EC00004A9C16 /* SearchParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchParams.swift; sourceTree = "<group>"; };
+		4DC745A42507EC00004A9C16 /* SearchResultRelatedTopic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultRelatedTopic.swift; sourceTree = "<group>"; };
+		4DC745AE2507EC2D004A9C16 /* KeyboardAwareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardAwareViewController.swift; sourceTree = "<group>"; };
+		4DC745B22507ECB0004A9C16 /* CountryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryListViewController.swift; sourceTree = "<group>"; };
+		4DC745B42507ECBD004A9C16 /* CountryListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryListTableViewCell.swift; sourceTree = "<group>"; };
+		4DC745B72507ED81004A9C16 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		4DC745B92507EDDE004A9C16 /* CountryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewModel.swift; sourceTree = "<group>"; };
+		4DC745BD2507EEAB004A9C16 /* CountriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesService.swift; sourceTree = "<group>"; };
+		4DC745C22507EF09004A9C16 /* CountriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesRepository.swift; sourceTree = "<group>"; };
+		4DC745C42507F001004A9C16 /* CountryList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CountryList.json; sourceTree = "<group>"; };
+		4DC745C62507F0FB004A9C16 /* CountryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewModel.swift; sourceTree = "<group>"; };
 		74C6AD34227BC52B00B16A95 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = ../Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		E3FDE6231485C576F460F5A4 /* Pods-RxFlowDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxFlowDemo.debug.xcconfig"; path = "Target Support Files/Pods-RxFlowDemo/Pods-RxFlowDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		FA60738343472EFAF6EF062D /* Pods_RxFlowDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxFlowDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,8 +190,8 @@
 			children = (
 				1A8FBE221FF8480C00389464 /* AppStep.swift */,
 				1A25DE80202D3CFE00F1C4B8 /* AppFlow.swift */,
-				1A25DE84203129F200F1C4B8 /* OnboardingFlow.swift */,
-				1A25DE8A20351E1D00F1C4B8 /* DashboardFlow.swift */,
+				1A25DE84203129F200F1C4B8 /* AuthFlow.swift */,
+				1A25DE8A20351E1D00F1C4B8 /* HomeFlow.swift */,
 				1A8FBE211FF8480B00389464 /* WishlistFlow.swift */,
 				1A8FBE251FF8480C00389464 /* WatchedFlow.swift */,
 				1A8FBE231FF8480C00389464 /* SettingsFlow.swift */,
@@ -166,11 +202,9 @@
 		1A8FBE201FF847FA00389464 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				1A8FBE2F1FF84B5300389464 /* CastsHelper.swift */,
-				1A8FBE321FF84B5300389464 /* CastsRepository.swift */,
-				1A8FBE301FF84B5300389464 /* MoviesHelper.swift */,
-				1A8FBE311FF84B5300389464 /* MoviesRepository.swift */,
-				1A8FBE331FF84B5300389464 /* MoviesService.swift */,
+				4DC745BF2507EEE7004A9C16 /* Casts */,
+				4DC745C02507EEED004A9C16 /* Movies */,
+				4DC745C12507EEF6004A9C16 /* Countries */,
 				1A25DE82202FB62500F1C4B8 /* PreferencesService.swift */,
 			);
 			path = Services;
@@ -187,6 +221,14 @@
 		1A8FBE391FF84B7300389464 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4DC7459D2507EC00004A9C16 /* Country.swift */,
+				4DC745A32507EC00004A9C16 /* SearchParams.swift */,
+				4DC745A02507EC00004A9C16 /* SearchResult.swift */,
+				4DC745A22507EC00004A9C16 /* SearchResultAbstract.swift */,
+				4DC7459E2507EC00004A9C16 /* SearchResultAnswer.swift */,
+				4DC745A12507EC00004A9C16 /* SearchResultDefinition.swift */,
+				4DC745A42507EC00004A9C16 /* SearchResultRelatedTopic.swift */,
+				4DC7459F2507EC00004A9C16 /* SearchResultRelatedTopicIcon.swift */,
 				1A8FBE3B1FF84B7E00389464 /* Cast.swift */,
 				1A8FBE3A1FF84B7E00389464 /* Movie.swift */,
 			);
@@ -197,19 +239,21 @@
 			isa = PBXGroup;
 			children = (
 				4DC745962507E5EF004A9C16 /* Auth */,
-				1A8FBE3F1FF84B9600389464 /* Dashboard */,
+				1A8FBE3F1FF84B9600389464 /* Home */,
 				1A8FBE401FF84B9E00389464 /* Settings */,
 			);
 			path = Features;
 			sourceTree = "<group>";
 		};
-		1A8FBE3F1FF84B9600389464 /* Dashboard */ = {
+		1A8FBE3F1FF84B9600389464 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				1A8FBE4D1FF84BBC00389464 /* Wishlist */,
 				1A8FBE4E1FF84BC400389464 /* Watched */,
+				4DC745982507EAAC004A9C16 /* DDGSearch */,
+				4DC745972507EA84004A9C16 /* CountryList */,
 			);
-			path = Dashboard;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		1A8FBE401FF84B9E00389464 /* Settings */ = {
@@ -293,8 +337,10 @@
 				1A8FBE1F1FF847EB00389464 /* Flows */,
 				1A8FBE3E1FF84B8700389464 /* Features */,
 				1A8FBE391FF84B7300389464 /* Models */,
-				1A8FBE201FF847FA00389464 /* Services */,
 				1A8FBE2B1FF84B1C00389464 /* Protocols */,
+				1A8FBE201FF847FA00389464 /* Services */,
+				4DC745B62507ED75004A9C16 /* Store */,
+				4DC745AD2507EC0E004A9C16 /* UI */,
 				1AF854B21FF832AE00271B52 /* AppDelegate.swift */,
 				1AF854BB1FF832AE00271B52 /* LaunchScreen.storyboard */,
 				1AF854B91FF832AE00271B52 /* Assets.xcassets */,
@@ -310,6 +356,70 @@
 				1A25DE8820351B8F00F1C4B8 /* AuthViewController.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		4DC745972507EA84004A9C16 /* CountryList */ = {
+			isa = PBXGroup;
+			children = (
+				4DC745B42507ECBD004A9C16 /* CountryListTableViewCell.swift */,
+				4DC745B22507ECB0004A9C16 /* CountryListViewController.swift */,
+				4DC745B92507EDDE004A9C16 /* CountryListViewModel.swift */,
+				4DC745C62507F0FB004A9C16 /* CountryViewModel.swift */,
+			);
+			path = CountryList;
+			sourceTree = "<group>";
+		};
+		4DC745982507EAAC004A9C16 /* DDGSearch */ = {
+			isa = PBXGroup;
+			children = (
+				4DC745992507EAFE004A9C16 /* DDGSearchViewController.swift */,
+			);
+			path = DDGSearch;
+			sourceTree = "<group>";
+		};
+		4DC745AD2507EC0E004A9C16 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				4DC745AE2507EC2D004A9C16 /* KeyboardAwareViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		4DC745B62507ED75004A9C16 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				4DC745B72507ED81004A9C16 /* Store.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		4DC745BF2507EEE7004A9C16 /* Casts */ = {
+			isa = PBXGroup;
+			children = (
+				1A8FBE2F1FF84B5300389464 /* CastsHelper.swift */,
+				1A8FBE321FF84B5300389464 /* CastsRepository.swift */,
+			);
+			path = Casts;
+			sourceTree = "<group>";
+		};
+		4DC745C02507EEED004A9C16 /* Movies */ = {
+			isa = PBXGroup;
+			children = (
+				1A8FBE301FF84B5300389464 /* MoviesHelper.swift */,
+				1A8FBE311FF84B5300389464 /* MoviesRepository.swift */,
+				1A8FBE331FF84B5300389464 /* MoviesService.swift */,
+			);
+			path = Movies;
+			sourceTree = "<group>";
+		};
+		4DC745C12507EEF6004A9C16 /* Countries */ = {
+			isa = PBXGroup;
+			children = (
+				4DC745C42507F001004A9C16 /* CountryList.json */,
+				4DC745BD2507EEAB004A9C16 /* CountriesService.swift */,
+				4DC745C22507EF09004A9C16 /* CountriesRepository.swift */,
+			);
+			path = Countries;
 			sourceTree = "<group>";
 		};
 		FE41C29559ECF2BBE62F9E76 /* Pods */ = {
@@ -393,6 +503,7 @@
 				1A8FBE661FF84BFE00389464 /* MovieDetailViewController.storyboard in Resources */,
 				1AF854BA1FF832AE00271B52 /* Assets.xcassets in Resources */,
 				1A25DE872035185000F1C4B8 /* AuthViewController.storyboard in Resources */,
+				4DC745C52507F001004A9C16 /* CountryList.json in Resources */,
 				1A8FBE5F1FF84BFE00389464 /* CastDetailViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +525,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxFlow/RxFlow.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -424,6 +536,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxFlow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -475,35 +588,52 @@
 			files = (
 				1A8FBE2A1FF8480C00389464 /* WatchedFlow.swift in Sources */,
 				1A8FBE6F1FF84C2C00389464 /* WatchedViewController.swift in Sources */,
+				4DC745AC2507EC00004A9C16 /* SearchResultRelatedTopic.swift in Sources */,
 				1A8FBE481FF84BB200389464 /* SettingsListViewController.swift in Sources */,
 				1A8FBE5E1FF84BFE00389464 /* WishlistViewModel.swift in Sources */,
+				4DC745C72507F0FB004A9C16 /* CountryViewModel.swift in Sources */,
 				1A8FBE631FF84BFE00389464 /* CastDetailViewModel.swift in Sources */,
 				1A8FBE611FF84BFE00389464 /* MovieDetailViewController.swift in Sources */,
 				1A8FBE3D1FF84B7E00389464 /* Cast.swift in Sources */,
+				4DC745A62507EC00004A9C16 /* SearchResultAnswer.swift in Sources */,
+				4DC7459A2507EAFE004A9C16 /* DDGSearchViewController.swift in Sources */,
 				1A8FBE621FF84BFE00389464 /* MovieDetailViewModel.swift in Sources */,
 				1A8FBE381FF84B5300389464 /* MoviesService.swift in Sources */,
 				1A8FBE4A1FF84BB200389464 /* SettingsAboutViewController.swift in Sources */,
 				1A8FBE701FF84C2C00389464 /* WatchedViewModel.swift in Sources */,
+				4DC745AA2507EC00004A9C16 /* SearchResultAbstract.swift in Sources */,
 				1A8FBE341FF84B5300389464 /* CastsHelper.swift in Sources */,
+				4DC745C32507EF09004A9C16 /* CountriesRepository.swift in Sources */,
 				1A25DE81202D3CFE00F1C4B8 /* AppFlow.swift in Sources */,
+				4DC745B32507ECB0004A9C16 /* CountryListViewController.swift in Sources */,
 				1A8FBE351FF84B5300389464 /* MoviesHelper.swift in Sources */,
-				1A25DE8B20351E1D00F1C4B8 /* DashboardFlow.swift in Sources */,
+				1A25DE8B20351E1D00F1C4B8 /* HomeFlow.swift in Sources */,
 				1A8FBE281FF8480C00389464 /* SettingsFlow.swift in Sources */,
 				1A25DE8920351B8F00F1C4B8 /* AuthViewController.swift in Sources */,
 				1A8FBE641FF84BFE00389464 /* CastViewModel.swift in Sources */,
 				1A8FBE271FF8480C00389464 /* AppStep.swift in Sources */,
 				1A8FBE601FF84BFE00389464 /* MovieViewModel.swift in Sources */,
+				4DC745BA2507EDDE004A9C16 /* CountryListViewModel.swift in Sources */,
+				4DC745AB2507EC00004A9C16 /* SearchParams.swift in Sources */,
+				4DC745A92507EC00004A9C16 /* SearchResultDefinition.swift in Sources */,
 				1A8FBE361FF84B5300389464 /* MoviesRepository.swift in Sources */,
 				1A8FBE681FF84BFE00389464 /* WishlistViewController.swift in Sources */,
 				1A8FBE3C1FF84B7E00389464 /* Movie.swift in Sources */,
-				1A25DE85203129F200F1C4B8 /* OnboardingFlow.swift in Sources */,
+				4DC745B82507ED81004A9C16 /* Store.swift in Sources */,
+				1A25DE85203129F200F1C4B8 /* AuthFlow.swift in Sources */,
 				1A25DE83202FB62500F1C4B8 /* PreferencesService.swift in Sources */,
+				4DC745A82507EC00004A9C16 /* SearchResult.swift in Sources */,
 				1A8FBE371FF84B5300389464 /* CastsRepository.swift in Sources */,
+				4DC745AF2507EC2D004A9C16 /* KeyboardAwareViewController.swift in Sources */,
+				4DC745A52507EC00004A9C16 /* Country.swift in Sources */,
+				4DC745B52507ECBD004A9C16 /* CountryListTableViewCell.swift in Sources */,
+				4DC745A72507EC00004A9C16 /* SearchResultRelatedTopicIcon.swift in Sources */,
 				1A8FBE261FF8480C00389464 /* WishlistFlow.swift in Sources */,
 				1A8FBE2D1FF84B2500389464 /* ViewModelBased.swift in Sources */,
 				1A8FBE671FF84BFE00389464 /* CastDetailViewController.swift in Sources */,
 				1A8FBE6A1FF84C2400389464 /* MovieCollectionViewCell.swift in Sources */,
 				1AF854B31FF832AE00271B52 /* AppDelegate.swift in Sources */,
+				4DC745BE2507EEAB004A9C16 /* CountriesService.swift in Sources */,
 				1A8FBE521FF84BF300389464 /* MovieViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -649,7 +779,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = RxFlowDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.warpfactor.RxFlowDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -673,7 +803,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = RxFlowDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.warpfactor.RxFlowDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

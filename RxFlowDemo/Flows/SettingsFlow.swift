@@ -1,11 +1,3 @@
-//
-//  SettingsFlow.swift
-//  RxFlowDemo
-//
-//  Created by Thibault Wittemberg on 17-08-09.
-//  Copyright (c) RxSwiftCommunity. All rights reserved.
-//
-
 import UIKit
 import RxFlow
 import RxSwift
@@ -36,9 +28,9 @@ class SettingsFlow: Flow {
         switch step {
         case .settingsAreRequired:
             return navigateToSettingsScreen()
-        case .loginIsRequired:
+        case .authenticationRequired:
             return navigateToLoginScreen()
-        case .userIsLoggedIn:
+        case .userIsAuthenticated:
             return popToMasterViewController()
         case .aboutIsRequired:
             return navigateToAboutScreen()
