@@ -12,6 +12,9 @@ PODS:
   - RxCocoa (5.0.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
+  - RxFlow (2.7.0):
+    - RxCocoa (>= 5.0.0)
+    - RxSwift (>= 5.0.0)
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.0.1)
@@ -24,6 +27,7 @@ DEPENDENCIES:
   - RxAlamofire
   - RxBlocking (~> 5.0.1)
   - RxCocoa (~> 5.0.1)
+  - RxFlow
   - RxSwift (~> 5.0.1)
   - RxTest (~> 5.0.1)
   - Toast-Swift (~> 5.0.1)
@@ -35,6 +39,7 @@ SPEC REPOS:
     - RxAlamofire
     - RxBlocking
     - RxCocoa
+    - RxFlow
     - RxRelay
     - RxSwift
     - RxTest
@@ -46,11 +51,12 @@ SPEC CHECKSUMS:
   RxAlamofire: a2d7621de4c23a0c6e7b476b504acc32838ee341
   RxBlocking: c5e090f42d046df8b0e7752742510f349963710f
   RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
+  RxFlow: 605ef6364d7e937bea8f9507a1e99a431cdc2493
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
   RxTest: 0132f952a61da82d5233abedaa559df91e5330e5
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 573b39163fefdac333870acab024715b4ab7b724
+PODFILE CHECKSUM: bf2bcd2a1fc42f9598157fc9bc7baabd32263970
 
 COCOAPODS: 1.9.3
