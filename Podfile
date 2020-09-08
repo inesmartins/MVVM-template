@@ -10,6 +10,7 @@ target 'MVVMTemplate' do
   pod 'RxCocoa', '~> 5.0.1'
   pod 'RxAlamofire'
   pod 'ReactiveCoordinator', '~> 4.0.0'
+  pod 'Toast-Swift', '~> 5.0.1'
  
   target 'MVVMTemplateTests' do
     inherit! :search_paths

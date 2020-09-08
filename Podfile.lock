@@ -17,6 +17,7 @@ PODS:
   - RxSwift (5.0.1)
   - RxTest (5.0.1):
     - RxSwift (~> 5)
+  - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
   - ReactiveCoordinator (~> 4.0.0)
@@ -25,6 +26,7 @@ DEPENDENCIES:
   - RxCocoa (~> 5.0.1)
   - RxSwift (~> 5.0.1)
   - RxTest (~> 5.0.1)
+  - Toast-Swift (~> 5.0.1)
 
 SPEC REPOS:
   trunk:
@@ -36,6 +38,7 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - RxTest
+    - Toast-Swift
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -46,7 +49,8 @@ SPEC CHECKSUMS:
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
   RxTest: 0132f952a61da82d5233abedaa559df91e5330e5
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 9a0ff3498f99e65a0f9603daa94269d6ec5bec37
+PODFILE CHECKSUM: 573b39163fefdac333870acab024715b4ab7b724
 
 COCOAPODS: 1.9.3
