@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 protocol CountryListTableViewCellType: AnyObject {
-    func setupView(forCountry country: CountryViewModel)
+    func setupView(forCountry country: CountryDetailViewModel)
 }
 
 class CountryListTableViewCell: UITableViewCell {
@@ -22,7 +22,7 @@ class CountryListTableViewCell: UITableViewCell {
 
 extension CountryListTableViewCell: CountryListTableViewCellType {
 
-    func setupView(forCountry country: CountryViewModel) {
+    func setupView(forCountry country: CountryDetailViewModel) {
         self.textLabel?.text = country.name
         self.detailTextLabel?.text = country.code
         self.textLabel?.font = CountryListTableViewCell.cellPrimaryFont

@@ -25,19 +25,34 @@ class CountryListFlow: Flow {
         switch step {
 
         case .countryListIsRequired:
-            return navigateToCountryListScreen()
+            return self.navigateToCountryListScreen()
+        case .countryIsPicked(let name):
+            return self.navigateToCountryDetailScreen(withName: name)
         default:
             return .none
         }
     }
 
-    private func navigateToCountryListScreen() -> FlowContributors {
+}
+
+private extension CountryListFlow {
+
+    func navigateToCountryListScreen() -> FlowContributors {
         let viewController = CountryListViewController.instantiate(withViewModel: CountryListViewModel(), andServices: self.services)
         viewController.title = "Country List"
         self.rootViewController.pushViewController(viewController, animated: true)
         self.rootViewController.view.backgroundColor = .white
         return .one(flowContributor: .contribute(withNextPresentable: viewController, withNextStepper: viewController.viewModel))
 
+    }
+
+    func navigateToCountryDetailScreen(withName name: String) -> FlowContributors {
+        let viewController = CountryDetailViewController
+            .instantiate(withViewModel: CountryDetailViewModel(name: name), andServices: self.services)
+        viewController.title = viewController.viewModel.name
+        self.rootViewController.pushViewController(viewController, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: viewController,
+                                                 withNextStepper: viewController.viewModel))
     }
 
 }

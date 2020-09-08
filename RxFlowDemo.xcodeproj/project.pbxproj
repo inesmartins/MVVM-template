@@ -69,8 +69,9 @@
 		4DC745BE2507EEAB004A9C16 /* CountriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745BD2507EEAB004A9C16 /* CountriesService.swift */; };
 		4DC745C32507EF09004A9C16 /* CountriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745C22507EF09004A9C16 /* CountriesRepository.swift */; };
 		4DC745C52507F001004A9C16 /* CountryList.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DC745C42507F001004A9C16 /* CountryList.json */; };
-		4DC745C72507F0FB004A9C16 /* CountryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745C62507F0FB004A9C16 /* CountryViewModel.swift */; };
+		4DC745C72507F0FB004A9C16 /* CountryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745C62507F0FB004A9C16 /* CountryDetailViewModel.swift */; };
 		4DC745C92507F25D004A9C16 /* CountryListFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745C82507F25D004A9C16 /* CountryListFlow.swift */; };
+		4DC745CC2507FF27004A9C16 /* CountryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745CB2507FF27004A9C16 /* CountryDetailViewController.swift */; };
 		74C6AD35227BC52B00B16A95 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74C6AD34227BC52B00B16A95 /* RxRelay.framework */; };
 /* End PBXBuildFile section */
 
@@ -152,8 +153,9 @@
 		4DC745BD2507EEAB004A9C16 /* CountriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesService.swift; sourceTree = "<group>"; };
 		4DC745C22507EF09004A9C16 /* CountriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesRepository.swift; sourceTree = "<group>"; };
 		4DC745C42507F001004A9C16 /* CountryList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CountryList.json; sourceTree = "<group>"; };
-		4DC745C62507F0FB004A9C16 /* CountryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewModel.swift; sourceTree = "<group>"; };
+		4DC745C62507F0FB004A9C16 /* CountryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailViewModel.swift; sourceTree = "<group>"; };
 		4DC745C82507F25D004A9C16 /* CountryListFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListFlow.swift; sourceTree = "<group>"; };
+		4DC745CB2507FF27004A9C16 /* CountryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailViewController.swift; sourceTree = "<group>"; };
 		74C6AD34227BC52B00B16A95 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = ../Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		E3FDE6231485C576F460F5A4 /* Pods-RxFlowDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxFlowDemo.debug.xcconfig"; path = "Target Support Files/Pods-RxFlowDemo/Pods-RxFlowDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		FA60738343472EFAF6EF062D /* Pods_RxFlowDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxFlowDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -367,7 +369,8 @@
 				4DC745B42507ECBD004A9C16 /* CountryListTableViewCell.swift */,
 				4DC745B22507ECB0004A9C16 /* CountryListViewController.swift */,
 				4DC745B92507EDDE004A9C16 /* CountryListViewModel.swift */,
-				4DC745C62507F0FB004A9C16 /* CountryViewModel.swift */,
+				4DC745C62507F0FB004A9C16 /* CountryDetailViewModel.swift */,
+				4DC745CB2507FF27004A9C16 /* CountryDetailViewController.swift */,
 			);
 			path = CountryList;
 			sourceTree = "<group>";
@@ -594,7 +597,7 @@
 				4DC745AC2507EC00004A9C16 /* SearchResultRelatedTopic.swift in Sources */,
 				1A8FBE481FF84BB200389464 /* SettingsListViewController.swift in Sources */,
 				1A8FBE5E1FF84BFE00389464 /* WishlistViewModel.swift in Sources */,
-				4DC745C72507F0FB004A9C16 /* CountryViewModel.swift in Sources */,
+				4DC745C72507F0FB004A9C16 /* CountryDetailViewModel.swift in Sources */,
 				1A8FBE631FF84BFE00389464 /* CastDetailViewModel.swift in Sources */,
 				1A8FBE611FF84BFE00389464 /* MovieDetailViewController.swift in Sources */,
 				1A8FBE3D1FF84B7E00389464 /* Cast.swift in Sources */,
@@ -607,6 +610,7 @@
 				4DC745AA2507EC00004A9C16 /* SearchResultAbstract.swift in Sources */,
 				4DC745C92507F25D004A9C16 /* CountryListFlow.swift in Sources */,
 				1A8FBE341FF84B5300389464 /* CastsHelper.swift in Sources */,
+				4DC745CC2507FF27004A9C16 /* CountryDetailViewController.swift in Sources */,
 				4DC745C32507EF09004A9C16 /* CountriesRepository.swift in Sources */,
 				1A25DE81202D3CFE00F1C4B8 /* AppFlow.swift in Sources */,
 				4DC745B32507ECB0004A9C16 /* CountryListViewController.swift in Sources */,
