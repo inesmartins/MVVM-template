@@ -239,6 +239,7 @@
 		1AF854B11FF832AE00271B52 /* RxFlowDemo */ = {
 			isa = PBXGroup;
 			children = (
+				1AF854B91FF832AE00271B52 /* Assets.xcassets */,
 				4DC745F225080CE7004A9C16 /* Extensions */,
 				1A8FBE1F1FF847EB00389464 /* Flows */,
 				1A8FBE3E1FF84B8700389464 /* Features */,
@@ -248,7 +249,6 @@
 				4DC745AD2507EC0E004A9C16 /* UI */,
 				1AF854B21FF832AE00271B52 /* AppDelegate.swift */,
 				1AF854BB1FF832AE00271B52 /* LaunchScreen.storyboard */,
-				1AF854B91FF832AE00271B52 /* Assets.xcassets */,
 				1AF854BE1FF832AE00271B52 /* Info.plist */,
 			);
 			path = RxFlowDemo;
@@ -343,7 +343,7 @@
 			buildConfigurationList = 1AF854C11FF832AE00271B52 /* Build configuration list for PBXNativeTarget "RxFlowDemo" */;
 			buildPhases = (
 				2DF6B51072402F8F1D71BB07 /* [CP] Check Pods Manifest.lock */,
-				1A8FBE131FF8460100389464 /* ⚙ Swiftlint Code Analysis */,
+				1A8FBE131FF8460100389464 /* Swiftlint Code Analysis */,
 				1AF854AB1FF832AE00271B52 /* Sources */,
 				1AF854AC1FF832AE00271B52 /* Frameworks */,
 				1AF854AD1FF832AE00271B52 /* Resources */,
@@ -441,14 +441,14 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxFlowDemo/Pods-RxFlowDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1A8FBE131FF8460100389464 /* ⚙ Swiftlint Code Analysis */ = {
+		1A8FBE131FF8460100389464 /* Swiftlint Code Analysis */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "⚙ Swiftlint Code Analysis";
+			name = "Swiftlint Code Analysis";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;

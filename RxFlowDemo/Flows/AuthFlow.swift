@@ -23,6 +23,9 @@ class AuthFlow: Flow {
     deinit {
         print("\(type(of: self)): \(#function)")
     }
+}
+
+extension AuthFlow {
 
     func navigate(to step: Step) -> FlowContributors {
         guard let step = step as? AppStep else { return .none }
@@ -37,7 +40,11 @@ class AuthFlow: Flow {
         }
     }
 
-    private func navigationToLoginScreen() -> FlowContributors {
+}
+
+private extension AuthFlow {
+
+    func navigationToLoginScreen() -> FlowContributors {
         let authViewController = AuthViewController.instantiate()
         authViewController.title = "Login"
         self.rootViewController.pushViewController(authViewController, animated: false)

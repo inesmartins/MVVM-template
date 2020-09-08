@@ -18,6 +18,10 @@ class CountryListFlow: Flow {
         print("\(type(of: self)): \(#function)")
     }
 
+}
+
+extension CountryListFlow {
+
     func navigate(to step: Step) -> FlowContributors {
         guard let step = step as? AppStep else { return .none }
         switch step {

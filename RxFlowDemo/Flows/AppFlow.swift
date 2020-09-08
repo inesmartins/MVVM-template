@@ -26,6 +26,10 @@ class AppFlow: Flow {
         print("\(type(of: self)): \(#function)")
     }
 
+}
+
+extension AppFlow {
+
     func navigate(to step: Step) -> FlowContributors {
         guard let step = step as? AppStep else { return .none }
 
@@ -33,7 +37,7 @@ class AppFlow: Flow {
         case .homeIsRequired:
             return navigationToHomeScreen()
         case .authenticationRequired:
-            return navigationToOnboardingScreen()
+            return navigationToAuthScreen()
         case .userIsAuthenticated:
             return self.dismissOnboarding()
         default:
@@ -41,27 +45,33 @@ class AppFlow: Flow {
         }
     }
 
-    private func navigationToHomeScreen() -> FlowContributors {
+}
+
+private extension AppFlow {
+
+    func navigationToHomeScreen() -> FlowContributors {
         let homeFlow = HomeFlow(withServices: self.services)
         Flows.use(homeFlow, when: .created) { [unowned self] root in
             self.rootViewController.pushViewController(root, animated: false)
         }
-        return .one(flowContributor: .contribute(withNextPresentable: homeFlow,
-                                                 withNextStepper: OneStepper(withSingleStep: AppStep.homeIsRequired)))
+        return .one(flowContributor: .contribute(
+            withNextPresentable: homeFlow,
+            withNextStepper: OneStepper(withSingleStep: AppStep.homeIsRequired)))
     }
 
-    private func navigationToOnboardingScreen() -> FlowContributors {
+    func navigationToAuthScreen() -> FlowContributors {
         let onboardingFlow = AuthFlow(withServices: self.services)
         Flows.use(onboardingFlow, when: .created) { [unowned self] root in
             DispatchQueue.main.async {
                 self.rootViewController.present(root, animated: true)
             }
         }
-        return .one(flowContributor: .contribute(withNextPresentable: onboardingFlow,
-                                                 withNextStepper: OneStepper(withSingleStep: AppStep.authenticationRequired)))
+        return .one(flowContributor: .contribute(
+            withNextPresentable: onboardingFlow,
+            withNextStepper: OneStepper(withSingleStep: AppStep.authenticationRequired)))
     }
 
-    private func dismissOnboarding() -> FlowContributors {
+    func dismissOnboarding() -> FlowContributors {
         if let onboardingViewController = self.rootViewController.presentedViewController {
             onboardingViewController.dismiss(animated: true)
         }

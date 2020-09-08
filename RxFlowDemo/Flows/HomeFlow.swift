@@ -19,6 +19,10 @@ class HomeFlow: Flow {
         print("\(type(of: self)): \(#function)")
     }
 
+}
+
+extension HomeFlow {
+
     func navigate(to step: Step) -> FlowContributors {
         guard let step = step as? AppStep else { return .none }
 
@@ -30,7 +34,11 @@ class HomeFlow: Flow {
         }
     }
 
-    private func navigateToHome() -> FlowContributors {
+}
+
+private extension HomeFlow {
+
+    func navigateToHome() -> FlowContributors {
         let countryListFlow = CountryListFlow(withServices: self.services)
         Flows.use(countryListFlow, when: .created) { [unowned self] (root1: UINavigationController) in
             let tabBarItem1 = UITabBarItem(title: "Country List", image: UIImage(named: "wishlist"), selectedImage: nil)
