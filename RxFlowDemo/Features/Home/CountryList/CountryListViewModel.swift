@@ -11,14 +11,13 @@ class CountryListViewModel: ServicesViewModel, Stepper {
 
     var services: Services! {
         didSet {
-            // we can do some data refactoring in order to display things exactly the way we want (this is the aim of a ViewModel)
             self.countries = self.services.countriesService.all().map({ (country) -> CountryViewModel in
                 return CountryViewModel(name: country.name, code: country.code)
             })
         }
     }
 
-    //public func pick(movieId: Int) {
-    //    self.steps.accept(AppStep.movieIsPicked(withId: movieId))
-    //}
+    public func pick(countryName: String) {
+        self.steps.accept(AppStep.countryIsPicked(withName: countryName))
+    }
 }

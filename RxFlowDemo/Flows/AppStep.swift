@@ -14,12 +14,13 @@ enum AppStep: Step {
     case homeIsRequired
 
     // Country List
+    case countryIsPicked(withName: String)
     case countryListIsRequired
 
     // Movies
     case moviesAreRequired
-    case movieIsPicked (withId: Int)
-    case castIsPicked (withId: Int)
+    case movieIsPicked(withId: Int)
+    case castIsPicked(withId: Int)
 
     // Settings
     case settingsAreRequired

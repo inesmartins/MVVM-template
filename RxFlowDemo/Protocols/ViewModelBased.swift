@@ -30,10 +30,11 @@ extension ViewModelBased where Self: StoryboardBased & UIViewController {
     }
 }
 
+/** for programmatic ViewControllers */
 extension ViewModelBased where Self: UIViewController, ViewModelType: ServicesViewModel {
     static func instantiate<ViewModelType, ServicesType> (withViewModel viewModel: ViewModelType, andServices services: ServicesType) -> Self
         where ViewModelType == Self.ViewModelType, ServicesType == Self.ViewModelType.Services {
-        let viewController = Self.init(nibName: nil, bundle: nil)
+        let viewController = Self.init()
         viewController.viewModel = viewModel
         viewController.viewModel.services = services
         return viewController

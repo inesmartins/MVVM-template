@@ -35,7 +35,9 @@ class CountryListFlow: Flow {
         let viewController = CountryListViewController.instantiate(withViewModel: CountryListViewModel(), andServices: self.services)
         viewController.title = "Country List"
         self.rootViewController.pushViewController(viewController, animated: true)
+        self.rootViewController.view.backgroundColor = .white
         return .one(flowContributor: .contribute(withNextPresentable: viewController, withNextStepper: viewController.viewModel))
+
     }
 
 }

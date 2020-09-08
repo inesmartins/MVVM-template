@@ -38,7 +38,7 @@ class HomeFlow: Flow {
         let watchedFlow = WatchedFlow(withServices: self.services)
 
         Flows.use(countryListFlow, wishListFlow, watchedFlow, when: .created) { [unowned self] (root1: UINavigationController, root2: UINavigationController, root3: UINavigationController) in
-            let tabBarItem1 = UITabBarItem(title: "Country List", image: UIImage(), selectedImage: nil)
+            let tabBarItem1 = UITabBarItem(title: "Country List", image: UIImage(named: "wishlist"), selectedImage: nil)
             let tabBarItem2 = UITabBarItem(title: "Wishlist", image: UIImage(named: "wishlist"), selectedImage: nil)
             let tabBarItem3 = UITabBarItem(title: "Watched", image: UIImage(named: "watched"), selectedImage: nil)
             root1.tabBarItem = tabBarItem1
