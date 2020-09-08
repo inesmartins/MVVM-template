@@ -17,10 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     let disposeBag = DisposeBag()
     var window: UIWindow?
     var coordinator = FlowCoordinator()
+    let countriesService = CountriesService()
     let moviesService = MoviesService()
     let preferencesService = PreferencesService()
     lazy var appServices = {
-        return AppServices(moviesService: self.moviesService, preferencesService: self.preferencesService)
+        return AppServices(countriesService: self.countriesService,
+                           moviesService: self.moviesService,
+                           preferencesService: self.preferencesService)
     }()
 
     func application(_ application: UIApplication,
@@ -64,7 +67,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 }
 
-struct AppServices: HasMoviesService, HasPreferencesService {
+struct AppServices: HasCountriesService, HasMoviesService, HasPreferencesService {
+    let countriesService: CountriesService
     let moviesService: MoviesService
     let preferencesService: PreferencesService
 }

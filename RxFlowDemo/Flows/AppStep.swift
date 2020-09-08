@@ -13,6 +13,9 @@ enum AppStep: Step {
     // Home
     case homeIsRequired
 
+    // Country List
+    case countryListIsRequired
+
     // Movies
     case moviesAreRequired
     case movieIsPicked (withId: Int)

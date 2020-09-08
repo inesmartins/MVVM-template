@@ -8,7 +8,7 @@ protocol CountryListViewControllerType: AnyObject {
     func showSavedCountry(_ country: Country)
 }
 
-class CountryListViewController: UIViewController {
+class CountryListViewController: UIViewController, ViewModelBased {
 
     // MARK: - Class properties
 
@@ -64,6 +64,10 @@ class CountryListViewController: UIViewController {
     // MARK: - Lifecycle Methods
 
     init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -169,7 +173,7 @@ private extension CountryListViewController {
 
     func addConstraints() {
         let constraints: [NSLayoutConstraint] = [
-            self.countriesTable.topAnchor.constraint(equalTo: self.view.topAnchor),
+            self.countriesTable.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
             self.countriesTable.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             self.countriesTable.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             self.storeSelector.heightAnchor.constraint(equalToConstant: 120.0),
@@ -184,7 +188,7 @@ private extension CountryListViewController {
             self.getSavedCountryButton.topAnchor.constraint(equalTo: self.saveCountryButton.bottomAnchor),
             self.getSavedCountryButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             self.getSavedCountryButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            self.getSavedCountryButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+            self.getSavedCountryButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
         ]
         NSLayoutConstraint.activate(constraints)
     }
