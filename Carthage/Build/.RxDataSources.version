@@ -1,0 +1,17 @@
+{
+  "commitish" : "4.0.1",
+  "iOS" : [
+    {
+      "hash" : "2fa18d542185aa8e850dd7f37c0b374421276a8617bb620ca815e457435ea737",
+      "name" : "Differentiator",
+      "linking" : "dynamic",
+      "swiftToolchainVersion" : "5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)"
+    },
+    {
+      "hash" : "64b4e4ccd6f22fdfd56bfa9e1a5e2181df42d659c16d83e93d36c93b7f25e6da",
+      "name" : "RxDataSources",
+      "linking" : "dynamic",
+      "swiftToolchainVersion" : "5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)"
+    }
+  ]
+}
