@@ -15,8 +15,20 @@ final class DDGSearchViewController: KeyboardAwareViewController {
 
     // MARK: - UI components
 
-    private lazy var textField = UITextField(frame: .zero)
-    private lazy var searchButton = UIButton(frame: .zero)
+    private lazy var textField: UITextField = {
+        let textField = UITextField(frame: .zero)
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.borderStyle = .roundedRect
+        return textField
+    }()
+    private lazy var searchButton: UIButton = {
+        let button = UIButton(frame: .zero)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Search on DuckDuckGo", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.addTarget(self, action: #selector(self.handleSearchButtonClick), for: .touchUpInside)
+        return button
+    }()
 
     // MARK: - UIViewController Lifecycle
 
@@ -63,24 +75,14 @@ extension DDGSearchViewController: UITextFieldDelegate {
 private extension DDGSearchViewController {
 
     func setupViews() {
+        self.view.backgroundColor = .white
         self.addSubviews()
-        self.setupUIComponents()
         self.addConstraints()
     }
 
     func addSubviews() {
         self.view.addSubview(self.textField)
         self.view.addSubview(self.searchButton)
-    }
-
-    func setupUIComponents() {
-        self.view.backgroundColor = .white
-        self.textField.translatesAutoresizingMaskIntoConstraints = false
-        self.textField.borderStyle = .roundedRect
-        self.searchButton.translatesAutoresizingMaskIntoConstraints = false
-        self.searchButton.setTitle("Search on DuckDuckGo", for: .normal)
-        self.searchButton.setTitleColor(.black, for: .normal)
-        self.searchButton.addTarget(self, action: #selector(self.handleSearchButtonClick), for: .touchUpInside)
     }
 
     @objc func handleSearchButtonClick() {

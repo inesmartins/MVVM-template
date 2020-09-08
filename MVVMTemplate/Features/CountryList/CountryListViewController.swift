@@ -25,7 +25,6 @@ class CountryListViewController: UIViewController {
             forCellReuseIdentifier: CountryListViewController.tableCellId)
         return table
     }()
-
     private lazy var storeSelector: UIPickerView = {
         let picker = UIPickerView(frame: .zero)
         picker.translatesAutoresizingMaskIntoConstraints = false
@@ -34,7 +33,6 @@ class CountryListViewController: UIViewController {
         picker.backgroundColor = .white
         return picker
     }()
-
     private lazy var saveCountryButton: UIButton = {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -45,7 +43,6 @@ class CountryListViewController: UIViewController {
         button.setTitleColor(.black, for: .normal)
         return button
     }()
-
     private lazy var getSavedCountryButton: UIButton = {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false

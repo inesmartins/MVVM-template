@@ -51,15 +51,13 @@ extension AppFlow: AppFlowType {
     }
 
 }
+
 private extension AppFlow {
     
     func navigationToAuthScreen() -> FlowContributors {
-        let authFlow = AuthFlow(withServices: self.api, withStore: self.store)
-        Flows.whenReady(flow1: authFlow, block: { root in
-            self.rootViewController.pushViewController(root, animated: false)
-        })
-        return .one(flowContributor: .contribute(withNextPresentable: authFlow,
-                                                 withNextStepper: OneStepper(withSingleStep: AppStep.loginIsRequired)))
+        let authVC = AuthViewController(viewModel: AuthViewModel(withServices: self.api, withStore: self.store))
+        self.rootViewController.pushViewController(authVC, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: authVC, withNextStepper: authVC.viewModel))
     }
 
     func navigationToHomeScreen() -> FlowContributors {
@@ -70,4 +68,22 @@ private extension AppFlow {
         return .one(flowContributor: .contribute(withNextPresentable: homeFlow,
                                                  withNextStepper: OneStepper(withSingleStep: AppStep.userIsLoggedIn)))
     }
+}
+
+class AppStepper: Stepper {
+
+    let steps = PublishRelay<Step>()
+    private let api: APIServiceType
+    private let store: StoreServiceType
+    private let disposeBag = DisposeBag()
+
+    init(withServices api: APIServiceType, withStore store: StoreServiceType) {
+        self.api = api
+        self.store = store
+    }
+
+    var initialStep: Step {
+        return AppStep.loginIsRequired
+    }
+
 }

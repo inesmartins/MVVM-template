@@ -13,26 +13,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
+        self.window = UIWindow()
 
-        // subscribes to willNavigate and didNavigate events
-        self.coordinator.rx.willNavigate.subscribe(onNext: { (flow, step) in
-            print("will navigate to flow=\(flow) and step=\(step)")
-        }).disposed(by: self.disposeBag)
-        self.coordinator.rx.didNavigate.subscribe(onNext: { (flow, step) in
-            print("did navigate to flow=\(flow) and step=\(step)")
-        }).disposed(by: self.disposeBag)
-
-        // initializes api and store
         let api = APIService()
         let store = StoreService(coreData: CoreDataStorage(),
                                  userDefaults: UserDefaultsStorage(),
                                  keychain: KeyChainStorage())
 
-        // initializes appFlow
-        self.window = UIWindow()
         let appFlow = AppFlow(withServices: api, withStore: store)
-        self.coordinator.coordinate(flow: appFlow,
-                                    with: AppStepper(withServices: api, withStore: store))
+        let appStepper = AppStepper(withServices: api, withStore: store)
+        self.configureCoordinator(flow: appFlow, stepper: appStepper, api: api, store: store)
         Flows.whenReady(flow1: appFlow, block: { root in
             self.window?.rootViewController = root
             self.window?.makeKeyAndVisible()
@@ -54,5 +44,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
         // example of how DeepLink can be handled
         //self.coordinator.navigate(to: AppStep.countryIsSelected(withName: "Portugal"))
+    }
+}
+
+private extension AppDelegate {
+    
+    func configureCoordinator(flow: Flow, stepper: Stepper, api: APIServiceType, store: StoreServiceType) {
+        self.coordinator.rx.willNavigate.subscribe(onNext: { (flow, step) in
+            print("will navigate to flow=\(flow) and step=\(step)")
+        }).disposed(by: self.disposeBag)
+        self.coordinator.rx.didNavigate.subscribe(onNext: { (flow, step) in
+            print("did navigate to flow=\(flow) and step=\(step)")
+        }).disposed(by: self.disposeBag)
+        self.coordinator.coordinate(flow: flow, with: stepper)
     }
 }

@@ -2,8 +2,9 @@ import Foundation
 import UIKit
 import RxSwift
 import RxCocoa
+import RxFlow
 
-final class AuthViewController: KeyboardAwareViewController {
+final class AuthViewController: KeyboardAwareViewController, Stepper {
 
     // MARK: - UI Components
 
@@ -51,9 +52,10 @@ final class AuthViewController: KeyboardAwareViewController {
     
     // MARK: - Properties
 
+    var steps = PublishRelay<Step>()
     let disposeBag = DisposeBag()
     let viewModel: AuthViewModel
-
+    
     // MARK: - Lifecycle Methods
 
     init(viewModel: AuthViewModel) {
