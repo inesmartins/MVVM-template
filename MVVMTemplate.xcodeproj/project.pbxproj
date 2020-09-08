@@ -73,11 +73,11 @@
 		366177E65700D2A81CFF2A80 /* Pods_MVVMTemplate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMTemplate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38716CAE35A8810639A75E69 /* Pods-MVVMTemplate-MVVMTemplateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMTemplate-MVVMTemplateUITests.release.xcconfig"; path = "Target Support Files/Pods-MVVMTemplate-MVVMTemplateUITests/Pods-MVVMTemplate-MVVMTemplateUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4D6B10752506B37D00BCA7A1 /* MVVMTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4D6B10782506B37D00BCA7A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4D6B10782506B37D00BCA7A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		4D6B107C2506B37D00BCA7A1 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		4D6B10822506B37D00BCA7A1 /* MVVMTemplate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MVVMTemplate.xcdatamodel; sourceTree = "<group>"; };
 		4D6B10842506B38100BCA7A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4D6B10892506B38100BCA7A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D6B10892506B38100BCA7A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		4D6B108E2506B38200BCA7A1 /* MVVMTemplateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVVMTemplateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D6B10922506B38200BCA7A1 /* MVVMTemplateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMTemplateTests.swift; sourceTree = "<group>"; };
 		4D6B10942506B38200BCA7A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -107,8 +107,8 @@
 		4D6B112F25076D5800BCA7A1 /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
 		4D6B113025076D5800BCA7A1 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
 		4D6B11372507735300BCA7A1 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		4D6B11392507755200BCA7A1 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
-		4D6B113B250775A100BCA7A1 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
+		4D6B11392507755200BCA7A1 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Step.swift; path = ../Step.swift; sourceTree = "<group>"; };
+		4D6B113B250775A100BCA7A1 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppFlow.swift; path = ../AppFlow.swift; sourceTree = "<group>"; };
 		4D6B113D25077C6F00BCA7A1 /* StoreService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreService.swift; sourceTree = "<group>"; };
 		4D6B114025077D9D00BCA7A1 /* SearchResultDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultDefinition.swift; sourceTree = "<group>"; };
 		4D6B114125077D9D00BCA7A1 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 		4D6B115D25077E3800BCA7A1 /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KeychainStorage.swift; path = KeyValueLocalStorage/KeychainStorage.swift; sourceTree = "<group>"; };
 		4D6B115E25077E3800BCA7A1 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDefaultsStorage.swift; path = KeyValueLocalStorage/UserDefaultsStorage.swift; sourceTree = "<group>"; };
 		4D6B115F25077E3800BCA7A1 /* KeyValueLocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KeyValueLocalStorage.swift; path = KeyValueLocalStorage/KeyValueLocalStorage.swift; sourceTree = "<group>"; };
-		4D6B116425077EBD00BCA7A1 /* AppStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStepper.swift; sourceTree = "<group>"; };
+		4D6B116425077EBD00BCA7A1 /* AppStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppStepper.swift; path = ../AppStepper.swift; sourceTree = "<group>"; };
 		4D6B116825077F8D00BCA7A1 /* Data+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		675954E326124A100A108648 /* Pods_MVVMTemplate_MVVMTemplateUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMTemplate_MVVMTemplateUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7134A5830C56BAF48BC2F091 /* Pods-MVVMTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMTemplate.debug.xcconfig"; path = "Target Support Files/Pods-MVVMTemplate/Pods-MVVMTemplate.debug.xcconfig"; sourceTree = "<group>"; };
@@ -162,11 +162,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D2B71AD2507984A0043BD93 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				4D6B10842506B38100BCA7A1 /* Assets.xcassets */,
+				4D6B10782506B37D00BCA7A1 /* AppDelegate.swift */,
+				4D6B11392507755200BCA7A1 /* Step.swift */,
+				4D6B113B250775A100BCA7A1 /* AppFlow.swift */,
+				4D6B116425077EBD00BCA7A1 /* AppStepper.swift */,
+				4D6B10AC2506B39D00BCA7A1 /* API */,
+				4D6B116625077F5500BCA7A1 /* Extensions */,
+				4D6B113F25077C7500BCA7A1 /* Model */,
+				4D6B10AF2506B3CC00BCA7A1 /* Store */,
+				4D6B10B32506B4E800BCA7A1 /* Modules */,
+				4D6B10AE2506B3C000BCA7A1 /* UI */,
+				4D6B10892506B38100BCA7A1 /* Info.plist */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		4D6B106C2506B37D00BCA7A1 = {
 			isa = PBXGroup;
 			children = (
 				4D6B111C25076AC100BCA7A1 /* Default-568h@2x.png */,
-				4D6B10772506B37D00BCA7A1 /* MVVMTemplate */,
+				4D2B71AD2507984A0043BD93 /* New Group */,
 				4D6B10912506B38200BCA7A1 /* MVVMTemplateTests */,
 				4D6B109C2506B38200BCA7A1 /* MVVMTemplateUITests */,
 				4D6B10762506B37D00BCA7A1 /* Products */,
@@ -183,25 +202,6 @@
 				4D6B10992506B38200BCA7A1 /* MVVMTemplateUITests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		4D6B10772506B37D00BCA7A1 /* MVVMTemplate */ = {
-			isa = PBXGroup;
-			children = (
-				4D6B10842506B38100BCA7A1 /* Assets.xcassets */,
-				4D6B10782506B37D00BCA7A1 /* AppDelegate.swift */,
-				4D6B11392507755200BCA7A1 /* Step.swift */,
-				4D6B113B250775A100BCA7A1 /* AppFlow.swift */,
-				4D6B116425077EBD00BCA7A1 /* AppStepper.swift */,
-				4D6B10AC2506B39D00BCA7A1 /* API */,
-				4D6B116625077F5500BCA7A1 /* Extensions */,
-				4D6B113F25077C7500BCA7A1 /* Model */,
-				4D6B10AF2506B3CC00BCA7A1 /* Store */,
-				4D6B10B32506B4E800BCA7A1 /* Modules */,
-				4D6B10AE2506B3C000BCA7A1 /* UI */,
-				4D6B10892506B38100BCA7A1 /* Info.plist */,
-			);
-			path = MVVMTemplate;
 			sourceTree = "<group>";
 		};
 		4D6B10912506B38200BCA7A1 /* MVVMTemplateTests */ = {
