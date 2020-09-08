@@ -17,11 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     let disposeBag = DisposeBag()
     var window: UIWindow?
     var coordinator = FlowCoordinator()
+    let store = StoreService(coreData: CoreDataStorage(),
+                             userDefaults: UserDefaultsStorage(),
+                             keychain: KeyChainStorage())
     let countriesService = CountriesService()
     let moviesService = MoviesService()
     let preferencesService = PreferencesService()
     lazy var appServices = {
-        return AppServices(countriesService: self.countriesService,
+        return AppServices(store: self.store,
+                           countriesService: self.countriesService,
                            moviesService: self.moviesService,
                            preferencesService: self.preferencesService)
     }()
@@ -62,12 +66,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
-        // example of how DeepLink can be handled
-        self.coordinator.navigate(to: AppStep.movieIsPicked(withId: 23452))
+        self.coordinator.navigate(to: AppStep.countryIsPicked(withName: "Portugal"))
     }
 }
 
 struct AppServices: HasCountriesService, HasMoviesService, HasPreferencesService {
+    var store: StoreServiceType
     let countriesService: CountriesService
     let moviesService: MoviesService
     let preferencesService: PreferencesService

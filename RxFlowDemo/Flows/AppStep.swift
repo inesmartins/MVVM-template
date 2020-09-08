@@ -10,23 +10,9 @@ enum AppStep: Step {
     case fakeStep
     case unauthorized
 
-    // Home
+    // Features
     case homeIsRequired
-
-    // Country List
-    case countryIsPicked(withName: String)
     case countryListIsRequired
+    case countryIsPicked(withName: String)
 
-    // Movies
-    case moviesAreRequired
-    case movieIsPicked(withId: Int)
-    case castIsPicked(withId: Int)
-
-    // Settings
-    case settingsAreRequired
-    case settingsAreComplete
-
-    // About
-    case aboutIsRequired
-    case aboutIsComplete
 }

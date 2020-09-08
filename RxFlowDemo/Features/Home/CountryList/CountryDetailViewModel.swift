@@ -3,6 +3,8 @@ import RxFlow
 
 class CountryDetailViewModel: ServicesViewModel, Stepper {
 
+    let stores = Store.allCases
+
     let steps = PublishRelay<Step>()
     typealias Services = HasCountriesService
 
@@ -22,7 +24,10 @@ class CountryDetailViewModel: ServicesViewModel, Stepper {
     }
 
     public func pickStore(_ store: Store) {
-        // TODO: implement
+        let country = Country(name: self.name, code: self.code!)
+        self.services.store.save(object: country, withKey: "SelectedStore", inStore: store, onCompletion: { _ in
+
+        })
     }
 
 }

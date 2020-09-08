@@ -1,5 +1,6 @@
 protocol HasCountriesService {
     var countriesService: CountriesService { get }
+    var store: StoreServiceType { get }
 }
 
 class CountriesService {

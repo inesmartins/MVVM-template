@@ -8,20 +8,14 @@ class CountryDetailViewController: UIViewController, ViewModelBased {
 
     // MARK: - UI components
 
-    private lazy var storeSelector: UIPickerView = {
-        let picker = UIPickerView(frame: .zero)
-        picker.translatesAutoresizingMaskIntoConstraints = false
-        picker.dataSource = self
-        picker.delegate = self
-        picker.backgroundColor = .white
-        return picker
-    }()
     private lazy var saveCountryButton: UIButton = {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self,
                          action: #selector(self.handleSaveCountryButtonClick), for: .touchUpInside)
-        button.backgroundColor = .green
+        button.layer.cornerRadius = 7
+        button.layer.borderWidth = 1.0
+        button.layer.borderColor = UIColor.black.cgColor
         button.setTitle("Save Country", for: .normal)
         button.setTitleColor(.black, for: .normal)
         return button
@@ -49,11 +43,22 @@ class CountryDetailViewController: UIViewController, ViewModelBased {
 
 }
 
-extension CountryDetailViewController {
+extension CountryDetailViewController: UIActionSheetDelegate {
 
     @objc func handleSaveCountryButtonClick() {
-        // TODO: refactor
-        //self.delegate.didClickSaveCountry()
+        let actionSheet = UIAlertController(title: "Choose Option",
+                                            message: "Please select where country should be stored",
+                                            preferredStyle: .actionSheet)
+        for store in self.viewModel.stores {
+            actionSheet.addAction(UIAlertAction(title: store.rawValue, style: .default, handler: { _ in
+                self.didSelectStore(store)
+            }))
+        }
+        self.present(actionSheet, animated: true, completion: nil)
+    }
+
+    private func didSelectStore(_ store: Store) {
+        self.viewModel.pickStore(store)
     }
 
     func showSaveResult(_ result: Bool) {
@@ -70,26 +75,6 @@ extension CountryDetailViewController {
 
 }
 
-extension CountryDetailViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return Store.allCases.count
-    }
-
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Store.allCases[row].rawValue
-    }
-
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.viewModel.pickStore(Store.allCases[row])
-    }
-
-}
-
 extension CountryDetailViewController {
 
     func setupView() {
@@ -98,21 +83,15 @@ extension CountryDetailViewController {
     }
 
     func addSubviews() {
-        self.view.addSubview(self.storeSelector)
         self.view.addSubview(self.saveCountryButton)
     }
 
     func addConstraints() {
         let constraints: [NSLayoutConstraint] = [
-            self.storeSelector.heightAnchor.constraint(equalToConstant: 120.0),
-            self.storeSelector.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
-            self.storeSelector.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            self.storeSelector.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             self.saveCountryButton.heightAnchor.constraint(equalToConstant: 50.0),
-            self.saveCountryButton.topAnchor.constraint(equalTo: self.storeSelector.bottomAnchor),
-            self.saveCountryButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            self.saveCountryButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            self.saveCountryButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
+            self.saveCountryButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            self.saveCountryButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20.0),
+            self.saveCountryButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20.0)
         ]
         NSLayoutConstraint.activate(constraints)
     }
