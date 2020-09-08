@@ -1,0 +1,6 @@
+framework module ReactiveCoordinator {
+  umbrella header "ReactiveCoordinator-umbrella.h"
+
+  export *
+  module * { export * }
+}

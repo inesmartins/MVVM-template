@@ -1,4 +1,0 @@
-github "ReactiveX/RxSwift" ~> 5.0
-github "RxSwiftCommunity/RxAlamofire" ~> 5.6.1
-github "RxSwiftCommunity/RxDataSources" ~> 4.0.1
-github "scalessec/Toast-Swift" ~> 5.0.1
