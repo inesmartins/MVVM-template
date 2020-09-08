@@ -1,15 +1,13 @@
-//
-//  AppDelegate.swift
-//  RxFlowDemo
-//
-//  Created by Thibault Wittemberg on 17-07-25.
-//  Copyright (c) RxSwiftCommunity. All rights reserved.
-//
-
 import UIKit
 import RxFlow
 import RxSwift
 import RxCocoa
+
+struct AppServices: HasPreferencesService, HasCountriesService {
+    let preferencesService: PreferencesService
+    let countriesService: CountriesService
+    let store: StoreServiceType
+}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -17,16 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     let disposeBag = DisposeBag()
     var window: UIWindow?
     var coordinator = FlowCoordinator()
-    let store = StoreService(coreData: CoreDataStorage(),
-                             userDefaults: UserDefaultsStorage(),
-                             keychain: KeyChainStorage())
-    let countriesService = CountriesService()
-    let preferencesService = PreferencesService()
 
-    lazy var appServices = {
-        return AppServices(preferencesService: self.preferencesService,
-                           countriesService: self.countriesService,
-                           store: self.store)
+    lazy var appServices: AppServices = {
+        let store = StoreService(coreData: CoreDataStorage(),
+                                 userDefaults: UserDefaultsStorage(),
+                                 keychain: KeyChainStorage())
+        return AppServices(preferencesService: PreferencesService(),
+                           countriesService: CountriesService(),
+                           store: store)
     }()
 
     func application(_ application: UIApplication,
@@ -34,17 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
         guard let window = self.window else { return false }
 
-        self.coordinator.rx.willNavigate.subscribe(onNext: { (flow, step) in
-            print("will navigate to flow=\(flow) and step=\(step)")
-        }).disposed(by: self.disposeBag)
-
-        self.coordinator.rx.didNavigate.subscribe(onNext: { (flow, step) in
-            print("did navigate to flow=\(flow) and step=\(step)")
-        }).disposed(by: self.disposeBag)
-
         let appFlow = AppFlow(services: self.appServices)
-
-        self.coordinator.coordinate(flow: appFlow, with: AppStepper(withServices: self.appServices))
+        let appStepper = AppStepper(withServices: self.appServices)
+        self.configureCoordinator(flow: appFlow, stepper: appStepper)
 
         Flows.use(appFlow, when: .created) { root in
             window.rootViewController = root
@@ -52,9 +40,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
 
         UNUserNotificationCenter.current().delegate = self
-
         return true
     }
+
+}
+
+extension AppDelegate {
 
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
@@ -69,8 +60,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 }
 
-struct AppServices: HasPreferencesService, HasCountriesService {
-    let preferencesService: PreferencesService
-    let countriesService: CountriesService
-    let store: StoreServiceType
+private extension AppDelegate {
+
+    func configureCoordinator(flow: Flow, stepper: Stepper) {
+        self.coordinator.rx.willNavigate.subscribe(onNext: { (flow, step) in
+            print("will navigate to flow=\(flow) and step=\(step)")
+        }).disposed(by: self.disposeBag)
+        self.coordinator.rx.didNavigate.subscribe(onNext: { (flow, step) in
+            print("did navigate to flow=\(flow) and step=\(step)")
+        }).disposed(by: self.disposeBag)
+        self.coordinator.coordinate(flow: flow, with: stepper)
+    }
+
 }
