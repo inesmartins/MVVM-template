@@ -19,11 +19,8 @@ class CountryListFlow: Flow {
     }
 
     func navigate(to step: Step) -> FlowContributors {
-
         guard let step = step as? AppStep else { return .none }
-
         switch step {
-
         case .countryListIsRequired:
             return self.navigateToCountryListScreen()
         case .countryIsPicked(let name):
