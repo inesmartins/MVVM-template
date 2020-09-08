@@ -27,7 +27,7 @@ class DashboardFlow: Flow {
     }
 
     func navigate(to step: Step) -> FlowContributors {
-        guard let step = step as? DemoStep else { return .none }
+        guard let step = step as? AppStep else { return .none }
 
         switch step {
         case .dashboardIsRequired:
@@ -55,8 +55,8 @@ class DashboardFlow: Flow {
         }
 
         return .multiple(flowContributors: [.contribute(withNextPresentable: wishListFlow,
-                                                        withNextStepper: CompositeStepper(steppers: [OneStepper(withSingleStep: DemoStep.moviesAreRequired), wishlistStepper])),
+                                                        withNextStepper: CompositeStepper(steppers: [OneStepper(withSingleStep: AppStep.moviesAreRequired), wishlistStepper])),
                                             .contribute(withNextPresentable: watchedFlow,
-                                                        withNextStepper: OneStepper(withSingleStep: DemoStep.moviesAreRequired))])
+                                                        withNextStepper: OneStepper(withSingleStep: AppStep.moviesAreRequired))])
     }
 }

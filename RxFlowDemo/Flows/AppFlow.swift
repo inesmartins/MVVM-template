@@ -35,7 +35,7 @@ class AppFlow: Flow {
     }
 
     func navigate(to step: Step) -> FlowContributors {
-        guard let step = step as? DemoStep else { return .none }
+        guard let step = step as? AppStep else { return .none }
 
         switch step {
         case .dashboardIsRequired:
@@ -58,7 +58,7 @@ class AppFlow: Flow {
         }
 
         return .one(flowContributor: .contribute(withNextPresentable: dashboardFlow,
-                                                 withNextStepper: OneStepper(withSingleStep: DemoStep.dashboardIsRequired)))
+                                                 withNextStepper: OneStepper(withSingleStep: AppStep.dashboardIsRequired)))
     }
 
     private func navigationToOnboardingScreen() -> FlowContributors {
@@ -72,7 +72,7 @@ class AppFlow: Flow {
         }
 
         return .one(flowContributor: .contribute(withNextPresentable: onboardingFlow,
-                                                 withNextStepper: OneStepper(withSingleStep: DemoStep.loginIsRequired)))
+                                                 withNextStepper: OneStepper(withSingleStep: AppStep.loginIsRequired)))
     }
 
     private func dismissOnboarding() -> FlowContributors {
@@ -94,7 +94,7 @@ class AppStepper: Stepper {
     }
 
     var initialStep: Step {
-        return DemoStep.dashboardIsRequired
+        return AppStep.dashboardIsRequired
     }
 
     /// callback used to emit steps once the FlowCoordinator is ready to listen to them to contribute to the Flow
@@ -102,7 +102,7 @@ class AppStepper: Stepper {
         self.appServices
             .preferencesService.rx
             .isOnboarded
-            .map { $0 ? DemoStep.onboardingIsComplete : DemoStep.onboardingIsRequired }
+            .map { $0 ? AppStep.onboardingIsComplete : AppStep.onboardingIsRequired }
             .bind(to: self.steps)
             .disposed(by: self.disposeBag)
     }

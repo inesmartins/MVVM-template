@@ -20,6 +20,6 @@ class SettingsAboutViewController: UIViewController, StoryboardBased, Stepper {
     }
 
     @IBAction func done(_ sender: UIButton) {
-        self.steps.accept(DemoStep.aboutIsComplete)
+        self.steps.accept(AppStep.aboutIsComplete)
     }
 }

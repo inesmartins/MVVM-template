@@ -31,7 +31,7 @@ class SettingsFlow: Flow {
     }
 
     func navigate(to step: Step) -> FlowContributors {
-        guard let step = step as? DemoStep else { return .none }
+        guard let step = step as? AppStep else { return .none }
 
         switch step {
         case .settingsAreRequired:
@@ -47,7 +47,7 @@ class SettingsFlow: Flow {
         case .aboutIsRequired:
             return navigateToAboutScreen()
         case .settingsAreComplete:
-            return .end(forwardToParentFlowWithStep: DemoStep.settingsAreComplete)
+            return .end(forwardToParentFlowWithStep: AppStep.settingsAreComplete)
         case let .alert(message):
             return navigateToAlertScreen(message: message)
         default:
@@ -72,12 +72,12 @@ class SettingsFlow: Flow {
     private func navigateToSettingsScreen() -> FlowContributors {
         let navigationController = UINavigationController()
         let settingsListViewController = SettingsListViewController.instantiate()
-        let settingsLoginViewController = SettingsLoginViewController.instantiate()
+        let authViewController = AuthViewController.instantiate()
 
-        self.rootViewController.viewControllers = [navigationController, settingsLoginViewController]
+        self.rootViewController.viewControllers = [navigationController, authViewController]
         self.rootViewController.preferredDisplayMode = .allVisible
 
-        settingsLoginViewController.title = "Login"
+        authViewController.title = "Login"
 
         navigationController.viewControllers = [settingsListViewController]
         if let navigationBarItem = navigationController.navigationBar.items?[0] {
@@ -89,13 +89,13 @@ class SettingsFlow: Flow {
 
         return .multiple(flowContributors: [
             .contribute(withNext: settingsListViewController),
-            .contribute(withNext: settingsLoginViewController),
-            .forwardToCurrentFlow(withStep: DemoStep.alert("Demo of multiple Flow Contributor"))
+            .contribute(withNext: authViewController),
+            .forwardToCurrentFlow(withStep: AppStep.alert("Demo of multiple Flow Contributor"))
         ])
     }
 
     private func navigateToLoginScreen() -> FlowContributors {
-        let settingsLoginViewController = SettingsLoginViewController.instantiate()
+        let settingsLoginViewController = AuthViewController.instantiate()
         settingsLoginViewController.title = "Login"
         self.rootViewController.showDetailViewController(settingsLoginViewController, sender: nil)
         return .one(flowContributor: .contribute(withNext: settingsLoginViewController))
@@ -124,10 +124,10 @@ class SettingsStepper: Stepper {
     let steps = PublishRelay<Step>()
 
     var initialStep: Step {
-        return DemoStep.settingsAreRequired
+        return AppStep.settingsAreRequired
     }
 
     @objc func settingsDone() {
-        self.steps.accept(DemoStep.settingsAreComplete)
+        self.steps.accept(AppStep.settingsAreComplete)
     }
 }

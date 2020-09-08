@@ -60,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
         // example of how DeepLink can be handled
-        self.coordinator.navigate(to: DemoStep.movieIsPicked(withId: 23452))
+        self.coordinator.navigate(to: AppStep.movieIsPicked(withId: 23452))
     }
 }
 

@@ -17,7 +17,7 @@ class SettingsListViewController: UITableViewController, StoryboardBased, Steppe
     let steps = PublishRelay<Step>()
 
     struct SettingItem {
-        let step: DemoStep
+        let step: AppStep
         let title: String
     }
 

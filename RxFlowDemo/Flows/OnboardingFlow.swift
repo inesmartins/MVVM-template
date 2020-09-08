@@ -32,7 +32,7 @@ class OnboardingFlow: Flow {
     }
 
     func navigate(to step: Step) -> FlowContributors {
-        guard let step = step as? DemoStep else { return .none }
+        guard let step = step as? AppStep else { return .none }
 
         switch step {
         case .loginIsRequired:
@@ -40,17 +40,17 @@ class OnboardingFlow: Flow {
         case .userIsLoggedIn:
             return navigationToApiScreen()
         case .apiKeyIsFilledIn:
-            return .end(forwardToParentFlowWithStep: DemoStep.onboardingIsComplete)
+            return .end(forwardToParentFlowWithStep: AppStep.onboardingIsComplete)
         default:
             return .none
         }
     }
 
     private func navigationToLoginScreen() -> FlowContributors {
-        let settingsLoginViewController = SettingsLoginViewController.instantiate()
-        settingsLoginViewController.title = "Login"
-        self.rootViewController.pushViewController(settingsLoginViewController, animated: false)
-        return .one(flowContributor: .contribute(withNext: settingsLoginViewController))
+        let authViewController = AuthViewController.instantiate()
+        authViewController.title = "Login"
+        self.rootViewController.pushViewController(authViewController, animated: false)
+        return .one(flowContributor: .contribute(withNext: authViewController))
     }
 
     private func navigationToApiScreen() -> FlowContributors {

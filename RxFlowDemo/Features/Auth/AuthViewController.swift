@@ -1,18 +1,10 @@
-//
-//  SettingsLoginViewController.swift
-//  RxFlowDemo
-//
-//  Created by Thibault Wittemberg on 18-02-14.
-//  Copyright © 2018 RxSwiftCommunity. All rights reserved.
-//
-
 import UIKit
 import Reusable
 import RxSwift
 import RxCocoa
 import RxFlow
 
-class SettingsLoginViewController: UIViewController, StoryboardBased, Stepper {
+class AuthViewController: UIViewController, StoryboardBased, Stepper {
 
     @IBOutlet weak var proceedButton: UIButton!
 
@@ -24,7 +16,7 @@ class SettingsLoginViewController: UIViewController, StoryboardBased, Stepper {
         // Do any additional setup after loading the view.
         _ = proceedButton.rx.tap
             .takeUntil(self.rx.deallocating)
-            .map { DemoStep.userIsLoggedIn }
+            .map { AppStep.userIsLoggedIn }
             .bind(to: self.steps)
     }
 

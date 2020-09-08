@@ -28,7 +28,7 @@ class WishlistViewController: UIViewController, StoryboardBased, ViewModelBased 
         _ = Observable<Int>
             .interval(.seconds(5), scheduler: MainScheduler.instance)
             .takeUntil(self.rx.deallocating)
-            .map { _ in return DemoStep.fakeStep }
+            .map { _ in return AppStep.fakeStep }
             .bind(to: self.steps)
     }
 
@@ -56,7 +56,7 @@ class WishlistViewController: UIViewController, StoryboardBased, ViewModelBased 
 
 extension WishlistViewController: Stepper {
     private func about () {
-        self.steps.accept(DemoStep.aboutIsRequired)
+        self.steps.accept(AppStep.aboutIsRequired)
     }
 }
 

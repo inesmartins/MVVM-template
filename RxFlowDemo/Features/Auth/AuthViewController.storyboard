@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nRl-pm-g0M">
-    <device id="retina5_9" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nRl-pm-g0M">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Settings Login View Controller-->
+        <!--Auth View Controller-->
         <scene sceneID="fA8-Bd-Dd8">
             <objects>
-                <viewController id="nRl-pm-g0M" customClass="SettingsLoginViewController" customModule="RxFlowDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="nRl-pm-g0M" customClass="AuthViewController" customModule="RxFlowDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ae0-H4-n3W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,18 +44,17 @@
                                         <viewLayoutGuide key="safeArea" id="i6d-JA-6ZZ"/>
                                     </view>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c5Z-w6-BT2">
-                                        <rect key="frame" x="47" y="400" width="280" height="40"/>
+                                        <rect key="frame" x="47.666666666666657" y="400" width="280" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="0.49634132920000001" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="280" id="fOl-8I-T0F"/>
                                             <constraint firstAttribute="height" constant="40" id="jVs-8s-CKi"/>
                                         </constraints>
-                                        <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMM-zk-NUb">
-                                        <rect key="frame" x="47" y="708" width="280" height="40"/>
+                                        <rect key="frame" x="47.666666666666657" y="708" width="280" height="40"/>
                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="y28-2q-uvu"/>
@@ -67,12 +64,11 @@
                                         </state>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="awF-0T-PXE">
-                                        <rect key="frame" x="47" y="448" width="280" height="40"/>
+                                        <rect key="frame" x="47.666666666666657" y="448" width="280" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="0.49634132920000001" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="NBF-2A-EV3"/>
                                         </constraints>
-                                        <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -105,6 +101,7 @@
                             <constraint firstItem="m8K-5S-BLp" firstAttribute="top" secondItem="Ae0-H4-n3W" secondAttribute="top" id="bBl-e7-CHg"/>
                             <constraint firstAttribute="bottom" secondItem="m8K-5S-BLp" secondAttribute="bottom" id="zWC-lc-dhE"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="spl-H8-fIM"/>
                     </view>
                     <connections>
                         <outlet property="proceedButton" destination="wMM-zk-NUb" id="WxB-f7-s36"/>

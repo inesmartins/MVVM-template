@@ -27,7 +27,7 @@ class WatchedFlow: Flow {
 
     func navigate(to step: Step) -> FlowContributors {
 
-        guard let step = step as? DemoStep else { return .none }
+        guard let step = step as? AppStep else { return .none }
 
         switch step {
 

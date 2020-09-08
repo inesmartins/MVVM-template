@@ -34,19 +34,19 @@ class WishlistFlow: Flow {
     func adapt(step: Step) -> Single<Step> {
 
         switch step {
-        case DemoStep.aboutIsRequired:
+        case AppStep.aboutIsRequired:
             self.internalCounterForAuthorizationDemo += 1
             if (self.internalCounterForAuthorizationDemo % 2) == 0 {
                 return .just(step)
             }
-            return .just(DemoStep.unauthorized)
+            return .just(AppStep.unauthorized)
         default:
             return .just(step)
         }
     }
 
     func navigate(to step: Step) -> FlowContributors {
-        guard let step = step as? DemoStep else { return .none }
+        guard let step = step as? AppStep else { return .none }
 
         switch step {
         case .moviesAreRequired:
@@ -148,6 +148,6 @@ class WishlistStepper: Stepper {
     let steps = PublishRelay<Step>()
 
     @objc func settingsAreRequired() {
-        self.steps.accept(DemoStep.settingsAreRequired)
+        self.steps.accept(AppStep.settingsAreRequired)
     }
 }
