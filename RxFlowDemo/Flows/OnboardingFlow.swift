@@ -38,8 +38,6 @@ class OnboardingFlow: Flow {
         case .loginIsRequired:
             return navigationToLoginScreen()
         case .userIsLoggedIn:
-            return navigationToApiScreen()
-        case .apiKeyIsFilledIn:
             return .end(forwardToParentFlowWithStep: AppStep.onboardingIsComplete)
         default:
             return .none
@@ -51,16 +49,6 @@ class OnboardingFlow: Flow {
         authViewController.title = "Login"
         self.rootViewController.pushViewController(authViewController, animated: false)
         return .one(flowContributor: .contribute(withNext: authViewController))
-    }
-
-    private func navigationToApiScreen() -> FlowContributors {
-        let settingsViewModel = SettingsApiKeyViewModel()
-        let settingsViewController = SettingsApiKeyViewController.instantiate(withViewModel: settingsViewModel,
-                                                                              andServices: self.services)
-        settingsViewController.title = "API Key"
-        self.rootViewController.pushViewController(settingsViewController, animated: true)
-        return .one(flowContributor: .contribute(withNextPresentable: settingsViewController,
-                                                 withNextStepper: settingsViewModel))
     }
 
 }

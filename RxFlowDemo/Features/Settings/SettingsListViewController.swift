@@ -23,7 +23,6 @@ class SettingsListViewController: UITableViewController, StoryboardBased, Steppe
 
     let settings = [
         SettingItem(step: .loginIsRequired, title: "Login"),
-        SettingItem(step: .apiKeyIsRequired, title: "API Key"),
         SettingItem(step: .aboutIsRequired, title: "About")
     ]
 

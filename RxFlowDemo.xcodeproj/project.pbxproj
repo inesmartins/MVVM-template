@@ -13,7 +13,6 @@
 		1A25DE872035185000F1C4B8 /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A25DE862035185000F1C4B8 /* AuthViewController.storyboard */; };
 		1A25DE8920351B8F00F1C4B8 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A25DE8820351B8F00F1C4B8 /* AuthViewController.swift */; };
 		1A25DE8B20351E1D00F1C4B8 /* DashboardFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A25DE8A20351E1D00F1C4B8 /* DashboardFlow.swift */; };
-		1A350D062038F6E9002DDE02 /* SettingsApiKeyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A350D052038F6E9002DDE02 /* SettingsApiKeyViewModel.swift */; };
 		1A8FBE101FF845EE00389464 /* Reusable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8FBE0D1FF845EE00389464 /* Reusable.framework */; };
 		1A8FBE111FF845EE00389464 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8FBE0E1FF845EE00389464 /* RxSwift.framework */; };
 		1A8FBE121FF845EE00389464 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8FBE0F1FF845EE00389464 /* RxCocoa.framework */; };
@@ -33,8 +32,6 @@
 		1A8FBE481FF84BB200389464 /* SettingsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8FBE421FF84BB200389464 /* SettingsListViewController.swift */; };
 		1A8FBE491FF84BB200389464 /* SettingsListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A8FBE431FF84BB200389464 /* SettingsListViewController.storyboard */; };
 		1A8FBE4A1FF84BB200389464 /* SettingsAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8FBE441FF84BB200389464 /* SettingsAboutViewController.swift */; };
-		1A8FBE4B1FF84BB200389464 /* SettingsApiKeyViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A8FBE451FF84BB200389464 /* SettingsApiKeyViewController.storyboard */; };
-		1A8FBE4C1FF84BB200389464 /* SettingsApiKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8FBE461FF84BB200389464 /* SettingsApiKeyViewController.swift */; };
 		1A8FBE521FF84BF300389464 /* MovieViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8FBE511FF84BF300389464 /* MovieViewCell.swift */; };
 		1A8FBE5E1FF84BFE00389464 /* WishlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8FBE531FF84BFE00389464 /* WishlistViewModel.swift */; };
 		1A8FBE5F1FF84BFE00389464 /* CastDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A8FBE541FF84BFE00389464 /* CastDetailViewController.storyboard */; };
@@ -78,7 +75,6 @@
 		1A25DE862035185000F1C4B8 /* AuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthViewController.storyboard; sourceTree = "<group>"; };
 		1A25DE8820351B8F00F1C4B8 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		1A25DE8A20351E1D00F1C4B8 /* DashboardFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardFlow.swift; sourceTree = "<group>"; };
-		1A350D052038F6E9002DDE02 /* SettingsApiKeyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsApiKeyViewModel.swift; sourceTree = "<group>"; };
 		1A8FBE0D1FF845EE00389464 /* Reusable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reusable.framework; path = Carthage/Build/iOS/Reusable.framework; sourceTree = "<group>"; };
 		1A8FBE0E1FF845EE00389464 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		1A8FBE0F1FF845EE00389464 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -98,8 +94,6 @@
 		1A8FBE421FF84BB200389464 /* SettingsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsListViewController.swift; sourceTree = "<group>"; };
 		1A8FBE431FF84BB200389464 /* SettingsListViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SettingsListViewController.storyboard; sourceTree = "<group>"; };
 		1A8FBE441FF84BB200389464 /* SettingsAboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsAboutViewController.swift; sourceTree = "<group>"; };
-		1A8FBE451FF84BB200389464 /* SettingsApiKeyViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SettingsApiKeyViewController.storyboard; sourceTree = "<group>"; };
-		1A8FBE461FF84BB200389464 /* SettingsApiKeyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsApiKeyViewController.swift; sourceTree = "<group>"; };
 		1A8FBE511FF84BF300389464 /* MovieViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewCell.swift; sourceTree = "<group>"; };
 		1A8FBE531FF84BFE00389464 /* WishlistViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishlistViewModel.swift; sourceTree = "<group>"; };
 		1A8FBE541FF84BFE00389464 /* CastDetailViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CastDetailViewController.storyboard; sourceTree = "<group>"; };
@@ -225,9 +219,6 @@
 				1A8FBE441FF84BB200389464 /* SettingsAboutViewController.swift */,
 				1A8FBE431FF84BB200389464 /* SettingsListViewController.storyboard */,
 				1A8FBE421FF84BB200389464 /* SettingsListViewController.swift */,
-				1A8FBE451FF84BB200389464 /* SettingsApiKeyViewController.storyboard */,
-				1A8FBE461FF84BB200389464 /* SettingsApiKeyViewController.swift */,
-				1A350D052038F6E9002DDE02 /* SettingsApiKeyViewModel.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -398,7 +389,6 @@
 				1A8FBE491FF84BB200389464 /* SettingsListViewController.storyboard in Resources */,
 				1A8FBE651FF84BFE00389464 /* WishlistViewController.storyboard in Resources */,
 				1AF854BD1FF832AE00271B52 /* LaunchScreen.storyboard in Resources */,
-				1A8FBE4B1FF84BB200389464 /* SettingsApiKeyViewController.storyboard in Resources */,
 				1A8FBE471FF84BB200389464 /* SettingsAboutViewController.storyboard in Resources */,
 				1A8FBE661FF84BFE00389464 /* MovieDetailViewController.storyboard in Resources */,
 				1AF854BA1FF832AE00271B52 /* Assets.xcassets in Resources */,
@@ -507,8 +497,6 @@
 				1A8FBE681FF84BFE00389464 /* WishlistViewController.swift in Sources */,
 				1A8FBE3C1FF84B7E00389464 /* Movie.swift in Sources */,
 				1A25DE85203129F200F1C4B8 /* OnboardingFlow.swift in Sources */,
-				1A8FBE4C1FF84BB200389464 /* SettingsApiKeyViewController.swift in Sources */,
-				1A350D062038F6E9002DDE02 /* SettingsApiKeyViewModel.swift in Sources */,
 				1A25DE83202FB62500F1C4B8 /* PreferencesService.swift in Sources */,
 				1A8FBE371FF84B5300389464 /* CastsRepository.swift in Sources */,
 				1A8FBE261FF8480C00389464 /* WishlistFlow.swift in Sources */,

@@ -40,10 +40,6 @@ class SettingsFlow: Flow {
             return navigateToLoginScreen()
         case .userIsLoggedIn:
             return popToMasterViewController()
-        case .apiKeyIsRequired:
-            return navigateToApiKeyScreen()
-        case .apiKeyIsFilledIn:
-            return popToMasterViewController()
         case .aboutIsRequired:
             return navigateToAboutScreen()
         case .settingsAreComplete:
@@ -99,15 +95,6 @@ class SettingsFlow: Flow {
         settingsLoginViewController.title = "Login"
         self.rootViewController.showDetailViewController(settingsLoginViewController, sender: nil)
         return .one(flowContributor: .contribute(withNext: settingsLoginViewController))
-    }
-
-    private func navigateToApiKeyScreen() -> FlowContributors {
-        let settingsViewModel = SettingsApiKeyViewModel()
-        let settingsViewController = SettingsApiKeyViewController.instantiate(withViewModel: settingsViewModel,
-                                                                              andServices: self.services)
-        settingsViewController.title = "API Key"
-        self.rootViewController.showDetailViewController(settingsViewController, sender: nil)
-        return .one(flowContributor: .contribute(withNextPresentable: settingsViewController, withNextStepper: settingsViewModel))
     }
 
     private func navigateToAboutScreen() -> FlowContributors {
