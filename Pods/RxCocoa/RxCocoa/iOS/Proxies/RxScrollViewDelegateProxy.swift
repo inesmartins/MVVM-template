@@ -10,16 +10,13 @@
 
 import RxSwift
 import UIKit
-    
+
 extension UIScrollView: HasDelegate {
     public typealias Delegate = UIScrollViewDelegate
 }
 
 /// For more information take a look at `DelegateProxyType`.
-open class RxScrollViewDelegateProxy
-    : DelegateProxy<UIScrollView, UIScrollViewDelegate>
-    , DelegateProxyType 
-    , UIScrollViewDelegate {
+open class RxScrollViewDelegateProxy: DelegateProxy<UIScrollView, UIScrollViewDelegate>, DelegateProxyType, UIScrollViewDelegate {
 
     /// Typed parent object.
     public weak private(set) var scrollView: UIScrollView?
@@ -38,8 +35,8 @@ open class RxScrollViewDelegateProxy
         self.register { RxTextViewDelegateProxy(textView: $0) }
     }
 
-    fileprivate var _contentOffsetBehaviorSubject: BehaviorSubject<CGPoint>?
-    fileprivate var _contentOffsetPublishSubject: PublishSubject<()>?
+    private var _contentOffsetBehaviorSubject: BehaviorSubject<CGPoint>?
+    private var _contentOffsetPublishSubject: PublishSubject<()>?
 
     /// Optimized version used for observing content offset changes.
     internal var contentOffsetBehaviorSubject: BehaviorSubject<CGPoint> {
@@ -64,7 +61,7 @@ open class RxScrollViewDelegateProxy
 
         return subject
     }
-    
+
     // MARK: delegate methods
 
     /// For more information take a look at `DelegateProxyType`.
@@ -77,7 +74,7 @@ open class RxScrollViewDelegateProxy
         }
         self._forwardToDelegate?.scrollViewDidScroll?(scrollView)
     }
-    
+
     deinit {
         if let subject = _contentOffsetBehaviorSubject {
             subject.on(.completed)

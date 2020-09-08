@@ -1,27 +1,12 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '11.0'
 
-target 'MVVMTemplate' do
+target 'RxFlowDemo' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for MVVMTemplate
-  pod 'RxSwift', '~> 5.0.1'
-  pod 'RxCocoa', '~> 5.0.1'
-  pod 'RxAlamofire'
-  pod 'RxFlow'
-  pod 'ReactiveCoordinator', '~> 4.0.0'
-  pod 'Toast-Swift', '~> 5.0.1'
- 
-  target 'MVVMTemplateTests' do
-    inherit! :search_paths
-    # Pods for testing
-    pod 'RxBlocking', '~> 5.0.1'
-    pod 'RxTest', '~> 5.0.1'    
-  end
-
-  target 'MVVMTemplateUITests' do
-    # Pods for testing
-  end
-
+  # Pods for RxFlowDemo
+  pod "RxSwift"
+  pod "RxFlow"
+  pod "RxAlamofire"
+  pod "Reusable"
 end

@@ -26,8 +26,8 @@
         /// Parent object associated with delegate proxy.
         private weak var _parentObject: ParentObject?
 
-        fileprivate let _currentDelegateFor: (ParentObject) -> AnyObject?
-        fileprivate let _setCurrentDelegateTo: (AnyObject?, ParentObject) -> Void
+        private let _currentDelegateFor: (ParentObject) -> AnyObject?
+        private let _setCurrentDelegateTo: (AnyObject?, ParentObject) -> Void
 
         /// Initializes new instance.
         ///
@@ -94,8 +94,7 @@
 
             if let subject = subject {
                 return subject.asObservable()
-            }
-            else {
+            } else {
                 let subject = MessageDispatcher(selector: selector, delegateProxy: self)
                 self._sentMessageForSelector[selector] = subject
                 return subject.asObservable()
@@ -151,8 +150,7 @@
 
             if let subject = subject {
                 return subject.asObservable()
-            }
-            else {
+            } else {
                 let subject = MessageDispatcher(selector: selector, delegateProxy: self)
                 self._methodInvokedForSelector[selector] = subject
                 return subject.asObservable()
@@ -252,13 +250,12 @@
                 _ = Resources.decrementTotal()
             #endif
         }
-    
 
     }
 
     private let mainScheduler = MainScheduler()
 
-    fileprivate final class MessageDispatcher {
+    private final class MessageDispatcher {
         private let dispatcher: PublishSubject<[Any]>
         private let result: Observable<[Any]>
 
@@ -289,5 +286,5 @@
             return self.result
         }
     }
-    
+
 #endif

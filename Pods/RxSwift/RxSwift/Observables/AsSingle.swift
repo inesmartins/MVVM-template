@@ -6,7 +6,7 @@
 //  Copyright © 2017 Krunoslav Zaher. All rights reserved.
 //
 
-fileprivate final class AsSingleSink<Observer: ObserverType> : Sink<Observer>, ObserverType { 
+private final class AsSingleSink<Observer: ObserverType>: Sink<Observer>, ObserverType {
     typealias Element = Observer.Element
 
     private var _element: Event<Element>?
@@ -27,8 +27,7 @@ fileprivate final class AsSingleSink<Observer: ObserverType> : Sink<Observer>, O
             if let element = self._element {
                 self.forwardOn(element)
                 self.forwardOn(.completed)
-            }
-            else {
+            } else {
                 self.forwardOn(.error(RxError.noElements))
             }
             self.dispose()
@@ -37,7 +36,7 @@ fileprivate final class AsSingleSink<Observer: ObserverType> : Sink<Observer>, O
 }
 
 final class AsSingle<Element>: Producer<Element> {
-    fileprivate let _source: Observable<Element>
+    private let _source: Observable<Element>
 
     init(source: Observable<Element>) {
         self._source = source

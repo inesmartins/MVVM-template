@@ -110,7 +110,6 @@ extension ObservableType {
         return binder(self)(curriedArgument)
     }
 
-
     /**
      Subscribes an element handler to an observable sequence.
 
@@ -220,12 +219,6 @@ extension ObservableType {
             fatalError()
         }
     }
-    extension UIWebView {
-        @available(*, unavailable, message: "createRxDelegateProxy is now unavailable, check DelegateProxyFactory")
-        public func createRxDelegateProxy() -> RxWebViewDelegateProxy {
-            fatalError()
-        }
-    }
 #endif
 
 #if os(macOS)
@@ -270,7 +263,7 @@ extension DelegateProxy {
     public static func assignedProxyFor(_ object: ParentObject) -> Delegate? {
         fatalError()
     }
-    
+
     @available(*, unavailable, renamed: "currentDelegate(for:)")
     public static func currentDelegateFor(_ object: ParentObject) -> Delegate? {
         fatalError()
@@ -290,7 +283,7 @@ Observer that enforces interface binding rules:
  queue.
 */
 @available(*, deprecated, renamed: "Binder")
-public final class UIBindingObserver<UIElement, Value> : ObserverType where UIElement: AnyObject {
+public final class UIBindingObserver<UIElement, Value>: ObserverType where UIElement: AnyObject {
     public typealias Element = Value
 
     weak var UIElement: UIElement?
@@ -333,7 +326,6 @@ public final class UIBindingObserver<UIElement, Value> : ObserverType where UIEl
     }
 }
 
-
 #if os(iOS)
     extension Reactive where Base: UIRefreshControl {
 
@@ -362,15 +354,14 @@ extension Reactive where Base: UIImageView {
 
                     imageView.layer.add(transition, forKey: kCATransition)
                 }
-            }
-            else {
+            } else {
                 imageView.layer.removeAllAnimations()
             }
             imageView.image = image
         }
     }
 }
-    
+
 extension Reactive where Base: UISegmentedControl {
     @available(*, deprecated, renamed: "enabledForSegment(at:)")
     public func enabled(forSegmentAt segmentAt: Int) -> Binder<Bool> {
@@ -397,8 +388,7 @@ extension Reactive where Base: UISegmentedControl {
                         transition.type = CATransitionType(rawValue: transitionType)
                         control.layer?.add(transition, forKey: kCATransition)
                     }
-                }
-                else {
+                } else {
                     control.layer?.removeAllAnimations()
                 }
                 control.image = value
@@ -406,8 +396,6 @@ extension Reactive where Base: UISegmentedControl {
         }
     }
 #endif
-
-import RxSwift
 
 @available(*, deprecated, message: "Variable is deprecated. Please use `BehaviorRelay` as a replacement.")
 extension Variable {
@@ -420,7 +408,6 @@ extension Variable {
         return Driver(source)
     }
 }
-
 
 private let errorMessage = "`drive*` family of methods can be only called from `MainThread`.\n" +
 "This is required to ensure that the last replayed `Driver` element is delivered on `MainThread`.\n"
@@ -534,7 +521,7 @@ extension SharedSequenceConvertibleType {
 
 // MARK: delay
 extension SharedSequenceConvertibleType {
-    
+
     /**
      Returns an observable sequence by the source observable sequence shifted forward in time by a specified delay. Error events from the source observable sequence are not delayed.
      
@@ -551,7 +538,7 @@ extension SharedSequenceConvertibleType {
     }
 }
 
-extension SharedSequence where Element : RxAbstractInteger {
+extension SharedSequence where Element: RxAbstractInteger {
     /**
      Returns an observable sequence that produces a value after each period, using the specified scheduler to run timers and to send out observer messages.
      
@@ -585,4 +572,3 @@ extension SharedSequence where Element: RxAbstractInteger {
         return timer(.milliseconds(Int(dueTime * 1000.0)), period: .milliseconds(Int(period * 1000.0)))
     }
 }
-

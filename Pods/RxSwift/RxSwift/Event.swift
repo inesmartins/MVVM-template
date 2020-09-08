@@ -82,8 +82,7 @@ extension Event {
             case .completed:
                 return .completed
             }
-        }
-        catch let e {
+        } catch let e {
             return .error(e)
         }
     }
@@ -94,7 +93,7 @@ public protocol EventConvertible {
     /// Type of element in event
     associatedtype Element
 
-    @available(*, deprecated, message: "Use `Element` instead.")
+    @available(*, deprecated, renamed: "Element")
     typealias ElementType = Element
 
     /// Event representation of this instance

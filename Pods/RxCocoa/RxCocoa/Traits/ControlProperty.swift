@@ -9,7 +9,7 @@
 import RxSwift
 
 /// Protocol that enables extension of `ControlProperty`.
-public protocol ControlPropertyType : ObservableType, ObserverType {
+public protocol ControlPropertyType: ObservableType, ObserverType {
 
     /// - returns: `ControlProperty` interface
     func asControlProperty() -> ControlProperty<Element>
@@ -23,7 +23,6 @@ public protocol ControlPropertyType : ObservableType, ObserverType {
 
     It's properties are:
 
-    - it never fails
     - `shareReplay(1)` behavior
         - it's stateful, upon subscription (calling subscribe) last element is immediately replayed if it was produced
     - it will `Complete` sequence on control being deallocated
@@ -40,7 +39,7 @@ public protocol ControlPropertyType : ObservableType, ObserverType {
     **In case `values` observable sequence that is being passed into initializer doesn't satisfy all enumerated
     properties, please don't use this trait.**
 */
-public struct ControlProperty<PropertyType> : ControlPropertyType {
+public struct ControlProperty<PropertyType>: ControlPropertyType {
     public typealias Element = PropertyType
 
     let _values: Observable<PropertyType>

@@ -23,14 +23,14 @@ extension ObservableType {
 }
 
 final private class AnonymousObservableSink<Observer: ObserverType>: Sink<Observer>, ObserverType {
-    typealias Element = Observer.Element 
+    typealias Element = Observer.Element
     typealias Parent = AnonymousObservable<Element>
 
     // state
     private let _isStopped = AtomicInt(0)
 
     #if DEBUG
-        fileprivate let _synchronizationTracker = SynchronizationTracker()
+        private let _synchronizationTracker = SynchronizationTracker()
     #endif
 
     override init(observer: Observer, cancel: Cancelable) {
