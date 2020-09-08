@@ -1,6 +1,6 @@
 import Foundation
 
-typealias APIServiceType = AuthServiceType
+typealias APIServiceType = AuthServiceType & DDGServiceType
 
 protocol AuthServiceType: AnyObject {
     func validateLogin(
