@@ -162,7 +162,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4D2B71AD2507984A0043BD93 /* New Group */ = {
+		4D2B71AD2507984A0043BD93 /* MVVMTemplate */ = {
 			isa = PBXGroup;
 			children = (
 				4D6B10842506B38100BCA7A1 /* Assets.xcassets */,
@@ -178,14 +178,14 @@
 				4D6B10AE2506B3C000BCA7A1 /* UI */,
 				4D6B10892506B38100BCA7A1 /* Info.plist */,
 			);
-			path = "New Group";
+			path = MVVMTemplate;
 			sourceTree = "<group>";
 		};
 		4D6B106C2506B37D00BCA7A1 = {
 			isa = PBXGroup;
 			children = (
 				4D6B111C25076AC100BCA7A1 /* Default-568h@2x.png */,
-				4D2B71AD2507984A0043BD93 /* New Group */,
+				4D2B71AD2507984A0043BD93 /* MVVMTemplate */,
 				4D6B10912506B38200BCA7A1 /* MVVMTemplateTests */,
 				4D6B109C2506B38200BCA7A1 /* MVVMTemplateUITests */,
 				4D6B10762506B37D00BCA7A1 /* Products */,
