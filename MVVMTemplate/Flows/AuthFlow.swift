@@ -7,13 +7,14 @@ class AuthFlow: Flow {
         return self.rootViewController
     }
 
-    let rootViewController = UITabBarController()
+    let rootViewController: AuthViewController
     private let api: APIServiceType
     private let store: StoreServiceType
     
     init(withServices api: APIServiceType, withStore store: StoreServiceType) {
         self.api = api
         self.store = store
+        self.rootViewController = AuthViewController(viewModel: AuthViewModel(authService: api))
     }
 
     deinit {
@@ -23,25 +24,12 @@ class AuthFlow: Flow {
     func navigate(to step: Step) -> FlowContributors {
         guard let step = step as? AppStep else { return .none }
         switch step {
-        case .loginIsRequired:
-            return navigateToAuth()
+        case .loginIsRequired, .logoutIsRequired:
+            // TODO: implement
+            return .none
         default:
             return .none
         }
     }
     
-}
-
-extension AuthFlow {
-
-    func navigateToAuth() -> FlowContributors {
-        let authStepper = AuthStepper(withServices: self.api, withStore: self.store)
-        let authFlow = AuthFlow(withServices: self.api)
-
-        Flows.use(authStepper, when: .created) { navCtrl in
-            self.rootViewController.setViewControllers(navCtrl, animated: false)
-        }
-        return .one(flowContributor: .contribute(withNextPresentable: authFlow,
-                                                 withNextStepper: OneStepper(withSingleStep: AppStep.loginIsRequired)))
-    }
 }

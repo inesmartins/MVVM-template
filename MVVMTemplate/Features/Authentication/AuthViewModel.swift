@@ -3,7 +3,7 @@ import RxSwift
 import RxFlow
 import RxRelay
 
-class AuthenticationViewModel: Stepper {
+class AuthViewModel: Stepper {
 
     private let disposeBag = DisposeBag()
     private let authService: AuthServiceType

@@ -21,7 +21,7 @@
 		4D6B11102506C23000BCA7A1 /* APIService+AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B110D2506C23000BCA7A1 /* APIService+AuthService.swift */; };
 		4D6B11112506C23000BCA7A1 /* APIService+DDGService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B110E2506C23000BCA7A1 /* APIService+DDGService.swift */; };
 		4D6B11122506C23000BCA7A1 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B110F2506C23000BCA7A1 /* APIService.swift */; };
-		4D6B11142506C36600BCA7A1 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B11132506C36600BCA7A1 /* AuthenticationViewModel.swift */; };
+		4D6B11142506C36600BCA7A1 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B11132506C36600BCA7A1 /* AuthViewModel.swift */; };
 		4D6B111D25076AC100BCA7A1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D6B111C25076AC100BCA7A1 /* Default-568h@2x.png */; };
 		4D6B11382507735300BCA7A1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B11372507735300BCA7A1 /* HomeViewModel.swift */; };
 		4D6B113E25077C6F00BCA7A1 /* StoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B113D25077C6F00BCA7A1 /* StoreService.swift */; };
@@ -47,7 +47,8 @@
 		4DB2CF3425079F1F0003DD3C /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB2CF3325079F1F0003DD3C /* AppFlow.swift */; };
 		4DB2CF392507A2170003DD3C /* HomeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB2CF382507A2170003DD3C /* HomeFlow.swift */; };
 		4DB2CF3D2507A2700003DD3C /* AuthFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB2CF3C2507A2700003DD3C /* AuthFlow.swift */; };
-		4DB2CF3F2507A53F0003DD3C /* HomeStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB2CF3E2507A53F0003DD3C /* HomeStepper.swift */; };
+		4DB2CF412507A9EC0003DD3C /* HomeStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB2CF402507A9EC0003DD3C /* HomeStepper.swift */; };
+		4DB2CF432507A9FD0003DD3C /* AuthStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB2CF422507A9FD0003DD3C /* AuthStepper.swift */; };
 		6B3A13B1A8135B29F3A380DA /* Pods_MVVMTemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366177E65700D2A81CFF2A80 /* Pods_MVVMTemplate.framework */; };
 		8463BDC74968F3C25AC2F66B /* Pods_MVVMTemplate_MVVMTemplateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 675954E326124A100A108648 /* Pods_MVVMTemplate_MVVMTemplateUITests.framework */; };
 		D6C4B394AE6208E5FFDF8098 /* Pods_MVVMTemplateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 328050301B4981826BFF8785 /* Pods_MVVMTemplateTests.framework */; };
@@ -103,7 +104,7 @@
 		4D6B110D2506C23000BCA7A1 /* APIService+AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "APIService+AuthService.swift"; sourceTree = "<group>"; };
 		4D6B110E2506C23000BCA7A1 /* APIService+DDGService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "APIService+DDGService.swift"; sourceTree = "<group>"; };
 		4D6B110F2506C23000BCA7A1 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
-		4D6B11132506C36600BCA7A1 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		4D6B11132506C36600BCA7A1 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		4D6B111C25076AC100BCA7A1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4D6B112F25076D5800BCA7A1 /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
 		4D6B113025076D5800BCA7A1 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
@@ -131,7 +132,8 @@
 		4DB2CF3325079F1F0003DD3C /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		4DB2CF382507A2170003DD3C /* HomeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlow.swift; sourceTree = "<group>"; };
 		4DB2CF3C2507A2700003DD3C /* AuthFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlow.swift; sourceTree = "<group>"; };
-		4DB2CF3E2507A53F0003DD3C /* HomeStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStepper.swift; sourceTree = "<group>"; };
+		4DB2CF402507A9EC0003DD3C /* HomeStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStepper.swift; sourceTree = "<group>"; };
+		4DB2CF422507A9FD0003DD3C /* AuthStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStepper.swift; sourceTree = "<group>"; };
 		675954E326124A100A108648 /* Pods_MVVMTemplate_MVVMTemplateUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMTemplate_MVVMTemplateUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7134A5830C56BAF48BC2F091 /* Pods-MVVMTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMTemplate.debug.xcconfig"; path = "Target Support Files/Pods-MVVMTemplate/Pods-MVVMTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 		7845E812DE8BF03F86C8EFC4 /* Pods-MVVMTemplate-MVVMTemplateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMTemplate-MVVMTemplateUITests.debug.xcconfig"; path = "Target Support Files/Pods-MVVMTemplate-MVVMTemplateUITests/Pods-MVVMTemplate-MVVMTemplateUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -294,7 +296,7 @@
 		4D6B10DF2506B91800BCA7A1 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				4D6B11132506C36600BCA7A1 /* AuthenticationViewModel.swift */,
+				4D6B11132506C36600BCA7A1 /* AuthViewModel.swift */,
 				4D6B107C2506B37D00BCA7A1 /* AuthViewController.swift */,
 			);
 			path = Authentication;
@@ -357,7 +359,8 @@
 				4DB2CF2F25079E0E0003DD3C /* AppStepper.swift */,
 				4DB2CF3C2507A2700003DD3C /* AuthFlow.swift */,
 				4DB2CF382507A2170003DD3C /* HomeFlow.swift */,
-				4DB2CF3E2507A53F0003DD3C /* HomeStepper.swift */,
+				4DB2CF402507A9EC0003DD3C /* HomeStepper.swift */,
+				4DB2CF422507A9FD0003DD3C /* AuthStepper.swift */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -631,7 +634,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D6B11142506C36600BCA7A1 /* AuthenticationViewModel.swift in Sources */,
+				4D6B11142506C36600BCA7A1 /* AuthViewModel.swift in Sources */,
 				4D6B114B25077D9D00BCA7A1 /* SearchParams.swift in Sources */,
 				4D6B107D2506B37D00BCA7A1 /* AuthViewController.swift in Sources */,
 				4D6B113E25077C6F00BCA7A1 /* StoreService.swift in Sources */,
@@ -659,13 +662,14 @@
 				4D6B114A25077D9D00BCA7A1 /* SearchResultAbstract.swift in Sources */,
 				4DB2CF2E25079DFC0003DD3C /* AppDelegate.swift in Sources */,
 				4D6B10B72506B58A00BCA7A1 /* DDGSearchViewController.swift in Sources */,
-				4DB2CF3F2507A53F0003DD3C /* HomeStepper.swift in Sources */,
+				4DB2CF412507A9EC0003DD3C /* HomeStepper.swift in Sources */,
 				4D6B11382507735300BCA7A1 /* HomeViewModel.swift in Sources */,
 				4D6B114F25077D9D00BCA7A1 /* SearchResultAnswer.swift in Sources */,
 				4D6B114C25077D9D00BCA7A1 /* SearchResultRelatedTopic.swift in Sources */,
 				4D6B11122506C23000BCA7A1 /* APIService.swift in Sources */,
 				4D6B116225077E3800BCA7A1 /* UserDefaultsStorage.swift in Sources */,
 				4D6B10832506B37D00BCA7A1 /* MVVMTemplate.xcdatamodeld in Sources */,
+				4DB2CF432507A9FD0003DD3C /* AuthStepper.swift in Sources */,
 				4D6B10CE2506B7BC00BCA7A1 /* CountryListTableViewCell.swift in Sources */,
 				4DB2CF3D2507A2700003DD3C /* AuthFlow.swift in Sources */,
 			);

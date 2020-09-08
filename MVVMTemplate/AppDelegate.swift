@@ -13,29 +13,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        guard let window = self.window else { return false }
 
+        // subscribes to willNavigate and didNavigate events
         self.coordinator.rx.willNavigate.subscribe(onNext: { (flow, step) in
             print("will navigate to flow=\(flow) and step=\(step)")
         }).disposed(by: self.disposeBag)
-
         self.coordinator.rx.didNavigate.subscribe(onNext: { (flow, step) in
             print("did navigate to flow=\(flow) and step=\(step)")
         }).disposed(by: self.disposeBag)
 
-        
+        // initializes api and store
         let api = APIService()
         let store = StoreService(coreData: CoreDataStorage(),
                                  userDefaults: UserDefaultsStorage(),
                                  keychain: KeyChainStorage())
+
+        // initializes appFlow
+        self.window = UIWindow()
         let appFlow = AppFlow(withServices: api, withStore: store)
-
-        self.coordinator.coordinate(flow: appFlow, with: AppStepper(withServices: api, withStore: store))
-
-        Flows.use(appFlow, when: .created) { root in
-            window.rootViewController = root
-            window.makeKeyAndVisible()
-        }
+        self.coordinator.coordinate(flow: appFlow,
+                                    with: AppStepper(withServices: api, withStore: store))
+        Flows.whenReady(flow1: appFlow, block: { root in
+            self.window?.rootViewController = root
+            self.window?.makeKeyAndVisible()
+        })
 
         UNUserNotificationCenter.current().delegate = self
 
@@ -52,6 +53,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
         // example of how DeepLink can be handled
-        self.coordinator.navigate(to: AppStep.countryIsSelected(withName: "Portugal"))
+        //self.coordinator.navigate(to: AppStep.countryIsSelected(withName: "Portugal"))
     }
 }

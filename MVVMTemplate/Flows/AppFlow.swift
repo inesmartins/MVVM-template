@@ -41,9 +41,7 @@ extension AppFlow: AppFlowType {
         guard let step = step as? AppStep else { return .none }
 
         switch step {
-        case .loginIsRequired:
-            return navigationToAuthScreen()
-        case .logoutIsRequired:
+        case .loginIsRequired, .logoutIsRequired:
             return navigationToAuthScreen()
         case .userIsLoggedIn:
             return navigationToHomeScreen()
@@ -57,20 +55,18 @@ private extension AppFlow {
     
     func navigationToAuthScreen() -> FlowContributors {
         let authFlow = AuthFlow(withServices: self.api, withStore: self.store)
-        Flows.use(authFlow, when: .created) { [unowned self] root in
+        Flows.whenReady(flow1: authFlow, block: { root in
             self.rootViewController.pushViewController(root, animated: false)
-        }
+        })
         return .one(flowContributor: .contribute(withNextPresentable: authFlow,
-                                                 withNextStepper: OneStepper(withSingleStep: AppStep.dashboardIsRequired)))
+                                                 withNextStepper: OneStepper(withSingleStep: AppStep.loginIsRequired)))
     }
 
     func navigationToHomeScreen() -> FlowContributors {
-        let homeStepper = HomeStepper(withServices: self.api, withStore: self.store)
         let homeFlow = HomeFlow(withServices: self.api, store: self.store)
-
-        Flows.use(homeFlow, when: .created) { navCtrl in
-            self.rootViewController.setViewControllers(navCtrl, animated: false)
-        }
+        Flows.whenReady(flow1: homeFlow, block: { root in
+            self.rootViewController.pushViewController(root, animated: false)
+        })
         return .one(flowContributor: .contribute(withNextPresentable: homeFlow,
                                                  withNextStepper: OneStepper(withSingleStep: AppStep.userIsLoggedIn)))
     }

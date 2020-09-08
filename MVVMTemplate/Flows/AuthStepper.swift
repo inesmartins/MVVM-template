@@ -3,7 +3,7 @@ import RxFlow
 import RxSwift
 import RxRelay
 
-class HomeStepper: Stepper {
+class AuthStepper: Stepper {
 
     let steps = PublishRelay<Step>()
     private let api: APIServiceType
@@ -16,7 +16,7 @@ class HomeStepper: Stepper {
     }
 
     var initialStep: Step {
-        return AppStep.userIsLoggedIn
+        return AppStep.loginIsRequired
     }
 
 }

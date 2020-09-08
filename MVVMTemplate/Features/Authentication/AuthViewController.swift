@@ -50,11 +50,11 @@ final class AuthViewController: KeyboardAwareViewController {
     // MARK: - Properties
 
     let disposeBag = DisposeBag()
-    let viewModel: AuthenticationViewModel
+    let viewModel: AuthViewModel
 
     // MARK: - Lifecycle Methods
 
-    init(viewModel: AuthenticationViewModel) {
+    init(viewModel: AuthViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
