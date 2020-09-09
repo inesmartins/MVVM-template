@@ -4,7 +4,7 @@ import RxSwift
 import RxCocoa
 import RxFlow
 
-class AuthViewController: UIViewController, ViewModelBased, Stepper {
+class AuthViewController: KeyboardAwareViewController, ViewModelBased, Stepper {
 
     lazy var formContainer: UIView = {
         let view = UIView(frame: .zero)
@@ -29,7 +29,8 @@ class AuthViewController: UIViewController, ViewModelBased, Stepper {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Login", for: .normal)
-        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.lightGray, for: .disabled)
         button.backgroundColor = .gray
         return button
     }()
@@ -39,6 +40,8 @@ class AuthViewController: UIViewController, ViewModelBased, Stepper {
     private let disposeBag = DisposeBag()
     var viewModel: AuthViewModel!
     let steps = PublishRelay<Step>()
+
+    // MARK: - Lifecycle Methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +61,9 @@ private extension AuthViewController {
         self.passwordTextField.rx.text
             .orEmpty
             .bind(to: self.viewModel.password)
+            .disposed(by: self.disposeBag)
+        self.viewModel.isValid
+            .bind(to: self.loginButton.rx.isEnabled)
             .disposed(by: self.disposeBag)
         self.loginButton.rx.tap
             .takeUntil(self.rx.deallocating)
@@ -87,9 +93,9 @@ private extension AuthViewController {
     func addConstraints() {
         let constraints: [NSLayoutConstraint] = [
 
-            self.formContainer.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 50.0),
-            self.formContainer.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -50.0),
-            self.formContainer.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            self.formContainer.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 40.0),
+            self.formContainer.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -40.0),
+            self.formContainer.centerYAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerYAnchor),
 
             self.usernamTextField.heightAnchor.constraint(equalToConstant: 40.0),
             self.usernamTextField.topAnchor.constraint(equalTo: self.formContainer.topAnchor),
@@ -102,10 +108,10 @@ private extension AuthViewController {
             self.passwordTextField.trailingAnchor.constraint(equalTo: self.formContainer.trailingAnchor),
             self.passwordTextField.bottomAnchor.constraint(equalTo: self.formContainer.bottomAnchor),
 
-            self.loginButton.heightAnchor.constraint(equalToConstant: 30.0),
-            self.loginButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20.0),
-            self.loginButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20.0),
-            self.loginButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -20.0)
+            self.loginButton.heightAnchor.constraint(equalToConstant: 40.0),
+            self.loginButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 40.0),
+            self.loginButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -40.0),
+            self.loginButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -40.0)
         ]
         NSLayoutConstraint.activate(constraints)
     }

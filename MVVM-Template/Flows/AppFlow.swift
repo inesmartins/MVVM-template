@@ -73,8 +73,8 @@ private extension AppFlow {
     }
 
     func dismissAuthScreen() -> FlowContributors {
-        if let onboardingViewController = self.rootViewController.presentedViewController {
-            onboardingViewController.dismiss(animated: true)
+        if let authViewController = self.rootViewController.presentedViewController {
+            authViewController.dismiss(animated: true)
         }
         return .none
     }

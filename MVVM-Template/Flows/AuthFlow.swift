@@ -10,7 +10,7 @@ class AuthFlow: Flow {
 
     private lazy var rootViewController: UINavigationController = {
         let viewController = UINavigationController()
-        viewController.navigationBar.topItem?.title = "OnBoarding"
+        viewController.navigationBar.topItem?.title = "Authentication"
         return viewController
     }()
 
@@ -45,10 +45,12 @@ extension AuthFlow {
 private extension AuthFlow {
 
     func navigationToLoginScreen() -> FlowContributors {
-        let authViewController = AuthViewController.instantiate(withViewModel: AuthViewModel(), andServices: self.services)
+        let authViewController = AuthViewController.instantiate(withViewModel: AuthViewModel(),
+                                                                andServices: self.services)
         authViewController.title = "Login"
         self.rootViewController.pushViewController(authViewController, animated: false)
-        return .one(flowContributor: .contribute(withNext: authViewController))
+        return .one(flowContributor: .contribute(withNextPresentable: authViewController,
+                                                 withNextStepper: authViewController.viewModel))
     }
 
 }
