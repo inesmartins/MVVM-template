@@ -1,11 +1,3 @@
-//
-//  PreferencesService.swift
-//  RxFlowDemo
-//
-//  Created by Thibault Wittemberg on 18-02-10.
-//  Copyright © 2018 RxSwiftCommunity. All rights reserved.
-//
-
 import Foundation
 import RxSwift
 

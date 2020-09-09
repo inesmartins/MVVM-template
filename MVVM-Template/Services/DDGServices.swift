@@ -3,7 +3,6 @@ import Alamofire
 
 protocol DDGServices {
     var searchService: DDGServiceType { get }
-    var store: StoreServiceType { get }
 }
 
 protocol DDGServiceType: AnyObject {
