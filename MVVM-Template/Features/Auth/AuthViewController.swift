@@ -16,6 +16,8 @@ class AuthViewController: KeyboardAwareViewController, ViewModelBased, Stepper {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "username"
         textField.borderStyle = .roundedRect
+        textField.textContentType = .username
+        textField.autocapitalizationType = .none
         return textField
     }()
     lazy var passwordTextField: UITextField = {
@@ -23,6 +25,7 @@ class AuthViewController: KeyboardAwareViewController, ViewModelBased, Stepper {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "password"
         textField.borderStyle = .roundedRect
+        textField.isSecureTextEntry = true
         return textField
     }()
     lazy var errorMessageTextField: UILabel = {

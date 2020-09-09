@@ -36,14 +36,14 @@ extension AuthViewModel: AuthViewModelType {
                     self.steps.accept(AppStep.userIsAuthenticated)
                 } else {
                     self.errorMessage.accept("Username or password is incorrect.")
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                         self.errorMessage.accept("")
                     })
                 }
             })
         } catch let error {
             self.errorMessage.accept("Username or password is incorrect: \(error.localizedDescription)")
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                 self.errorMessage.accept("")
             })
         }

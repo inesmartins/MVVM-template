@@ -16,7 +16,7 @@ class AuthService: AuthServiceType {
         _ password: String,
         onCompletion: @escaping ((_ authenticated: Bool) -> Void)) {
         // TODO: implement authentication system
-        onCompletion(false)
+        onCompletion(true)
     }
 
 }
