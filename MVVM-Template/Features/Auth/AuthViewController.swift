@@ -25,6 +25,11 @@ class AuthViewController: KeyboardAwareViewController, ViewModelBased, Stepper {
         textField.borderStyle = .roundedRect
         return textField
     }()
+    lazy var errorMessageTextField: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     lazy var loginButton: UIButton = {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -54,22 +59,26 @@ class AuthViewController: KeyboardAwareViewController, ViewModelBased, Stepper {
 private extension AuthViewController {
 
     func setupBindings() {
-        self.usernamTextField.rx.text
-            .orEmpty
+        self.usernamTextField.rx.text.orEmpty
+            .takeUntil(self.rx.deallocating)
             .bind(to: self.viewModel.username)
             .disposed(by: self.disposeBag)
-        self.passwordTextField.rx.text
-            .orEmpty
+        self.passwordTextField.rx.text.orEmpty
+            .takeUntil(self.rx.deallocating)
             .bind(to: self.viewModel.password)
             .disposed(by: self.disposeBag)
         self.viewModel.isValid
+            .takeUntil(self.rx.deallocating)
             .bind(to: self.loginButton.rx.isEnabled)
             .disposed(by: self.disposeBag)
         self.loginButton.rx.tap
             .takeUntil(self.rx.deallocating)
             .bind(onNext: {
                 self.viewModel.validateLogin()
-            })
+            }).disposed(by: self.disposeBag)
+        self.viewModel.errorMessage
+            .takeUntil(self.rx.deallocating)
+            .bind(to: self.errorMessageTextField.rx.text)
             .disposed(by: self.disposeBag)
     }
 
@@ -87,12 +96,12 @@ private extension AuthViewController {
         self.view.addSubview(self.formContainer)
         self.formContainer.addSubview(self.usernamTextField)
         self.formContainer.addSubview(self.passwordTextField)
+        self.formContainer.addSubview(self.errorMessageTextField)
         self.view.addSubview(self.loginButton)
     }
 
     func addConstraints() {
         let constraints: [NSLayoutConstraint] = [
-
             self.formContainer.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 40.0),
             self.formContainer.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -40.0),
             self.formContainer.centerYAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerYAnchor),
@@ -106,7 +115,12 @@ private extension AuthViewController {
             self.passwordTextField.topAnchor.constraint(equalTo: self.usernamTextField.bottomAnchor, constant: 20.0),
             self.passwordTextField.leadingAnchor.constraint(equalTo: self.formContainer.leadingAnchor),
             self.passwordTextField.trailingAnchor.constraint(equalTo: self.formContainer.trailingAnchor),
-            self.passwordTextField.bottomAnchor.constraint(equalTo: self.formContainer.bottomAnchor),
+
+            self.errorMessageTextField.heightAnchor.constraint(equalToConstant: 40.0),
+            self.errorMessageTextField.topAnchor.constraint(equalTo: self.passwordTextField.bottomAnchor, constant: 20.0),
+            self.errorMessageTextField.leadingAnchor.constraint(equalTo: self.formContainer.leadingAnchor),
+            self.errorMessageTextField.trailingAnchor.constraint(equalTo: self.formContainer.trailingAnchor),
+            self.errorMessageTextField.bottomAnchor.constraint(equalTo: self.formContainer.bottomAnchor),
 
             self.loginButton.heightAnchor.constraint(equalToConstant: 40.0),
             self.loginButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 40.0),
