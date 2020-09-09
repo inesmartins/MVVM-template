@@ -12,56 +12,12 @@ final class DDGSearchResultsViewController: KeyboardAwareViewController, ViewMod
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    private lazy var abstractTextField: UITextField = {
-        let textField = UITextField(frame: .zero)
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        self.viewModel.searchResult?
-            .map({ $0.abstract.abstract })
-            .bind(to: textField.rx.text)
-            .disposed(by: self.disposeBag)
-        return textField
-    }()
-    private lazy var abstractTextTextField: UITextField = {
-        let textField = UITextField(frame: .zero)
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        self.viewModel.searchResult?
-            .map({ $0.abstract.abstractText })
-            .bind(to: textField.rx.text)
-            .disposed(by: self.disposeBag)
-        return textField
-    }()
-    private lazy var abstractSourceTextField: UITextField = {
-        let textField = UITextField(frame: .zero)
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        self.viewModel.searchResult?
-            .map({ $0.abstract.abstractSource })
-            .bind(to: textField.rx.text)
-            .disposed(by: self.disposeBag)
-        return textField
-    }()
-    private lazy var abstractURLTextField: UITextField = {
-        let textField = UITextField(frame: .zero)
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        self.viewModel.searchResult?
-            .map({ $0.abstract.abstractURL })
-            .bind(to: textField.rx.text)
-            .disposed(by: self.disposeBag)
-        return textField
-    }()
-    private lazy var abstractImageTextField: UIImageView = {
-        let imageView = UIImageView(frame: .zero)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-    private lazy var abstractHeadingTextField: UITextField = {
-        let textField = UITextField(frame: .zero)
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        self.viewModel.searchResult?
-            .map({ $0.abstract.heading })
-            .bind(to: textField.rx.text)
-            .disposed(by: self.disposeBag)
-        return textField
-    }()
+    private lazy var abstractTextField = self.makeUITextField()
+    private lazy var abstractTextTextField = self.makeUITextField()
+    private lazy var abstractSourceTextField = self.makeUITextField()
+    private lazy var abstractURLTextField = self.makeUITextField()
+    private lazy var abstractImageTextField = self.makeUITextField()
+    private lazy var abstractHeadingTextField = self.makeUITextField()
 
     // MARK: - UIViewController Properties
 
@@ -82,8 +38,36 @@ final class DDGSearchResultsViewController: KeyboardAwareViewController, ViewMod
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupViews()
+        self.setupBindings()
     }
 
+}
+
+private extension DDGSearchResultsViewController {
+
+    func setupBindings() {
+        self.viewModel.searchResult?
+            .map({ $0.abstract.abstract })
+            .bind(to: self.abstractTextField.rx.text)
+            .disposed(by: self.disposeBag)
+        self.viewModel.searchResult?
+            .map({ $0.abstract.abstractText })
+            .bind(to: self.abstractTextTextField.rx.text)
+            .disposed(by: self.disposeBag)
+        self.viewModel.searchResult?
+            .map({ $0.abstract.abstractSource })
+            .bind(to: self.abstractSourceTextField.rx.text)
+            .disposed(by: self.disposeBag)
+        self.viewModel.searchResult?
+            .map({ $0.abstract.abstractURL })
+            .bind(to: self.abstractURLTextField.rx.text)
+            .disposed(by: self.disposeBag)
+        self.viewModel.searchResult?
+            .map({ $0.abstract.heading })
+            .bind(to: self.abstractHeadingTextField.rx.text)
+            .disposed(by: self.disposeBag)
+
+    }
 }
 
 private extension DDGSearchResultsViewController {
@@ -113,6 +97,12 @@ private extension DDGSearchResultsViewController {
 
         ]
         NSLayoutConstraint.activate(constraints)
+    }
+
+    func makeUITextField() -> UITextField {
+        let textField = UITextField(frame: .zero)
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
     }
 
 }

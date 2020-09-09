@@ -37,7 +37,6 @@ class CountryListViewController: UIViewController, ViewModelBased {
 
     private let disposeBag = DisposeBag()
     var viewModel: CountryListViewModel!
-    let steps = PublishRelay<Step>()
 
     // MARK: - Lifecycle Methods
 
@@ -52,13 +51,20 @@ class CountryListViewController: UIViewController, ViewModelBased {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
+        self.setupBindings()
+    }
+
+}
+
+private extension CountryListViewController {
+
+    private func setupBindings() {
         self.sendDeeplinkButton.rx
             .tap
             .bind {
                 self.sendDeeplink()
             }.disposed(by: self.disposeBag)
     }
-
 }
 
 private extension CountryListViewController {

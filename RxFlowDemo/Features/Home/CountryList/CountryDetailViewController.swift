@@ -16,9 +16,6 @@ class CountryDetailViewController: UIViewController, ViewModelBased {
         button.layer.borderColor = UIColor.black.cgColor
         button.setTitle("Save Country", for: .normal)
         button.setTitleColor(.black, for: .normal)
-        button.rx.tap.bind {
-            self.saveCountry()
-        }.disposed(by: self.disposeBag)
         return button
     }()
 
@@ -41,11 +38,21 @@ class CountryDetailViewController: UIViewController, ViewModelBased {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
+        self.setupBindings()
     }
 
 }
 
 private extension CountryDetailViewController {
+
+    private func setupBindings() {
+        self.saveCountryButton.rx
+            .tap
+            .bind {
+                self.saveCountry()
+            }
+            .disposed(by: self.disposeBag)
+    }
 
     @objc func saveCountry() {
         let actionSheet = UIAlertController(

@@ -47,15 +47,15 @@ final class DDGSearchViewController: KeyboardAwareViewController, ViewModelBased
 private extension DDGSearchViewController {
 
     func setupBindings() {
-        _ = self.searchInputField.rx.text
+        self.searchInputField.rx.text
             .orEmpty
             .bind(to: self.viewModel.searchTerm)
             .disposed(by: self.disposeBag)
-        _ = self.searchButton.rx
+        self.searchButton.rx
             .tap
-            .bind(onNext: {
+            .bind {
                 self.viewModel.search()
-            })
+            }
             .disposed(by: self.disposeBag)
     }
 }
