@@ -64,4 +64,5 @@ final class SearchResultAbstract: Codable {
         aCoder.encode(self.image, forKey: CodingKeys.image.rawValue)
         aCoder.encode(self.heading, forKey: CodingKeys.heading.rawValue)
     }
+
 }

@@ -1,21 +1,13 @@
-import Foundation
 import UIKit
-import Toast_Swift
+import RxSwift
+import RxRelay
+import RxFlow
 
-protocol DDGSearchViewControllerType: AnyObject {
-    func showResult(_ searchResult: SearchResult)
-    func showNoResultsFound()
-}
-
-final class DDGSearchViewController: KeyboardAwareViewController {
-
-    // MARK: - UIViewController Properties
-
-    private var searchTerm: String?
+final class DDGSearchViewController: KeyboardAwareViewController, ViewModelBased {
 
     // MARK: - UI components
 
-    private lazy var textField: UITextField = {
+    private lazy var searchInputField: UITextField = {
         let textField = UITextField(frame: .zero)
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.borderStyle = .roundedRect
@@ -24,11 +16,15 @@ final class DDGSearchViewController: KeyboardAwareViewController {
     private lazy var searchButton: UIButton = {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Search on DuckDuckGo", for: .normal)
+        button.setTitle("Search", for: .normal)
         button.setTitleColor(.black, for: .normal)
-        button.addTarget(self, action: #selector(self.handleSearchButtonClick), for: .touchUpInside)
         return button
     }()
+
+    // MARK: - UIViewController Properties
+
+    private let disposeBag = DisposeBag()
+    var viewModel: DDGSearchViewModel!
 
     // MARK: - UIViewController Lifecycle
 
@@ -43,32 +39,24 @@ final class DDGSearchViewController: KeyboardAwareViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupViews()
+        self.setupBindings()
     }
 
 }
 
-extension DDGSearchViewController: DDGSearchViewControllerType {
+private extension DDGSearchViewController {
 
-    func showNoResultsFound() {
-        self.view.makeToast("No Results Found")
-    }
-
-    func showResult(_ searchResult: SearchResult) {
-        debugPrint(searchResult)
-    }
-
-}
-
-extension DDGSearchViewController: UITextFieldDelegate {
-
-    func textField(
-        _ textField: UITextField,
-        shouldChangeCharactersIn range: NSRange,
-        replacementString string: String) -> Bool {
-
-        self.searchTerm = (string == "" && textField.text?.count == 1) ? nil : textField.text
-        self.updateSearchButton(enabled: self.searchTerm != nil)
-        return true
+    func setupBindings() {
+        _ = self.searchInputField.rx.text
+            .orEmpty
+            .bind(to: self.viewModel.searchTerm)
+            .disposed(by: self.disposeBag)
+        _ = self.searchButton.rx
+            .tap
+            .bind(onNext: {
+                self.viewModel.search()
+            })
+            .disposed(by: self.disposeBag)
     }
 }
 
@@ -81,34 +69,22 @@ private extension DDGSearchViewController {
     }
 
     func addSubviews() {
-        self.view.addSubview(self.textField)
+        self.view.addSubview(self.searchInputField)
         self.view.addSubview(self.searchButton)
-    }
-
-    @objc func handleSearchButtonClick() {
-        if let searchTerm = self.textField.text {
-            // TODO: refactor
-            //self.delegate.didClickSearchButton(searchTerm: searchTerm, on: self)
-        }
     }
 
     func addConstraints() {
         let constraints = [
-            self.textField.heightAnchor.constraint(equalToConstant: 50.0),
-            self.textField.centerYAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerYAnchor),
-            self.textField.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20.0),
-            self.textField.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20.0),
-            self.searchButton.widthAnchor.constraint(equalTo: self.view.widthAnchor),
+            self.searchInputField.heightAnchor.constraint(equalToConstant: 50.0),
+            self.searchInputField.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20.0),
+            self.searchInputField.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20.0),
+            self.searchInputField.centerYAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerYAnchor),
             self.searchButton.heightAnchor.constraint(equalToConstant: 50.0),
-            self.searchButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            self.searchButton.bottomAnchor.constraint(
-                equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -50.0)
+            self.searchButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20.0),
+            self.searchButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20.0),
+            self.searchButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -20.0)
         ]
         NSLayoutConstraint.activate(constraints)
-    }
-
-    func updateSearchButton(enabled: Bool) {
-        self.searchButton.alpha = enabled ? 1.0 : 0.2
     }
 
 }

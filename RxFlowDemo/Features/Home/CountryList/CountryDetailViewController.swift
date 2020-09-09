@@ -11,18 +11,20 @@ class CountryDetailViewController: UIViewController, ViewModelBased {
     private lazy var saveCountryButton: UIButton = {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self,
-                         action: #selector(self.handleSaveCountryButtonClick), for: .touchUpInside)
         button.layer.cornerRadius = 7
         button.layer.borderWidth = 1.0
         button.layer.borderColor = UIColor.black.cgColor
         button.setTitle("Save Country", for: .normal)
         button.setTitleColor(.black, for: .normal)
+        button.rx.tap.bind {
+            self.saveCountry()
+        }.disposed(by: self.disposeBag)
         return button
     }()
 
     // MARK: - UIViewController Properties
 
+    private let disposeBag = DisposeBag()
     var viewModel: CountryDetailViewModel!
     let steps = PublishRelay<Step>()
 
@@ -45,7 +47,7 @@ class CountryDetailViewController: UIViewController, ViewModelBased {
 
 private extension CountryDetailViewController {
 
-    @objc func handleSaveCountryButtonClick() {
+    @objc func saveCountry() {
         let actionSheet = UIAlertController(
             title: "Choose Option",
             message: "Please select where country should be stored",
@@ -57,6 +59,10 @@ private extension CountryDetailViewController {
         }
         self.present(actionSheet, animated: true, completion: nil)
     }
+
+}
+
+private extension CountryDetailViewController {
 
     func didSelectStore(_ store: Store) {
         self.viewModel.pickStore(store)
@@ -75,9 +81,9 @@ private extension CountryDetailViewController {
     func addConstraints() {
         let constraints: [NSLayoutConstraint] = [
             self.saveCountryButton.heightAnchor.constraint(equalToConstant: 50.0),
-            self.saveCountryButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-            self.saveCountryButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20.0),
-            self.saveCountryButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20.0)
+            self.saveCountryButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            self.saveCountryButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            self.saveCountryButton.centerYAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerYAnchor)
         ]
         NSLayoutConstraint.activate(constraints)
     }

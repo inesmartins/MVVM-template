@@ -3,9 +3,10 @@ import RxFlow
 import RxSwift
 import RxCocoa
 
-struct AppServices: HasPreferencesService, HasCountriesService {
+struct AppServices: HasPreferencesService, CountryServices, DDGServices {
     let preferencesService: PreferencesService
-    let countriesService: CountriesService
+    let countriesService: CountryServiceType
+    let searchService: DDGServiceType
     let store: StoreServiceType
 }
 
@@ -21,7 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                                  userDefaults: UserDefaultsStorage(),
                                  keychain: KeyChainStorage())
         return AppServices(preferencesService: PreferencesService(),
-                           countriesService: CountriesService(),
+                           countriesService: CountryService(),
+                           searchService: DDGService(),
                            store: store)
     }()
 
@@ -56,7 +58,7 @@ extension AppDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
-        self.coordinator.navigate(to: AppStep.countryIsPicked(withName: "Portugal"))
+        self.coordinator.navigate(to: AppStep.countryWasPicked(withName: "Portugal"))
     }
 }
 

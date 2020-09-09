@@ -1,9 +1,14 @@
-protocol HasCountriesService {
-    var countriesService: CountriesService { get }
+protocol CountryServices {
+    var countriesService: CountryServiceType { get }
     var store: StoreServiceType { get }
 }
 
-class CountriesService {
+protocol CountryServiceType {
+    func all() -> [Country]
+    func country(withName name: String) -> Country?
+}
+
+class CountryService: CountryServiceType {
 
     func all() -> [Country] {
         return CountriesRepository.countries

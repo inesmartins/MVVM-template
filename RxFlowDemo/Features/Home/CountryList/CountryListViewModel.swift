@@ -9,14 +9,24 @@ protocol CountryListViewModelType {
 class CountryListViewModel: ServicesViewModel, Stepper {
 
     let steps = PublishRelay<Step>()
-    typealias Services = HasCountriesService
+    typealias Services = CountryServices
 
     private(set) var countries = [CountryDetailViewModel]()
+    private(set) var savedCountry: CountryDetailViewModel?
 
     var services: Services! {
         didSet {
             self.countries = self.services.countriesService.all().map({ country -> CountryDetailViewModel in
                 return CountryDetailViewModel(name: country.name, code: country.code)
+            })
+            self.services.store.load(fromStore: .keychain, withKey: "SelectedStore", onCompletion: { (res: Result<Country?, Error>) in
+                do {
+                    if let country: Country = try res.get() {
+                        self.savedCountry = CountryDetailViewModel(name: country.name, code: country.code)
+                    }
+                } catch let error {
+                    print(error.localizedDescription)
+                }
             })
         }
     }
@@ -26,7 +36,7 @@ class CountryListViewModel: ServicesViewModel, Stepper {
 extension CountryListViewModel: CountryListViewModelType {
 
     func pickCountry(withName: String) {
-        self.steps.accept(AppStep.countryIsPicked(withName: withName))
+        self.steps.accept(AppStep.countryWasPicked(withName: withName))
     }
 
 }

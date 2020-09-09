@@ -8,7 +8,7 @@ protocol CountryDetailViewModelType {
 class CountryDetailViewModel: ServicesViewModel, Stepper {
 
     let steps = PublishRelay<Step>()
-    typealias Services = HasCountriesService
+    typealias Services = CountryServices
 
     var services: Services! {
         didSet {

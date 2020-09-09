@@ -13,6 +13,8 @@ enum AppStep: Step {
     // Features
     case homeIsRequired
     case countryListIsRequired
-    case countryIsPicked(withName: String)
+    case countryWasPicked(withName: String)
+    case searchIsRequired
+    case showSearchResults(forSearchTerm: String)
 
 }

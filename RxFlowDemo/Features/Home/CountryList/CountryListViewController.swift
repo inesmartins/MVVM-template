@@ -22,9 +22,20 @@ class CountryListViewController: UIViewController, ViewModelBased {
             forCellReuseIdentifier: CountryListViewController.tableCellId)
         return table
     }()
+    private lazy var sendDeeplinkButton: UIButton = {
+        let button = UIButton(frame: .zero)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = 7
+        button.layer.borderWidth = 1.0
+        button.layer.borderColor = UIColor.black.cgColor
+        button.setTitle("Open with notification", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        return button
+    }()
 
     // MARK: - UIViewController Properties
 
+    private let disposeBag = DisposeBag()
     var viewModel: CountryListViewModel!
     let steps = PublishRelay<Step>()
 
@@ -41,27 +52,36 @@ class CountryListViewController: UIViewController, ViewModelBased {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
-        _ = Observable<Int>
-            .interval(.seconds(5), scheduler: MainScheduler.instance)
-            .takeUntil(self.rx.deallocating)
-            .map { _ in return AppStep.fakeStep }
-            .bind(to: self.steps)
+        self.sendDeeplinkButton.rx
+            .tap
+            .bind {
+                self.sendDeeplink()
+            }.disposed(by: self.disposeBag)
     }
 
 }
 
-extension CountryListViewController: UITableViewDelegate, UITableViewDataSource {
+private extension CountryListViewController {
+
+    @objc func sendDeeplink() {
+         UNUserNotificationCenter.current().requestAuthorization(options: [.alert]) { (granted, _) in
+             guard granted else { return }
+             let content = UNMutableNotificationContent()
+             content.title = "Notification from RxFlow"
+             content.subtitle = "Deeplink use case"
+            content.body = "Click to navigate to \(self.viewModel.savedCountry?.name ?? "")"
+             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+             let request = UNNotificationRequest(identifier: "\(UUID())", content: content, trigger: trigger)
+             UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+         }
+    }
+
+}
+
+extension CountryListViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.countries.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let country = self.viewModel.countries[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: CountryListViewController.tableCellId)
-            as? CountryListTableViewCell ?? CountryListTableViewCell()
-        cell.setupView(forCountry: country)
-        return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -76,6 +96,18 @@ extension CountryListViewController: UITableViewDelegate, UITableViewDataSource 
 
 }
 
+extension CountryListViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let country = self.viewModel.countries[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: CountryListViewController.tableCellId)
+            as? CountryListTableViewCell ?? CountryListTableViewCell()
+        cell.setupView(forCountry: country)
+        return cell
+    }
+
+}
+
 private extension CountryListViewController {
 
     func setupView() {
@@ -85,6 +117,7 @@ private extension CountryListViewController {
 
     func addSubviews() {
         self.view.addSubview(self.countriesTable)
+        self.view.addSubview(self.sendDeeplinkButton)
     }
 
     func addConstraints() {
@@ -92,7 +125,11 @@ private extension CountryListViewController {
             self.countriesTable.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
             self.countriesTable.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             self.countriesTable.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            self.countriesTable.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
+            self.sendDeeplinkButton.topAnchor.constraint(equalTo: self.countriesTable.bottomAnchor, constant: 20.0),
+            self.sendDeeplinkButton.heightAnchor.constraint(equalToConstant: 50.0),
+            self.sendDeeplinkButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20.0),
+            self.sendDeeplinkButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20.0),
+            self.sendDeeplinkButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -20.0)
         ]
         NSLayoutConstraint.activate(constraints)
     }

@@ -1,16 +1,16 @@
 import RxFlow
 import UIKit
 
-class CountryListFlow: Flow {
+class DDGSearchFlow: Flow {
 
     var root: Presentable {
         return self.rootViewController
     }
 
     private let rootViewController = UINavigationController()
-    private let services: AppServices
+    private let services: DDGServices
 
-    init(withServices services: AppServices) {
+    init(withServices services: DDGServices) {
         self.services = services
     }
 
@@ -20,15 +20,15 @@ class CountryListFlow: Flow {
 
 }
 
-extension CountryListFlow {
+extension DDGSearchFlow {
 
     func navigate(to step: Step) -> FlowContributors {
         guard let step = step as? AppStep else { return .none }
         switch step {
-        case .countryListIsRequired:
-            return self.navigateToCountryListScreen()
-        case .countryWasPicked(let name):
-            return self.navigateToCountryDetailScreen(withName: name)
+        case .searchIsRequired:
+            return self.navigationToSearchScreen()
+        case .showSearchResults(let searchTerm):
+            return self.navigationToSearchResultsScreen(withSearchTerm: searchTerm)
         default:
             return .none
         }
@@ -36,24 +36,22 @@ extension CountryListFlow {
 
 }
 
-private extension CountryListFlow {
+private extension DDGSearchFlow {
 
-    func navigateToCountryListScreen() -> FlowContributors {
-        let viewController = CountryListViewController.instantiate(withViewModel: CountryListViewModel(), andServices: self.services)
-        viewController.title = "Country List"
+    func navigationToSearchScreen() -> FlowContributors {
+        let viewController = DDGSearchViewController.instantiate(withViewModel: DDGSearchViewModel(), andServices: self.services)
+        viewController.title = "Search on DDG"
         self.rootViewController.pushViewController(viewController, animated: true)
         self.rootViewController.view.backgroundColor = .white
         return .one(flowContributor: .contribute(withNextPresentable: viewController, withNextStepper: viewController.viewModel))
-
     }
 
-    func navigateToCountryDetailScreen(withName name: String) -> FlowContributors {
-        let viewController = CountryDetailViewController
-            .instantiate(withViewModel: CountryDetailViewModel(name: name), andServices: self.services)
-        viewController.title = viewController.viewModel.name
+    func navigationToSearchResultsScreen(withSearchTerm searchTerm: String) -> FlowContributors {
+        let viewController = DDGSearchResultsViewController
+            .instantiate(withViewModel: DDGSearchResultsViewModel(searchTerm: searchTerm), andServices: self.services)
+        viewController.title = viewController.viewModel.searchTerm
         self.rootViewController.pushViewController(viewController, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: viewController,
                                                  withNextStepper: viewController.viewModel))
     }
-
 }
