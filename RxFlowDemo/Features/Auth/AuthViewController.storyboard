@@ -104,7 +104,9 @@
                         <viewLayoutGuide key="safeArea" id="spl-H8-fIM"/>
                     </view>
                     <connections>
+                        <outlet property="passwordTextField" destination="awF-0T-PXE" id="87b-hi-yoW"/>
                         <outlet property="proceedButton" destination="wMM-zk-NUb" id="WxB-f7-s36"/>
+                        <outlet property="usernamTextField" destination="c5Z-w6-BT2" id="Zvl-mW-YRa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="acq-tC-BAD" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -48,6 +48,7 @@ private extension CountryDetailViewController {
     private func setupBindings() {
         self.saveCountryButton.rx
             .tap
+            .takeUntil(self.rx.deallocating)
             .bind {
                 self.saveCountry()
             }

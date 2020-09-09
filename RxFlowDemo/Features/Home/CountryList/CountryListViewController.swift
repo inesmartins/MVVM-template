@@ -61,6 +61,7 @@ private extension CountryListViewController {
     private func setupBindings() {
         self.sendDeeplinkButton.rx
             .tap
+            .takeUntil(self.rx.deallocating)
             .bind {
                 self.sendDeeplink()
             }.disposed(by: self.disposeBag)

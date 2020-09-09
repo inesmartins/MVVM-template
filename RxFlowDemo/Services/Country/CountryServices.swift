@@ -1,4 +1,6 @@
-import Alamofire
+protocol AuthServices {
+    var authServiceType: AuthServiceType { get }
+}
 
 protocol AuthServiceType {
     func validateLogin(

@@ -39,7 +39,7 @@ extension AppFlow {
         case .authenticationRequired:
             return navigationToAuthScreen()
         case .userIsAuthenticated:
-            return self.dismissOnboarding()
+            return self.dismissAuthScreen()
         default:
             return .none
         }
@@ -63,6 +63,7 @@ private extension AppFlow {
         let onboardingFlow = AuthFlow(withServices: self.services)
         Flows.use(onboardingFlow, when: .created) { [unowned self] root in
             DispatchQueue.main.async {
+                root.modalPresentationStyle = .currentContext
                 self.rootViewController.present(root, animated: true)
             }
         }
@@ -71,7 +72,7 @@ private extension AppFlow {
             withNextStepper: OneStepper(withSingleStep: AppStep.authenticationRequired)))
     }
 
-    func dismissOnboarding() -> FlowContributors {
+    func dismissAuthScreen() -> FlowContributors {
         if let onboardingViewController = self.rootViewController.presentedViewController {
             onboardingViewController.dismiss(animated: true)
         }

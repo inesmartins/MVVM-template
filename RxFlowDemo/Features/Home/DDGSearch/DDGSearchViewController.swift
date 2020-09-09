@@ -53,6 +53,7 @@ private extension DDGSearchViewController {
             .disposed(by: self.disposeBag)
         self.searchButton.rx
             .tap
+            .takeUntil(self.rx.deallocating)
             .bind {
                 self.viewModel.search()
             }
