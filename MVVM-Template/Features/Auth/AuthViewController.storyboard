@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nRl-pm-g0M">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Auth View Controller-->
+        <scene sceneID="fA8-Bd-Dd8">
+            <objects>
+                <viewController id="nRl-pm-g0M" customClass="AuthViewController" customModule="MVVM_Template" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ae0-H4-n3W">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m8K-5S-BLp">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMM-zk-NUb">
+                                        <rect key="frame" x="47.666666666666657" y="708" width="279.33333333333337" height="40"/>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="y28-2q-uvu"/>
+                                        </constraints>
+                                        <state key="normal" title="Proceed">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c5Z-w6-BT2">
+                                        <rect key="frame" x="47" y="362" width="280" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="0.49634132920000001" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="280" id="fOl-8I-T0F"/>
+                                            <constraint firstAttribute="height" constant="40" id="jVs-8s-CKi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="awF-0T-PXE">
+                                        <rect key="frame" x="47" y="410" width="280" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="0.49634132920000001" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="NBF-2A-EV3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="awF-0T-PXE" firstAttribute="trailing" secondItem="c5Z-w6-BT2" secondAttribute="trailing" id="8Io-FB-rCg"/>
+                                    <constraint firstItem="awF-0T-PXE" firstAttribute="top" secondItem="c5Z-w6-BT2" secondAttribute="bottom" constant="8" id="8Oh-ps-7fj"/>
+                                    <constraint firstItem="RBe-Ji-l9v" firstAttribute="bottom" secondItem="wMM-zk-NUb" secondAttribute="bottom" constant="30" id="DSt-Ql-YHw"/>
+                                    <constraint firstItem="wMM-zk-NUb" firstAttribute="leading" secondItem="RBe-Ji-l9v" secondAttribute="leading" constant="47.666666666666657" id="Lcg-i8-Mrg"/>
+                                    <constraint firstItem="c5Z-w6-BT2" firstAttribute="centerX" secondItem="RBe-Ji-l9v" secondAttribute="centerX" id="UZw-wf-4hO"/>
+                                    <constraint firstItem="RBe-Ji-l9v" firstAttribute="trailing" secondItem="wMM-zk-NUb" secondAttribute="trailing" constant="48" id="aiV-MS-obe"/>
+                                    <constraint firstItem="awF-0T-PXE" firstAttribute="leading" secondItem="c5Z-w6-BT2" secondAttribute="leading" id="kZg-t4-TkC"/>
+                                    <constraint firstItem="c5Z-w6-BT2" firstAttribute="centerY" secondItem="RBe-Ji-l9v" secondAttribute="centerY" id="qMQ-yu-cei"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="RBe-Ji-l9v"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="m8K-5S-BLp" firstAttribute="leading" secondItem="Ae0-H4-n3W" secondAttribute="leading" id="AGD-xI-RaJ"/>
+                            <constraint firstAttribute="trailing" secondItem="m8K-5S-BLp" secondAttribute="trailing" id="PHb-Ch-4Wj"/>
+                            <constraint firstItem="m8K-5S-BLp" firstAttribute="top" secondItem="Ae0-H4-n3W" secondAttribute="top" id="bBl-e7-CHg"/>
+                            <constraint firstAttribute="bottom" secondItem="m8K-5S-BLp" secondAttribute="bottom" id="zWC-lc-dhE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="spl-H8-fIM"/>
+                    </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="awF-0T-PXE" id="87b-hi-yoW"/>
+                        <outlet property="proceedButton" destination="wMM-zk-NUb" id="WxB-f7-s36"/>
+                        <outlet property="usernamTextField" destination="c5Z-w6-BT2" id="Zvl-mW-YRa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="acq-tC-BAD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="21.600000000000001" y="145.56650246305421"/>
+        </scene>
+    </scenes>
+</document>

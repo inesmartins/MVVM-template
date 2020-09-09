@@ -17,8 +17,6 @@
 		1A8FBE121FF845EE00389464 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8FBE0F1FF845EE00389464 /* RxCocoa.framework */; };
 		1A8FBE271FF8480C00389464 /* AppStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8FBE221FF8480C00389464 /* AppStep.swift */; };
 		1A8FBE2D1FF84B2500389464 /* ViewModelBased.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8FBE2C1FF84B2500389464 /* ViewModelBased.swift */; };
-		1A8FBE3C1FF84B7E00389464 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8FBE3A1FF84B7E00389464 /* Movie.swift */; };
-		1A8FBE3D1FF84B7E00389464 /* Cast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8FBE3B1FF84B7E00389464 /* Cast.swift */; };
 		1AF854B31FF832AE00271B52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF854B21FF832AE00271B52 /* AppDelegate.swift */; };
 		1AF854BA1FF832AE00271B52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AF854B91FF832AE00271B52 /* Assets.xcassets */; };
 		1AF854BD1FF832AE00271B52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AF854BB1FF832AE00271B52 /* LaunchScreen.storyboard */; };
@@ -88,8 +86,6 @@
 		1A8FBE0F1FF845EE00389464 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		1A8FBE221FF8480C00389464 /* AppStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStep.swift; sourceTree = "<group>"; };
 		1A8FBE2C1FF84B2500389464 /* ViewModelBased.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelBased.swift; sourceTree = "<group>"; };
-		1A8FBE3A1FF84B7E00389464 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
-		1A8FBE3B1FF84B7E00389464 /* Cast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cast.swift; sourceTree = "<group>"; };
 		1AF854AF1FF832AE00271B52 /* MVVM-Template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM-Template.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AF854B21FF832AE00271B52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1AF854B91FF832AE00271B52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -211,8 +207,6 @@
 				4DC745A12507EC00004A9C16 /* SearchResultDefinition.swift */,
 				4DC745A42507EC00004A9C16 /* SearchResultRelatedTopic.swift */,
 				4DC7459F2507EC00004A9C16 /* SearchResultRelatedTopicIcon.swift */,
-				1A8FBE3B1FF84B7E00389464 /* Cast.swift */,
-				1A8FBE3A1FF84B7E00389464 /* Movie.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -238,7 +232,7 @@
 		1AF854A61FF832AE00271B52 = {
 			isa = PBXGroup;
 			children = (
-				1AF854B11FF832AE00271B52 /* RxFlowDemo */,
+				1AF854B11FF832AE00271B52 /* MVVM-Template */,
 				1AF854B01FF832AE00271B52 /* Products */,
 				1A8FBE0C1FF845EE00389464 /* Frameworks */,
 				FE41C29559ECF2BBE62F9E76 /* Pods */,
@@ -253,7 +247,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1AF854B11FF832AE00271B52 /* RxFlowDemo */ = {
+		1AF854B11FF832AE00271B52 /* MVVM-Template */ = {
 			isa = PBXGroup;
 			children = (
 				1AF854B91FF832AE00271B52 /* Assets.xcassets */,
@@ -268,7 +262,7 @@
 				1AF854BB1FF832AE00271B52 /* LaunchScreen.storyboard */,
 				1AF854BE1FF832AE00271B52 /* Info.plist */,
 			);
-			path = RxFlowDemo;
+			path = "MVVM-Template";
 			sourceTree = "<group>";
 		};
 		4DC745962507E5EF004A9C16 /* Auth */ = {
@@ -516,7 +510,6 @@
 				4DC745AC2507EC00004A9C16 /* SearchResultRelatedTopic.swift in Sources */,
 				4DC745C72507F0FB004A9C16 /* CountryDetailViewModel.swift in Sources */,
 				4DC746082508E018004A9C16 /* DDGSearchResultsViewController.swift in Sources */,
-				1A8FBE3D1FF84B7E00389464 /* Cast.swift in Sources */,
 				4DC745A62507EC00004A9C16 /* SearchResultAnswer.swift in Sources */,
 				4DC7459A2507EAFE004A9C16 /* DDGSearchViewController.swift in Sources */,
 				4DC745AA2507EC00004A9C16 /* SearchResultAbstract.swift in Sources */,
@@ -535,7 +528,6 @@
 				4DC745ED25080C33004A9C16 /* DBLocalStorage.swift in Sources */,
 				4DC745CF25080BE7004A9C16 /* StoreService.swift in Sources */,
 				4DC745A92507EC00004A9C16 /* SearchResultDefinition.swift in Sources */,
-				1A8FBE3C1FF84B7E00389464 /* Movie.swift in Sources */,
 				4DC745F625081078004A9C16 /* PreferencesService.swift in Sources */,
 				4DC745B82507ED81004A9C16 /* Store.swift in Sources */,
 				4DC745EF25080C33004A9C16 /* Cache.swift in Sources */,
@@ -701,10 +693,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = RxFlowDemo/Info.plist;
+				INFOPLIST_FILE = "MVVM-Template/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.warpfactor.RxFlowDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.warpfactor.MVVM-Template";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -724,10 +716,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = RxFlowDemo/Info.plist;
+				INFOPLIST_FILE = "MVVM-Template/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.warpfactor.RxFlowDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.warpfactor.MVVM-Template";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
