@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1AF854AE1FF832AE00271B52"
-               BuildableName = "RxFlowDemo.app"
-               BlueprintName = "RxFlowDemo"
-               ReferencedContainer = "container:RxFlowDemo.xcodeproj">
+               BuildableName = "MVVM-Template.app"
+               BlueprintName = "MVVM-Template"
+               ReferencedContainer = "container:MVVM-Template.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -31,9 +31,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1AF854AE1FF832AE00271B52"
-            BuildableName = "RxFlowDemo.app"
-            BlueprintName = "RxFlowDemo"
-            ReferencedContainer = "container:RxFlowDemo.xcodeproj">
+            BuildableName = "MVVM-Template.app"
+            BlueprintName = "MVVM-Template"
+            ReferencedContainer = "container:MVVM-Template.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -54,9 +54,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1AF854AE1FF832AE00271B52"
-            BuildableName = "RxFlowDemo.app"
-            BlueprintName = "RxFlowDemo"
-            ReferencedContainer = "container:RxFlowDemo.xcodeproj">
+            BuildableName = "MVVM-Template.app"
+            BlueprintName = "MVVM-Template"
+            ReferencedContainer = "container:MVVM-Template.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -71,9 +71,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1AF854AE1FF832AE00271B52"
-            BuildableName = "RxFlowDemo.app"
-            BlueprintName = "RxFlowDemo"
-            ReferencedContainer = "container:RxFlowDemo.xcodeproj">
+            BuildableName = "MVVM-Template.app"
+            BlueprintName = "MVVM-Template"
+            ReferencedContainer = "container:MVVM-Template.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

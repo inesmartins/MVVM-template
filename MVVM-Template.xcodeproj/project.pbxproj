@@ -90,7 +90,7 @@
 		1A8FBE2C1FF84B2500389464 /* ViewModelBased.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelBased.swift; sourceTree = "<group>"; };
 		1A8FBE3A1FF84B7E00389464 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		1A8FBE3B1FF84B7E00389464 /* Cast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cast.swift; sourceTree = "<group>"; };
-		1AF854AF1FF832AE00271B52 /* RxFlowDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxFlowDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AF854AF1FF832AE00271B52 /* MVVM-Template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM-Template.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AF854B21FF832AE00271B52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1AF854B91FF832AE00271B52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1AF854BC1FF832AE00271B52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -248,7 +248,7 @@
 		1AF854B01FF832AE00271B52 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1AF854AF1FF832AE00271B52 /* RxFlowDemo.app */,
+				1AF854AF1FF832AE00271B52 /* MVVM-Template.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -367,9 +367,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1AF854AE1FF832AE00271B52 /* RxFlowDemo */ = {
+		1AF854AE1FF832AE00271B52 /* MVVM-Template */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1AF854C11FF832AE00271B52 /* Build configuration list for PBXNativeTarget "RxFlowDemo" */;
+			buildConfigurationList = 1AF854C11FF832AE00271B52 /* Build configuration list for PBXNativeTarget "MVVM-Template" */;
 			buildPhases = (
 				2DF6B51072402F8F1D71BB07 /* [CP] Check Pods Manifest.lock */,
 				1A8FBE131FF8460100389464 /* Swiftlint Code Analysis */,
@@ -383,9 +383,9 @@
 			);
 			dependencies = (
 			);
-			name = RxFlowDemo;
+			name = "MVVM-Template";
 			productName = RxFlowDemo;
-			productReference = 1AF854AF1FF832AE00271B52 /* RxFlowDemo.app */;
+			productReference = 1AF854AF1FF832AE00271B52 /* MVVM-Template.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -405,7 +405,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1AF854AA1FF832AE00271B52 /* Build configuration list for PBXProject "RxFlowDemo" */;
+			buildConfigurationList = 1AF854AA1FF832AE00271B52 /* Build configuration list for PBXProject "MVVM-Template" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -418,7 +418,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1AF854AE1FF832AE00271B52 /* RxFlowDemo */,
+				1AF854AE1FF832AE00271B52 /* MVVM-Template */,
 			);
 		};
 /* End PBXProject section */
@@ -738,7 +738,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1AF854AA1FF832AE00271B52 /* Build configuration list for PBXProject "RxFlowDemo" */ = {
+		1AF854AA1FF832AE00271B52 /* Build configuration list for PBXProject "MVVM-Template" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1AF854BF1FF832AE00271B52 /* Debug */,
@@ -747,7 +747,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1AF854C11FF832AE00271B52 /* Build configuration list for PBXNativeTarget "RxFlowDemo" */ = {
+		1AF854C11FF832AE00271B52 /* Build configuration list for PBXNativeTarget "MVVM-Template" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1AF854C21FF832AE00271B52 /* Debug */,
