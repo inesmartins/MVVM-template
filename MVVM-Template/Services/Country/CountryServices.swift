@@ -1,5 +1,5 @@
 protocol AuthServices {
-    var authServiceType: AuthServiceType { get }
+    var authService: AuthServiceType { get }
 }
 
 protocol AuthServiceType {

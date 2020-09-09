@@ -25,7 +25,7 @@ extension AuthViewModel: AuthViewModelType {
             guard try validData.value() else { return }
             let username = try self.username.value()
             let pwd = try self.password.value()
-            self.services.authServiceType.validateLogin(username, pwd, onCompletion: { success in
+            self.services.authService.validateLogin(username, pwd, onCompletion: { success in
                 if success {
                     self.steps.accept(AppStep.userIsAuthenticated)
                 }

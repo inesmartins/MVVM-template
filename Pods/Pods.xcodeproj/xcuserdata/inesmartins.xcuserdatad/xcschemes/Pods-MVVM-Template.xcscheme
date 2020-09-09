@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B4FF569E412D99B2AB4552A01495E1F2"
-               BuildableName = "Pods_RxFlowDemo.framework"
-               BlueprintName = "Pods-RxFlowDemo"
+               BlueprintIdentifier = "6A2481FEC2EF5AC1CE7ACF7F54E2BBC6"
+               BuildableName = "Pods_MVVM_Template.framework"
+               BlueprintName = "Pods-MVVM-Template"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

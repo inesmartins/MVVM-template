@@ -45,9 +45,8 @@ extension AuthFlow {
 private extension AuthFlow {
 
     func navigationToLoginScreen() -> FlowContributors {
-        let authViewController = AuthViewController.instantiate()
+        let authViewController = AuthViewController.instantiate(withViewModel: AuthViewModel(), andServices: self.services)
         authViewController.title = "Login"
-        authViewController.viewModel = AuthViewModel()
         self.rootViewController.pushViewController(authViewController, animated: false)
         return .one(flowContributor: .contribute(withNext: authViewController))
     }

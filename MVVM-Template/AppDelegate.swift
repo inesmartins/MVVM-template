@@ -3,7 +3,8 @@ import RxFlow
 import RxSwift
 import RxCocoa
 
-struct AppServices: HasPreferencesService, CountryServices, DDGServices {
+struct AppServices: AuthServices, HasPreferencesService, CountryServices, DDGServices {
+    let authService: AuthServiceType
     let preferencesService: PreferencesService
     let countriesService: CountryServiceType
     let searchService: DDGServiceType
@@ -21,7 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let store = StoreService(coreData: CoreDataStorage(),
                                  userDefaults: UserDefaultsStorage(),
                                  keychain: KeyChainStorage())
-        return AppServices(preferencesService: PreferencesService(),
+        return AppServices(authService: AuthService(),
+                           preferencesService: PreferencesService(),
                            countriesService: CountryService(),
                            searchService: DDGService(),
                            store: store)

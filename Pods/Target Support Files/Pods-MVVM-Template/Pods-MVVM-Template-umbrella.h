@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_RxFlowDemoVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_RxFlowDemoVersionString[];
+FOUNDATION_EXPORT double Pods_MVVM_TemplateVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_MVVM_TemplateVersionString[];
 
