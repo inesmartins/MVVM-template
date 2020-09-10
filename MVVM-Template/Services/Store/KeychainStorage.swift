@@ -1,7 +1,6 @@
 import Foundation
-import Security
 
-final class KeyChainStorage {
+final class Keychain {
 
     private class SecKey {
         static let itemClass = kSecClass as String
@@ -16,23 +15,13 @@ final class KeyChainStorage {
 
 }
 
-extension KeyChainStorage: KeyValueLocalStorage {
+protocol KeychainType {
+    func insert<T: Codable>(_ object: T, forKey key: String) throws
+    func removeValue(forKey key: String) throws
+    func value<T: Codable>(forKey: String) throws -> T?
+}
 
-    func removeValue(forKey key: String) throws {
-
-        let query = [
-            SecKey.itemClass: SecKey.genericPasswordClass,
-            SecKey.itemAccountName: key
-        ] as CFDictionary
-
-        // removes previous entry
-        let deleteStatus = SecItemDelete(query)
-        guard deleteStatus == noErr || deleteStatus == errSecItemNotFound else {
-            throw NSError(
-                domain: "Error while deleting previous entry: \(deleteStatus.description)",
-                code: 0, userInfo: nil)
-        }
-    }
+extension Keychain: KeychainType {
 
     func insert<T: Codable>(_ object: T, forKey key: String) throws {
 
@@ -56,6 +45,22 @@ extension KeyChainStorage: KeyValueLocalStorage {
         guard addStatus == errSecSuccess else {
             throw NSError(
                 domain: "Error while adding new entry: \(addStatus.description)",
+                code: 0, userInfo: nil)
+        }
+    }
+
+    func removeValue(forKey key: String) throws {
+
+        let query = [
+            SecKey.itemClass: SecKey.genericPasswordClass,
+            SecKey.itemAccountName: key
+        ] as CFDictionary
+
+        // removes previous entry
+        let deleteStatus = SecItemDelete(query)
+        guard deleteStatus == noErr || deleteStatus == errSecItemNotFound else {
+            throw NSError(
+                domain: "Error while deleting previous entry: \(deleteStatus.description)",
                 code: 0, userInfo: nil)
         }
     }

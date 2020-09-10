@@ -33,10 +33,9 @@ extension AuthViewModel: AuthViewModelType {
             let username = try self.username.value()
             let pwd = try self.password.value()
             self.services.signIn(username, pwd)
-                .map { _ in }
                 .observeOn(MainScheduler.instance)
-                .subscribe(onSuccess: { [weak self] _ in
-                    self?.steps.accept(AppStep.userIsAuthenticated)
+                .subscribe(onSuccess: { [weak self] session in
+                    self?.steps.accept(AppStep.userIsAuthenticated(withId: session.userId))
                 }, onError: { [weak self] error in
                     self?.didFailSignIn.onNext(error)
                 })

@@ -98,7 +98,7 @@ class AppStepper: Stepper {
     func readyToEmitSteps() {
          self.appServices.rx
             .isAuthenticated
-            .map { $0 ? AppStep.userIsAuthenticated : AppStep.authenticationRequired }
+            .map { $0 ? AppStep.userIsAuthenticated(withId: nil) : AppStep.authenticationRequired }
             .bind(to: self.steps)
             .disposed(by: self.disposeBag)
     }

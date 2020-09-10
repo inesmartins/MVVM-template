@@ -1,6 +1,11 @@
 import Foundation
 import CoreData
 
+protocol CoreDataStorageType {
+    func storeObject<T>(_ object: T) throws
+    func loadFirstObject<T: Codable>() throws -> T?
+}
+
 final class CoreDataStorage {
 
     // MARK: - CoreData Entities
@@ -19,7 +24,7 @@ final class CoreDataStorage {
 
 }
 
-extension CoreDataStorage: DBLocalStorage {
+extension CoreDataStorage: CoreDataStorageType {
 
     func storeObject<T>(_ object: T) throws {
         if let country = object as? Country {

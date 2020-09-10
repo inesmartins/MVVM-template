@@ -33,8 +33,8 @@ extension AuthFlow {
         switch step {
         case .authenticationRequired:
             return navigationToLoginScreen()
-        case .userIsAuthenticated:
-            return .end(forwardToParentFlowWithStep: AppStep.userIsAuthenticated)
+        case .userIsAuthenticated(let userId):
+            return .end(forwardToParentFlowWithStep: AppStep.userIsAuthenticated(withId: userId))
         default:
             return .none
         }

@@ -20,6 +20,7 @@
 		1AF854BA1FF832AE00271B52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AF854B91FF832AE00271B52 /* Assets.xcassets */; };
 		1AF854BD1FF832AE00271B52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AF854BB1FF832AE00271B52 /* LaunchScreen.storyboard */; };
 		298FD427E610C6E8F58F4F21 /* Pods_MVVM_Template.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92410F693A189D289EEC58CA /* Pods_MVVM_Template.framework */; };
+		4D005FCA250A99B9003BF9CE /* SignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D005FC9250A99B9003BF9CE /* SignInResponse.swift */; };
 		4D0B1584250A5AAB00E4C339 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0B1583250A5AAB00E4C339 /* AppServices.swift */; };
 		4D0DF542250938E400C98D6C /* AppServices+AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DF541250938E400C98D6C /* AppServices+AuthService.swift */; };
 		4D26DD2925091E4200C4540F /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D26DD2825091E4200C4540F /* AuthViewModel.swift */; };
@@ -36,7 +37,6 @@
 		4DC745AF2507EC2D004A9C16 /* KeyboardAwareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745AE2507EC2D004A9C16 /* KeyboardAwareViewController.swift */; };
 		4DC745B32507ECB0004A9C16 /* CountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745B22507ECB0004A9C16 /* CountryListViewController.swift */; };
 		4DC745B52507ECBD004A9C16 /* CountryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745B42507ECBD004A9C16 /* CountryListTableViewCell.swift */; };
-		4DC745B82507ED81004A9C16 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745B72507ED81004A9C16 /* Store.swift */; };
 		4DC745BA2507EDDE004A9C16 /* CountryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745B92507EDDE004A9C16 /* CountryListViewModel.swift */; };
 		4DC745C32507EF09004A9C16 /* CountriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745C22507EF09004A9C16 /* CountriesRepository.swift */; };
 		4DC745C52507F001004A9C16 /* CountryList.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DC745C42507F001004A9C16 /* CountryList.json */; };
@@ -44,9 +44,7 @@
 		4DC745C92507F25D004A9C16 /* CountryListFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745C82507F25D004A9C16 /* CountryListFlow.swift */; };
 		4DC745CC2507FF27004A9C16 /* CountryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745CB2507FF27004A9C16 /* CountryDetailViewController.swift */; };
 		4DC745EA25080C33004A9C16 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745E125080C33004A9C16 /* KeychainStorage.swift */; };
-		4DC745EB25080C33004A9C16 /* KeyValueLocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745E225080C33004A9C16 /* KeyValueLocalStorage.swift */; };
 		4DC745EC25080C33004A9C16 /* AppKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745E325080C33004A9C16 /* AppKey.swift */; };
-		4DC745ED25080C33004A9C16 /* DBLocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745E425080C33004A9C16 /* DBLocalStorage.swift */; };
 		4DC745EE25080C33004A9C16 /* RxFlowDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745E525080C33004A9C16 /* RxFlowDemo.xcdatamodeld */; };
 		4DC745EF25080C33004A9C16 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745E725080C33004A9C16 /* Cache.swift */; };
 		4DC745F025080C33004A9C16 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745E825080C33004A9C16 /* CoreDataStorage.swift */; };
@@ -88,6 +86,7 @@
 		1AF854BC1FF832AE00271B52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1AF854BE1FF832AE00271B52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32DF1AFB988965A2A9C94FB4 /* Pods-RxFlowDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxFlowDemo.release.xcconfig"; path = "Target Support Files/Pods-RxFlowDemo/Pods-RxFlowDemo.release.xcconfig"; sourceTree = "<group>"; };
+		4D005FC9250A99B9003BF9CE /* SignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResponse.swift; sourceTree = "<group>"; };
 		4D0B1583250A5AAB00E4C339 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
 		4D0DF541250938E400C98D6C /* AppServices+AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AppServices+AuthService.swift"; path = "Repositories/AppServices+AuthService.swift"; sourceTree = "<group>"; };
 		4D26DD2825091E4200C4540F /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
@@ -104,7 +103,6 @@
 		4DC745AE2507EC2D004A9C16 /* KeyboardAwareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardAwareViewController.swift; sourceTree = "<group>"; };
 		4DC745B22507ECB0004A9C16 /* CountryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryListViewController.swift; sourceTree = "<group>"; };
 		4DC745B42507ECBD004A9C16 /* CountryListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryListTableViewCell.swift; sourceTree = "<group>"; };
-		4DC745B72507ED81004A9C16 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		4DC745B92507EDDE004A9C16 /* CountryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewModel.swift; sourceTree = "<group>"; };
 		4DC745C22507EF09004A9C16 /* CountriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesRepository.swift; sourceTree = "<group>"; };
 		4DC745C42507F001004A9C16 /* CountryList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CountryList.json; sourceTree = "<group>"; };
@@ -112,9 +110,7 @@
 		4DC745C82507F25D004A9C16 /* CountryListFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListFlow.swift; sourceTree = "<group>"; };
 		4DC745CB2507FF27004A9C16 /* CountryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailViewController.swift; sourceTree = "<group>"; };
 		4DC745E125080C33004A9C16 /* KeychainStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
-		4DC745E225080C33004A9C16 /* KeyValueLocalStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyValueLocalStorage.swift; sourceTree = "<group>"; };
 		4DC745E325080C33004A9C16 /* AppKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppKey.swift; sourceTree = "<group>"; };
-		4DC745E425080C33004A9C16 /* DBLocalStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBLocalStorage.swift; sourceTree = "<group>"; };
 		4DC745E625080C33004A9C16 /* VIPER_boilerplate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VIPER_boilerplate.xcdatamodel; sourceTree = "<group>"; };
 		4DC745E725080C33004A9C16 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		4DC745E825080C33004A9C16 /* CoreDataStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
@@ -204,6 +200,7 @@
 				4DC745A12507EC00004A9C16 /* SearchResultDefinition.swift */,
 				4DC745A42507EC00004A9C16 /* SearchResultRelatedTopic.swift */,
 				4DC7459F2507EC00004A9C16 /* SearchResultRelatedTopicIcon.swift */,
+				4D005FC9250A99B9003BF9CE /* SignInResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -305,14 +302,11 @@
 		4DC745B62507ED75004A9C16 /* Store */ = {
 			isa = PBXGroup;
 			children = (
-				4DC745B72507ED81004A9C16 /* Store.swift */,
 				4DC745E325080C33004A9C16 /* AppKey.swift */,
 				4DC745E725080C33004A9C16 /* Cache.swift */,
 				4DC745E825080C33004A9C16 /* CoreDataStorage.swift */,
-				4DC745E525080C33004A9C16 /* RxFlowDemo.xcdatamodeld */,
-				4DC745E425080C33004A9C16 /* DBLocalStorage.swift */,
 				4DC745E125080C33004A9C16 /* KeychainStorage.swift */,
-				4DC745E225080C33004A9C16 /* KeyValueLocalStorage.swift */,
+				4DC745E525080C33004A9C16 /* RxFlowDemo.xcdatamodeld */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -511,9 +505,7 @@
 				4DC745BA2507EDDE004A9C16 /* CountryListViewModel.swift in Sources */,
 				4DC745AB2507EC00004A9C16 /* SearchParams.swift in Sources */,
 				4DC745EE25080C33004A9C16 /* RxFlowDemo.xcdatamodeld in Sources */,
-				4DC745ED25080C33004A9C16 /* DBLocalStorage.swift in Sources */,
 				4DC745A92507EC00004A9C16 /* SearchResultDefinition.swift in Sources */,
-				4DC745B82507ED81004A9C16 /* Store.swift in Sources */,
 				4DC745EF25080C33004A9C16 /* Cache.swift in Sources */,
 				1A25DE85203129F200F1C4B8 /* AuthFlow.swift in Sources */,
 				4DC745A82507EC00004A9C16 /* SearchResult.swift in Sources */,
@@ -526,7 +518,6 @@
 				4DC746042508CAE1004A9C16 /* DDGSearchFlow.swift in Sources */,
 				4DC745EA25080C33004A9C16 /* KeychainStorage.swift in Sources */,
 				4DC745B52507ECBD004A9C16 /* CountryListTableViewCell.swift in Sources */,
-				4DC745EB25080C33004A9C16 /* KeyValueLocalStorage.swift in Sources */,
 				4DC745A72507EC00004A9C16 /* SearchResultRelatedTopicIcon.swift in Sources */,
 				4D26DD2925091E4200C4540F /* AuthViewModel.swift in Sources */,
 				1A8FBE2D1FF84B2500389464 /* ViewModelBased.swift in Sources */,
@@ -534,6 +525,7 @@
 				4DC746062508DFE7004A9C16 /* DDGSearchResultsViewModel.swift in Sources */,
 				4D0B1584250A5AAB00E4C339 /* AppServices.swift in Sources */,
 				1AF854B31FF832AE00271B52 /* AppDelegate.swift in Sources */,
+				4D005FCA250A99B9003BF9CE /* SignInResponse.swift in Sources */,
 				4D0DF542250938E400C98D6C /* AppServices+AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

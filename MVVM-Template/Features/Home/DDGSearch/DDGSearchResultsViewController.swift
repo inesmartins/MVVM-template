@@ -46,24 +46,24 @@ final class DDGSearchResultsViewController: KeyboardAwareViewController, ViewMod
 private extension DDGSearchResultsViewController {
 
     func setupBindings() {
-        self.viewModel.searchResult?
-            .map({ $0.abstract.abstract })
+        self.viewModel.searchResult
+            .map({ $0?.abstract.abstract ?? "" })
             .bind(to: self.abstractTextField.rx.text)
             .disposed(by: self.disposeBag)
-        self.viewModel.searchResult?
-            .map({ $0.abstract.abstractText })
+        self.viewModel.searchResult
+            .map({ $0?.abstract.abstractText ?? "" })
             .bind(to: self.abstractTextTextField.rx.text)
             .disposed(by: self.disposeBag)
-        self.viewModel.searchResult?
-            .map({ $0.abstract.abstractSource })
+        self.viewModel.searchResult
+            .map({ $0?.abstract.abstractSource ?? "" })
             .bind(to: self.abstractSourceTextField.rx.text)
             .disposed(by: self.disposeBag)
-        self.viewModel.searchResult?
-            .map({ $0.abstract.abstractURL })
+        self.viewModel.searchResult
+            .map({ $0?.abstract.abstractURL ?? "" })
             .bind(to: self.abstractURLTextField.rx.text)
             .disposed(by: self.disposeBag)
-        self.viewModel.searchResult?
-            .map({ $0.abstract.heading })
+        self.viewModel.searchResult
+            .map({ $0?.abstract.heading ?? "" })
             .bind(to: self.abstractHeadingTextField.rx.text)
             .disposed(by: self.disposeBag)
 

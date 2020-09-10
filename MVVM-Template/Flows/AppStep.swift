@@ -4,7 +4,7 @@ enum AppStep: Step {
 
     // Global
     case authenticationRequired
-    case userIsAuthenticated
+    case userIsAuthenticated(withId: String?)
     case logoutIsRequired
     case alert(String)
     case fakeStep

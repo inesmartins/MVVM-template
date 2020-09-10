@@ -1,6 +1,17 @@
 import RxCocoa
 import RxFlow
 
+enum Store: String, CaseIterable {
+
+    case cache = "Cache (NSCache)"
+    case userDefaults = "NSUserDefaults"
+    case keychain = "KeyChain"
+    case coreData = "Core Data"
+    case textFile = "Text file"
+    case sqlLite = "SQLite Database"
+    case realm = "Realm"
+}
+
 protocol CountryDetailViewModelType {
     func pickStore(_ store: Store)
 }

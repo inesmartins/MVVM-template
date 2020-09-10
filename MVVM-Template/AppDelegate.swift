@@ -2,6 +2,8 @@ import UIKit
 import RxFlow
 import RxSwift
 import RxCocoa
+import RxAlamofire
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -9,13 +11,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     let disposeBag = DisposeBag()
     var window: UIWindow?
     var coordinator = FlowCoordinator()
+    var session = Session.default
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         guard let window = self.window else { return false }
 
-        let services = AppServices()
+        let services = AppServices(session: Session.default)
         let appFlow = AppFlow(services: services)
         let appStepper = AppStepper(withServices: services)
         self.configureCoordinator(flow: appFlow, stepper: appStepper)

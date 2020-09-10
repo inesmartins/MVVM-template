@@ -4,24 +4,24 @@ import RxCocoa
 
 class DDGSearchResultsViewModel: ServicesViewModel, Stepper {
 
+    private let disposeBag = DisposeBag()
     typealias Services = DDGServiceType
     var steps = PublishRelay<Step>()
     var services: DDGServiceType! {
         didSet {
-            self.services.search(withParams: SearchParams(searchTerm: self.searchTerm), onCompletion: { res in
-                do {
-                    if let result = try res.get() {
-                        self.searchResult = BehaviorRelay<SearchResult>(value: result)
-                    }
-                } catch let error {
-                    print(error)
-                }
-            })
+            self.services.search(withParams: SearchParams(searchTerm: self.searchTerm))
+                .observeOn(MainScheduler.instance)
+                .subscribe(onSuccess: { [weak self] result in
+                    self?.searchResult.accept(result)
+                }, onError: { [weak self] _ in
+                    self?.searchResult.accept(nil)
+                })
+                .disposed(by: self.disposeBag)
         }
     }
 
     let searchTerm: String
-    private(set) var searchResult: BehaviorRelay<SearchResult>?
+    private(set) var searchResult = BehaviorRelay<SearchResult?>(value: nil)
 
     init(searchTerm: String) {
         self.searchTerm = searchTerm
