@@ -16,16 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        guard let window = self.window else { return false }
+        self.window = UIWindow()
 
         let services = AppServices(session: Session.default)
         let appFlow = AppFlow(services: services)
         let appStepper = AppStepper(withServices: services)
-        self.configureCoordinator(flow: appFlow, stepper: appStepper)
+        self.coordinator.coordinate(flow: appFlow, with: appStepper)
 
         Flows.use(appFlow, when: .created) { root in
-            window.rootViewController = root
-            window.makeKeyAndVisible()
+            self.window?.rootViewController = root
+            self.window?.makeKeyAndVisible()
         }
 
         UNUserNotificationCenter.current().delegate = self
@@ -34,31 +34,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
 }
 
-private extension AppDelegate {
-
-    func configureCoordinator(flow: Flow, stepper: Stepper) {
-        self.coordinator.rx.willNavigate.subscribe(onNext: { (flow, step) in
-            print("will navigate to flow=\(flow) and step=\(step)")
-        }).disposed(by: self.disposeBag)
-        self.coordinator.rx.didNavigate.subscribe(onNext: { (flow, step) in
-            print("did navigate to flow=\(flow) and step=\(step)")
-        }).disposed(by: self.disposeBag)
-        self.coordinator.coordinate(flow: flow, with: stepper)
-    }
-
-}
-
 extension AppDelegate {
 
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                willPresent notification: UNNotification,
-                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        willPresent notification: UNNotification,
+        withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler(UNNotificationPresentationOptions.init(arrayLiteral: [.alert, .badge]))
     }
 
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                didReceive response: UNNotificationResponse,
-                                withCompletionHandler completionHandler: @escaping () -> Void) {
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        didReceive response: UNNotificationResponse,
+        withCompletionHandler completionHandler: @escaping () -> Void) {
         self.coordinator.navigate(to: AppStep.countryWasPicked(withName: "Portugal"))
     }
 }

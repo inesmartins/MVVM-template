@@ -21,6 +21,8 @@
 		298FD427E610C6E8F58F4F21 /* Pods_MVVM_Template.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92410F693A189D289EEC58CA /* Pods_MVVM_Template.framework */; };
 		4D005FCA250A99B9003BF9CE /* SignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D005FC9250A99B9003BF9CE /* SignInResponse.swift */; };
 		4D005FCC250A9AFE003BF9CE /* AppServices+AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D005FCB250A9AFE003BF9CE /* AppServices+AuthService.swift */; };
+		4D005FCE250A9B6A003BF9CE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D005FCD250A9B6A003BF9CE /* Default-568h@2x.png */; };
+		4D005FD1250A9B9B003BF9CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D005FCF250A9B9B003BF9CE /* LaunchScreen.storyboard */; };
 		4D0B1584250A5AAB00E4C339 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0B1583250A5AAB00E4C339 /* AppServices.swift */; };
 		4D26DD2925091E4200C4540F /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D26DD2825091E4200C4540F /* AuthViewModel.swift */; };
 		4D26DD2B25091EDE00C4540F /* AppServices+CountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D26DD2A25091EDE00C4540F /* AppServices+CountryService.swift */; };
@@ -86,6 +88,8 @@
 		32DF1AFB988965A2A9C94FB4 /* Pods-RxFlowDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxFlowDemo.release.xcconfig"; path = "Target Support Files/Pods-RxFlowDemo/Pods-RxFlowDemo.release.xcconfig"; sourceTree = "<group>"; };
 		4D005FC9250A99B9003BF9CE /* SignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResponse.swift; sourceTree = "<group>"; };
 		4D005FCB250A9AFE003BF9CE /* AppServices+AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppServices+AuthService.swift"; sourceTree = "<group>"; };
+		4D005FCD250A9B6A003BF9CE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		4D005FD0250A9B9B003BF9CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D0B1583250A5AAB00E4C339 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
 		4D26DD2825091E4200C4540F /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		4D26DD2A25091EDE00C4540F /* AppServices+CountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AppServices+CountryService.swift"; path = "MVVM-Template/Services/AppServices+CountryService.swift"; sourceTree = SOURCE_ROOT; };
@@ -224,6 +228,7 @@
 		1AF854A61FF832AE00271B52 = {
 			isa = PBXGroup;
 			children = (
+				4D005FCD250A9B6A003BF9CE /* Default-568h@2x.png */,
 				1AF854B11FF832AE00271B52 /* MVVM-Template */,
 				1AF854B01FF832AE00271B52 /* Products */,
 				1A8FBE0C1FF845EE00389464 /* Frameworks */,
@@ -242,6 +247,7 @@
 		1AF854B11FF832AE00271B52 /* MVVM-Template */ = {
 			isa = PBXGroup;
 			children = (
+				4D005FCF250A9B9B003BF9CE /* LaunchScreen.storyboard */,
 				1AF854B91FF832AE00271B52 /* Assets.xcassets */,
 				4DC745F225080CE7004A9C16 /* Extensions */,
 				1A8FBE1F1FF847EB00389464 /* Flows */,
@@ -401,7 +407,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AF854BA1FF832AE00271B52 /* Assets.xcassets in Resources */,
+				4D005FD1250A9B9B003BF9CE /* LaunchScreen.storyboard in Resources */,
 				4DC745C52507F001004A9C16 /* CountryList.json in Resources */,
+				4D005FCE250A9B6A003BF9CE /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +535,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4D005FCF250A9B9B003BF9CE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D005FD0250A9B9B003BF9CE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1AF854BF1FF832AE00271B52 /* Debug */ = {
