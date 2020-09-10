@@ -15,9 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
         guard let window = self.window else { return false }
 
-        let store = StoreService(coreData: CoreDataStorage(),
-                                 userDefaults: UserDefaultsStorage(),
-                                 keychain: KeyChainStorage())
+        let store = StoreService(coreDataStorage: CoreDataStorage(),
+                                 userDefaultsStorage: UserDefaultsStorage(userDefaults: UserDefaults.standard),
+                                 keychainStorage: KeyChainStorage())
         let services = AppService(store: store)
         let appFlow = AppFlow(services: services)
         let appStepper = AppStepper(withServices: services)

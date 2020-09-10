@@ -30,13 +30,13 @@ class CountryDetailViewModel: ServicesViewModel, Stepper {
 extension CountryDetailViewModel: CountryDetailViewModelType {
 
     func pickStore(_ store: Store) {
+        // TODO: fix store invocation
+        /*
         guard let countryCode = self.code else {
             // TODO: implement error message
             return
         }
         let country = Country(name: self.name, code: countryCode)
-        // TODO: fix store invocation
-        /*
         self.services.store.save(object: country, withKey: "SelectedStore", inStore: store, onCompletion: { result in
             print(result)
         })

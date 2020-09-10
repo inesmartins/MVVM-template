@@ -96,8 +96,8 @@ class AppStepper: Stepper {
 
     /// callback used to emit steps once the FlowCoordinator is ready to listen to them to contribute to the Flow
     func readyToEmitSteps() {
-        self.appServices.rx
-            .isOnboarded
+        self.appServices
+            .isAuthenticated
             .map { $0 ? AppStep.userIsAuthenticated : AppStep.authenticationRequired }
             .bind(to: self.steps)
             .disposed(by: self.disposeBag)

@@ -1,11 +1,12 @@
 import RxSwift
 
 protocol AuthServiceType {
+    var isAuthenticated: Observable<Bool> { get }
     func signIn(_ username: String, _ password: String) -> Single<SignInResponse>
 }
 
 protocol CountryServiceType {
-    func all() -> [Country]
+    func allCountries() -> [Country]
     func country(withName name: String) -> Country?
 }
 
@@ -13,23 +14,19 @@ protocol DDGServiceType: AnyObject {
     func search(withParams: SearchParams, onCompletion: @escaping (Result<SearchResult?, Error>) -> Void)
 }
 
-final class AppService {
+open class AppService {
 
     internal let ddgEndpoint = "https://api.duckduckgo.com/"
-    private let store: StoreServiceType
+    internal let store: StoreServiceType
 
     init(store: StoreServiceType) {
         self.store = store
     }
 }
 
-extension AppService: ReactiveCompatible {}
+extension AppService: ReactiveCompatible {
 
-extension Reactive where Base: AppService {
-    var isOnboarded: Observable<Bool> {
-        return UserDefaults.standard
-            .rx
-            .observe(Bool.self, UserPreferences.onBoarded)
-            .map { $0 ?? false }
+    var isAuthenticated: Observable<Bool> {
+        return self.store.userDefaults.authToken.map({ $0 != nil ? true : false })
     }
 }

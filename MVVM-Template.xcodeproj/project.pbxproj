@@ -21,9 +21,9 @@
 		1AF854BD1FF832AE00271B52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AF854BB1FF832AE00271B52 /* LaunchScreen.storyboard */; };
 		298FD427E610C6E8F58F4F21 /* Pods_MVVM_Template.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92410F693A189D289EEC58CA /* Pods_MVVM_Template.framework */; };
 		4D0B1584250A5AAB00E4C339 /* AppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0B1583250A5AAB00E4C339 /* AppService.swift */; };
-		4D0DF542250938E400C98D6C /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DF541250938E400C98D6C /* AuthServices.swift */; };
+		4D0DF542250938E400C98D6C /* AppService+AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DF541250938E400C98D6C /* AppService+AuthService.swift */; };
 		4D26DD2925091E4200C4540F /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D26DD2825091E4200C4540F /* AuthViewModel.swift */; };
-		4D26DD2B25091EDE00C4540F /* CountryServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D26DD2A25091EDE00C4540F /* CountryServices.swift */; };
+		4D26DD2B25091EDE00C4540F /* AppService+CountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D26DD2A25091EDE00C4540F /* AppService+CountryService.swift */; };
 		4DC7459A2507EAFE004A9C16 /* DDGSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745992507EAFE004A9C16 /* DDGSearchViewController.swift */; };
 		4DC745A52507EC00004A9C16 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC7459D2507EC00004A9C16 /* Country.swift */; };
 		4DC745A62507EC00004A9C16 /* SearchResultAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC7459E2507EC00004A9C16 /* SearchResultAnswer.swift */; };
@@ -53,9 +53,8 @@
 		4DC745F025080C33004A9C16 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745E825080C33004A9C16 /* CoreDataStorage.swift */; };
 		4DC745F125080C33004A9C16 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745E925080C33004A9C16 /* UserDefaultsStorage.swift */; };
 		4DC745F425080CFF004A9C16 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745F325080CFF004A9C16 /* Data+Extension.swift */; };
-		4DC745F625081078004A9C16 /* PreferencesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745F525081078004A9C16 /* PreferencesService.swift */; };
 		4DC745F92508C027004A9C16 /* DDGSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745F82508C027004A9C16 /* DDGSearchViewModel.swift */; };
-		4DC746022508C20D004A9C16 /* DDGServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC746012508C20D004A9C16 /* DDGServices.swift */; };
+		4DC746022508C20D004A9C16 /* AppService+DDGService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC746012508C20D004A9C16 /* AppService+DDGService.swift */; };
 		4DC746042508CAE1004A9C16 /* DDGSearchFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC746032508CAE1004A9C16 /* DDGSearchFlow.swift */; };
 		4DC746062508DFE7004A9C16 /* DDGSearchResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC746052508DFE7004A9C16 /* DDGSearchResultsViewModel.swift */; };
 		4DC746082508E018004A9C16 /* DDGSearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC746072508E018004A9C16 /* DDGSearchResultsViewController.swift */; };
@@ -92,9 +91,9 @@
 		1AF854BE1FF832AE00271B52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32DF1AFB988965A2A9C94FB4 /* Pods-RxFlowDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxFlowDemo.release.xcconfig"; path = "Target Support Files/Pods-RxFlowDemo/Pods-RxFlowDemo.release.xcconfig"; sourceTree = "<group>"; };
 		4D0B1583250A5AAB00E4C339 /* AppService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppService.swift; sourceTree = "<group>"; };
-		4D0DF541250938E400C98D6C /* AuthServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthServices.swift; path = Repositories/AuthServices.swift; sourceTree = "<group>"; };
+		4D0DF541250938E400C98D6C /* AppService+AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AppService+AuthService.swift"; path = "Repositories/AppService+AuthService.swift"; sourceTree = "<group>"; };
 		4D26DD2825091E4200C4540F /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
-		4D26DD2A25091EDE00C4540F /* CountryServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CountryServices.swift; path = "MVVM-Template/Services/CountryServices.swift"; sourceTree = SOURCE_ROOT; };
+		4D26DD2A25091EDE00C4540F /* AppService+CountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AppService+CountryService.swift"; path = "MVVM-Template/Services/AppService+CountryService.swift"; sourceTree = SOURCE_ROOT; };
 		4DC745992507EAFE004A9C16 /* DDGSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DDGSearchViewController.swift; sourceTree = "<group>"; };
 		4DC7459D2507EC00004A9C16 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		4DC7459E2507EC00004A9C16 /* SearchResultAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultAnswer.swift; sourceTree = "<group>"; };
@@ -124,9 +123,8 @@
 		4DC745E825080C33004A9C16 /* CoreDataStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		4DC745E925080C33004A9C16 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
 		4DC745F325080CFF004A9C16 /* Data+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
-		4DC745F525081078004A9C16 /* PreferencesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesService.swift; sourceTree = "<group>"; };
 		4DC745F82508C027004A9C16 /* DDGSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGSearchViewModel.swift; sourceTree = "<group>"; };
-		4DC746012508C20D004A9C16 /* DDGServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGServices.swift; sourceTree = "<group>"; };
+		4DC746012508C20D004A9C16 /* AppService+DDGService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppService+DDGService.swift"; sourceTree = "<group>"; };
 		4DC746032508CAE1004A9C16 /* DDGSearchFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGSearchFlow.swift; sourceTree = "<group>"; };
 		4DC746052508DFE7004A9C16 /* DDGSearchResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGSearchResultsViewModel.swift; sourceTree = "<group>"; };
 		4DC746072508E018004A9C16 /* DDGSearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGSearchResultsViewController.swift; sourceTree = "<group>"; };
@@ -182,10 +180,9 @@
 			isa = PBXGroup;
 			children = (
 				4D0B1583250A5AAB00E4C339 /* AppService.swift */,
-				4D0DF541250938E400C98D6C /* AuthServices.swift */,
-				4D26DD2A25091EDE00C4540F /* CountryServices.swift */,
-				4DC746012508C20D004A9C16 /* DDGServices.swift */,
-				4DC745F525081078004A9C16 /* PreferencesService.swift */,
+				4D0DF541250938E400C98D6C /* AppService+AuthService.swift */,
+				4D26DD2A25091EDE00C4540F /* AppService+CountryService.swift */,
+				4DC746012508C20D004A9C16 /* AppService+DDGService.swift */,
 				4DC745C12507EEF6004A9C16 /* Repositories */,
 				4DC745B62507ED75004A9C16 /* Store */,
 			);
@@ -523,15 +520,14 @@
 				4DC745ED25080C33004A9C16 /* DBLocalStorage.swift in Sources */,
 				4DC745CF25080BE7004A9C16 /* StoreService.swift in Sources */,
 				4DC745A92507EC00004A9C16 /* SearchResultDefinition.swift in Sources */,
-				4DC745F625081078004A9C16 /* PreferencesService.swift in Sources */,
 				4DC745B82507ED81004A9C16 /* Store.swift in Sources */,
 				4DC745EF25080C33004A9C16 /* Cache.swift in Sources */,
 				1A25DE85203129F200F1C4B8 /* AuthFlow.swift in Sources */,
 				4DC745A82507EC00004A9C16 /* SearchResult.swift in Sources */,
 				4DC745F125080C33004A9C16 /* UserDefaultsStorage.swift in Sources */,
 				4DC745F92508C027004A9C16 /* DDGSearchViewModel.swift in Sources */,
-				4DC746022508C20D004A9C16 /* DDGServices.swift in Sources */,
-				4D26DD2B25091EDE00C4540F /* CountryServices.swift in Sources */,
+				4DC746022508C20D004A9C16 /* AppService+DDGService.swift in Sources */,
+				4D26DD2B25091EDE00C4540F /* AppService+CountryService.swift in Sources */,
 				4DC745F025080C33004A9C16 /* CoreDataStorage.swift in Sources */,
 				4DC745AF2507EC2D004A9C16 /* KeyboardAwareViewController.swift in Sources */,
 				4DC745A52507EC00004A9C16 /* Country.swift in Sources */,
@@ -546,7 +542,7 @@
 				4DC746062508DFE7004A9C16 /* DDGSearchResultsViewModel.swift in Sources */,
 				4D0B1584250A5AAB00E4C339 /* AppService.swift in Sources */,
 				1AF854B31FF832AE00271B52 /* AppDelegate.swift in Sources */,
-				4D0DF542250938E400C98D6C /* AuthServices.swift in Sources */,
+				4D0DF542250938E400C98D6C /* AppService+AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

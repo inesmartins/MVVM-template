@@ -16,7 +16,7 @@ class CountryListViewModel: ServicesViewModel, Stepper {
 
     var services: Services! {
         didSet {
-            self.countries = self.services.all().map({ country -> CountryDetailViewModel in
+            self.countries = self.services.allCountries().map({ country -> CountryDetailViewModel in
                 return CountryDetailViewModel(name: country.name, code: country.code)
             })
             // TODO: fix store invocation

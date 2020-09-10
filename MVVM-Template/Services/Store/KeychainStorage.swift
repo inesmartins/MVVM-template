@@ -18,6 +18,22 @@ final class KeyChainStorage {
 
 extension KeyChainStorage: KeyValueLocalStorage {
 
+    func removeValue(forKey key: String) throws {
+
+        let query = [
+            SecKey.itemClass: SecKey.genericPasswordClass,
+            SecKey.itemAccountName: key
+        ] as CFDictionary
+
+        // removes previous entry
+        let deleteStatus = SecItemDelete(query)
+        guard deleteStatus == noErr || deleteStatus == errSecItemNotFound else {
+            throw NSError(
+                domain: "Error while deleting previous entry: \(deleteStatus.description)",
+                code: 0, userInfo: nil)
+        }
+    }
+
     func insert<T: Codable>(_ object: T, forKey key: String) throws {
 
         let data = Data(from: object)

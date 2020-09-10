@@ -1,5 +1,6 @@
 import Foundation
 
-enum AppKey: String {
-    case selectedCountry = "SelectedCountry"
+enum StoreKey: String {
+    case selectedCountry
+    case authToken
 }

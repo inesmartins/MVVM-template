@@ -3,7 +3,7 @@ import RxAlamofire
 
 extension AppService: CountryServiceType {
 
-    func all() -> [Country] {
+    func allCountries() -> [Country] {
         return CountriesRepository.countries
     }
 
