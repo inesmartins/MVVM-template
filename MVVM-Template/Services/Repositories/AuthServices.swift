@@ -1,22 +1,18 @@
-protocol AuthServices {
-    var authService: AuthServiceType { get }
+import RxSwift
+import RxAlamofire
+
+struct SignInResponse {
+    let token: String
+    let userId: String
 }
 
-protocol AuthServiceType {
-    func validateLogin(
-    _ username: String,
-    _ password: String,
-    onCompletion: @escaping ((_ authenticated: Bool) -> Void))
-}
+extension AppService: AuthServiceType {
 
-class AuthService: AuthServiceType {
-
-    func validateLogin(
-        _ username: String,
-        _ password: String,
-        onCompletion: @escaping ((_ authenticated: Bool) -> Void)) {
-        // TODO: implement authentication system
-        onCompletion(true)
+    func signIn(_ username: String, _ password: String) -> Single<SignInResponse> {
+        return Single<SignInResponse>.create { single in
+            // call to backend
+            single(.success(SignInResponse(token: "12345", userId: "5678")))
+            return Disposables.create()
+        }
     }
-
 }

@@ -16,9 +16,9 @@ class AppFlow: Flow {
         return viewController
     }()
 
-    private let services: AppServices
+    private let services: AppService
 
-    init(services: AppServices) {
+    init(services: AppService) {
         self.services = services
     }
 
@@ -83,10 +83,10 @@ private extension AppFlow {
 class AppStepper: Stepper {
 
     let steps = PublishRelay<Step>()
-    private let appServices: AppServices
+    private let appServices: AppService
     private let disposeBag = DisposeBag()
 
-    init(withServices services: AppServices) {
+    init(withServices services: AppService) {
         self.appServices = services
     }
 
@@ -96,8 +96,7 @@ class AppStepper: Stepper {
 
     /// callback used to emit steps once the FlowCoordinator is ready to listen to them to contribute to the Flow
     func readyToEmitSteps() {
-        self.appServices
-            .preferencesService.rx
+        self.appServices.rx
             .isOnboarded
             .map { $0 ? AppStep.userIsAuthenticated : AppStep.authenticationRequired }
             .bind(to: self.steps)

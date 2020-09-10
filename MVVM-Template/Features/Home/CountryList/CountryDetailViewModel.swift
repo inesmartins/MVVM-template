@@ -8,11 +8,11 @@ protocol CountryDetailViewModelType {
 class CountryDetailViewModel: ServicesViewModel, Stepper {
 
     let steps = PublishRelay<Step>()
-    typealias Services = CountryServices
+    typealias Services = CountryServiceType
 
     var services: Services! {
         didSet {
-            let country = self.services.countriesService.country(withName: self.name)
+            let country = self.services.country(withName: self.name)
             self.code = country?.code
         }
     }
@@ -35,9 +35,12 @@ extension CountryDetailViewModel: CountryDetailViewModelType {
             return
         }
         let country = Country(name: self.name, code: countryCode)
+        // TODO: fix store invocation
+        /*
         self.services.store.save(object: country, withKey: "SelectedStore", inStore: store, onCompletion: { result in
             print(result)
         })
+        */
     }
 
 }

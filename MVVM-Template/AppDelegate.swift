@@ -3,14 +3,6 @@ import RxFlow
 import RxSwift
 import RxCocoa
 
-struct AppServices: AuthServices, HasPreferencesService, CountryServices, DDGServices {
-    let authService: AuthServiceType
-    let preferencesService: PreferencesService
-    let countriesService: CountryServiceType
-    let searchService: DDGServiceType
-    let store: StoreServiceType
-}
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
@@ -18,24 +10,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     var window: UIWindow?
     var coordinator = FlowCoordinator()
 
-    lazy var appServices: AppServices = {
-        let store = StoreService(coreData: CoreDataStorage(),
-                                 userDefaults: UserDefaultsStorage(),
-                                 keychain: KeyChainStorage())
-        return AppServices(authService: AuthService(),
-                           preferencesService: PreferencesService(),
-                           countriesService: CountryService(),
-                           searchService: DDGService(),
-                           store: store)
-    }()
-
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         guard let window = self.window else { return false }
 
-        let appFlow = AppFlow(services: self.appServices)
-        let appStepper = AppStepper(withServices: self.appServices)
+        let store = StoreService(coreData: CoreDataStorage(),
+                                 userDefaults: UserDefaultsStorage(),
+                                 keychain: KeyChainStorage())
+        let services = AppService(store: store)
+        let appFlow = AppFlow(services: services)
+        let appStepper = AppStepper(withServices: services)
         self.configureCoordinator(flow: appFlow, stepper: appStepper)
 
         Flows.use(appFlow, when: .created) { root in
@@ -47,21 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         return true
     }
 
-}
-
-extension AppDelegate {
-
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                willPresent notification: UNNotification,
-                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler(UNNotificationPresentationOptions.init(arrayLiteral: [.alert, .badge]))
-    }
-
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                didReceive response: UNNotificationResponse,
-                                withCompletionHandler completionHandler: @escaping () -> Void) {
-        self.coordinator.navigate(to: AppStep.countryWasPicked(withName: "Portugal"))
-    }
 }
 
 private extension AppDelegate {
@@ -77,3 +47,20 @@ private extension AppDelegate {
     }
 
 }
+
+/*
+extension AppDelegate {
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler(UNNotificationPresentationOptions.init(arrayLiteral: [.alert, .badge]))
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+        self.coordinator.navigate(to: AppStep.countryWasPicked(withName: "Portugal"))
+    }
+}
+*/

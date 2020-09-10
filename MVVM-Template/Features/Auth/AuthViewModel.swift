@@ -8,13 +8,14 @@ protocol AuthViewModelType {
 
 class AuthViewModel: ServicesViewModel, Stepper {
 
+    private let disposeBag = DisposeBag()
     let steps = PublishRelay<Step>()
-    typealias Services = AuthServices
+    typealias Services = AuthServiceType
     var services: Services!
 
     var username = BehaviorSubject<String>(value: "")
     var password = BehaviorSubject<String>(value: "")
-    var errorMessage = BehaviorRelay<String>(value: "")
+    let didFailSignIn = PublishSubject<Error>()
 
     var isValid: Observable<Bool> {
         return Observable.combineLatest(self.username.asObservable(),
@@ -31,21 +32,17 @@ extension AuthViewModel: AuthViewModelType {
         do {
             let username = try self.username.value()
             let pwd = try self.password.value()
-            self.services.authService.validateLogin(username, pwd, onCompletion: { success in
-                if success {
-                    self.steps.accept(AppStep.userIsAuthenticated)
-                } else {
-                    self.errorMessage.accept("Username or password is incorrect.")
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                        self.errorMessage.accept("")
-                    })
-                }
-            })
+            self.services.signIn(username, pwd)
+                .map { _ in }
+                .observeOn(MainScheduler.instance)
+                .subscribe(onSuccess: { [weak self] _ in
+                    self?.steps.accept(AppStep.userIsAuthenticated)
+                }, onError: { [weak self] error in
+                    self?.didFailSignIn.onNext(error)
+                })
+                .disposed(by: self.disposeBag)
         } catch let error {
-            self.errorMessage.accept("Username or password is incorrect: \(error.localizedDescription)")
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                self.errorMessage.accept("")
-            })
+            self.didFailSignIn.onNext(error)
         }
     }
 

@@ -36,14 +36,3 @@ class PreferencesService {
         return defaults.bool(forKey: UserPreferences.onBoarded)
     }
 }
-
-extension PreferencesService: ReactiveCompatible {}
-
-extension Reactive where Base: PreferencesService {
-    var isOnboarded: Observable<Bool> {
-        return UserDefaults.standard
-            .rx
-            .observe(Bool.self, UserPreferences.onBoarded)
-            .map { $0 ?? false }
-    }
-}

@@ -14,9 +14,9 @@ class AuthFlow: Flow {
         return viewController
     }()
 
-    private let services: AppServices
+    private let services: AppService
 
-    init(withServices services: AppServices) {
+    init(withServices services: AppService) {
         self.services = services
     }
 

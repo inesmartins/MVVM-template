@@ -20,6 +20,7 @@
 		1AF854BA1FF832AE00271B52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AF854B91FF832AE00271B52 /* Assets.xcassets */; };
 		1AF854BD1FF832AE00271B52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AF854BB1FF832AE00271B52 /* LaunchScreen.storyboard */; };
 		298FD427E610C6E8F58F4F21 /* Pods_MVVM_Template.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92410F693A189D289EEC58CA /* Pods_MVVM_Template.framework */; };
+		4D0B1584250A5AAB00E4C339 /* AppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0B1583250A5AAB00E4C339 /* AppService.swift */; };
 		4D0DF542250938E400C98D6C /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DF541250938E400C98D6C /* AuthServices.swift */; };
 		4D26DD2925091E4200C4540F /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D26DD2825091E4200C4540F /* AuthViewModel.swift */; };
 		4D26DD2B25091EDE00C4540F /* CountryServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D26DD2A25091EDE00C4540F /* CountryServices.swift */; };
@@ -90,6 +91,7 @@
 		1AF854BC1FF832AE00271B52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1AF854BE1FF832AE00271B52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32DF1AFB988965A2A9C94FB4 /* Pods-RxFlowDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxFlowDemo.release.xcconfig"; path = "Target Support Files/Pods-RxFlowDemo/Pods-RxFlowDemo.release.xcconfig"; sourceTree = "<group>"; };
+		4D0B1583250A5AAB00E4C339 /* AppService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppService.swift; sourceTree = "<group>"; };
 		4D0DF541250938E400C98D6C /* AuthServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthServices.swift; path = Repositories/AuthServices.swift; sourceTree = "<group>"; };
 		4D26DD2825091E4200C4540F /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		4D26DD2A25091EDE00C4540F /* CountryServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CountryServices.swift; path = "MVVM-Template/Services/CountryServices.swift"; sourceTree = SOURCE_ROOT; };
@@ -179,6 +181,7 @@
 		1A8FBE201FF847FA00389464 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				4D0B1583250A5AAB00E4C339 /* AppService.swift */,
 				4D0DF541250938E400C98D6C /* AuthServices.swift */,
 				4D26DD2A25091EDE00C4540F /* CountryServices.swift */,
 				4DC746012508C20D004A9C16 /* DDGServices.swift */,
@@ -541,6 +544,7 @@
 				1A8FBE2D1FF84B2500389464 /* ViewModelBased.swift in Sources */,
 				4DC745F425080CFF004A9C16 /* Data+Extension.swift in Sources */,
 				4DC746062508DFE7004A9C16 /* DDGSearchResultsViewModel.swift in Sources */,
+				4D0B1584250A5AAB00E4C339 /* AppService.swift in Sources */,
 				1AF854B31FF832AE00271B52 /* AppDelegate.swift in Sources */,
 				4D0DF542250938E400C98D6C /* AuthServices.swift in Sources */,
 			);

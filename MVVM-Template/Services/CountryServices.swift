@@ -1,14 +1,7 @@
-protocol CountryServices {
-    var countriesService: CountryServiceType { get }
-    var store: StoreServiceType { get }
-}
+import RxSwift
+import RxAlamofire
 
-protocol CountryServiceType {
-    func all() -> [Country]
-    func country(withName name: String) -> Country?
-}
-
-class CountryService: CountryServiceType {
+extension AppService: CountryServiceType {
 
     func all() -> [Country] {
         return CountriesRepository.countries

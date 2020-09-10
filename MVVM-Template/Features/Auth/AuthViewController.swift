@@ -79,9 +79,12 @@ private extension AuthViewController {
             .bind(onNext: {
                 self.viewModel.validateLogin()
             }).disposed(by: self.disposeBag)
-        self.viewModel.errorMessage
-            .takeUntil(self.rx.deallocating)
-            .bind(to: self.errorMessageTextField.rx.text)
+        self.viewModel.didFailSignIn
+            .subscribe(onNext: { error in
+                // TODO: bind to label
+                print("Failed: \(error)")
+                // show error
+            })
             .disposed(by: self.disposeBag)
     }
 

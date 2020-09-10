@@ -4,11 +4,11 @@ import RxCocoa
 
 class DDGSearchResultsViewModel: ServicesViewModel, Stepper {
 
-    typealias Services = DDGServices
+    typealias Services = DDGServiceType
     var steps = PublishRelay<Step>()
-    var services: DDGServices! {
+    var services: DDGServiceType! {
         didSet {
-            self.services.searchService.search(withParams: SearchParams(searchTerm: self.searchTerm), onCompletion: { res in
+            self.services.search(withParams: SearchParams(searchTerm: self.searchTerm), onCompletion: { res in
                 do {
                     if let result = try res.get() {
                         self.searchResult = BehaviorRelay<SearchResult>(value: result)

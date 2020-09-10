@@ -8,9 +8,9 @@ class DDGSearchFlow: Flow {
     }
 
     private let rootViewController = UINavigationController()
-    private let services: DDGServices
+    private let services: DDGServiceType
 
-    init(withServices services: DDGServices) {
+    init(withServices services: DDGServiceType) {
         self.services = services
     }
 

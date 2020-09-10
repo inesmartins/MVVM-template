@@ -7,8 +7,8 @@ protocol DDGSearchViewModelType {
 }
 
 class DDGSearchViewModel: ServicesViewModel, Stepper {
-    typealias Services = DDGServices
-    var services: DDGServices!
+    typealias Services = DDGServiceType
+    var services: DDGServiceType!
     var steps = PublishRelay<Step>()
     let searchTerm = BehaviorSubject<String>(value: "")
 }

@@ -1,17 +1,8 @@
-import Foundation
+import RxSwift
+import RxAlamofire
 import Alamofire
 
-protocol DDGServices {
-    var searchService: DDGServiceType { get }
-}
-
-protocol DDGServiceType: AnyObject {
-    func search(withParams: SearchParams, onCompletion: @escaping (Result<SearchResult?, Error>) -> Void)
-}
-
-class DDGService: DDGServiceType {
-
-    internal let ddgEndpoint = "https://api.duckduckgo.com/"
+extension AppService: DDGServiceType {
 
     func search(withParams: SearchParams, onCompletion: @escaping (Result<SearchResult?, Error>) -> Void) {
 
