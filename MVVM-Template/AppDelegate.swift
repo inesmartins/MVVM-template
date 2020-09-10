@@ -8,10 +8,8 @@ import Alamofire
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
-    let disposeBag = DisposeBag()
     var window: UIWindow?
     var coordinator = FlowCoordinator()
-    var session = Session.default
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
