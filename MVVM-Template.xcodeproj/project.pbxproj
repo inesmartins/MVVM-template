@@ -18,11 +18,10 @@
 		1A8FBE2D1FF84B2500389464 /* ViewModelBased.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8FBE2C1FF84B2500389464 /* ViewModelBased.swift */; };
 		1AF854B31FF832AE00271B52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF854B21FF832AE00271B52 /* AppDelegate.swift */; };
 		1AF854BA1FF832AE00271B52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AF854B91FF832AE00271B52 /* Assets.xcassets */; };
-		1AF854BD1FF832AE00271B52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AF854BB1FF832AE00271B52 /* LaunchScreen.storyboard */; };
 		298FD427E610C6E8F58F4F21 /* Pods_MVVM_Template.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92410F693A189D289EEC58CA /* Pods_MVVM_Template.framework */; };
 		4D005FCA250A99B9003BF9CE /* SignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D005FC9250A99B9003BF9CE /* SignInResponse.swift */; };
+		4D005FCC250A9AFE003BF9CE /* AppServices+AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D005FCB250A9AFE003BF9CE /* AppServices+AuthService.swift */; };
 		4D0B1584250A5AAB00E4C339 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0B1583250A5AAB00E4C339 /* AppServices.swift */; };
-		4D0DF542250938E400C98D6C /* AppServices+AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DF541250938E400C98D6C /* AppServices+AuthService.swift */; };
 		4D26DD2925091E4200C4540F /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D26DD2825091E4200C4540F /* AuthViewModel.swift */; };
 		4D26DD2B25091EDE00C4540F /* AppServices+CountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D26DD2A25091EDE00C4540F /* AppServices+CountryService.swift */; };
 		4DC7459A2507EAFE004A9C16 /* DDGSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745992507EAFE004A9C16 /* DDGSearchViewController.swift */; };
@@ -83,12 +82,11 @@
 		1AF854AF1FF832AE00271B52 /* MVVM-Template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM-Template.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AF854B21FF832AE00271B52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1AF854B91FF832AE00271B52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1AF854BC1FF832AE00271B52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1AF854BE1FF832AE00271B52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32DF1AFB988965A2A9C94FB4 /* Pods-RxFlowDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxFlowDemo.release.xcconfig"; path = "Target Support Files/Pods-RxFlowDemo/Pods-RxFlowDemo.release.xcconfig"; sourceTree = "<group>"; };
 		4D005FC9250A99B9003BF9CE /* SignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResponse.swift; sourceTree = "<group>"; };
+		4D005FCB250A9AFE003BF9CE /* AppServices+AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppServices+AuthService.swift"; sourceTree = "<group>"; };
 		4D0B1583250A5AAB00E4C339 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
-		4D0DF541250938E400C98D6C /* AppServices+AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AppServices+AuthService.swift"; path = "Repositories/AppServices+AuthService.swift"; sourceTree = "<group>"; };
 		4D26DD2825091E4200C4540F /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		4D26DD2A25091EDE00C4540F /* AppServices+CountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AppServices+CountryService.swift"; path = "MVVM-Template/Services/AppServices+CountryService.swift"; sourceTree = SOURCE_ROOT; };
 		4DC745992507EAFE004A9C16 /* DDGSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DDGSearchViewController.swift; sourceTree = "<group>"; };
@@ -172,7 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				4D0B1583250A5AAB00E4C339 /* AppServices.swift */,
-				4D0DF541250938E400C98D6C /* AppServices+AuthService.swift */,
+				4D005FCB250A9AFE003BF9CE /* AppServices+AuthService.swift */,
 				4D26DD2A25091EDE00C4540F /* AppServices+CountryService.swift */,
 				4DC746012508C20D004A9C16 /* AppServices+DDGService.swift */,
 				4DC745C12507EEF6004A9C16 /* Repositories */,
@@ -253,7 +251,6 @@
 				1A8FBE201FF847FA00389464 /* Services */,
 				4DC745AD2507EC0E004A9C16 /* UI */,
 				1AF854B21FF832AE00271B52 /* AppDelegate.swift */,
-				1AF854BB1FF832AE00271B52 /* LaunchScreen.storyboard */,
 				1AF854BE1FF832AE00271B52 /* Info.plist */,
 			);
 			path = "MVVM-Template";
@@ -403,7 +400,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AF854BD1FF832AE00271B52 /* LaunchScreen.storyboard in Resources */,
 				1AF854BA1FF832AE00271B52 /* Assets.xcassets in Resources */,
 				4DC745C52507F001004A9C16 /* CountryList.json in Resources */,
 			);
@@ -498,6 +494,7 @@
 				4DC745CC2507FF27004A9C16 /* CountryDetailViewController.swift in Sources */,
 				4DC745C32507EF09004A9C16 /* CountriesRepository.swift in Sources */,
 				1A25DE81202D3CFE00F1C4B8 /* AppFlow.swift in Sources */,
+				4D005FCC250A9AFE003BF9CE /* AppServices+AuthService.swift in Sources */,
 				4DC745B32507ECB0004A9C16 /* CountryListViewController.swift in Sources */,
 				1A25DE8B20351E1D00F1C4B8 /* HomeFlow.swift in Sources */,
 				1A25DE8920351B8F00F1C4B8 /* AuthViewController.swift in Sources */,
@@ -526,22 +523,10 @@
 				4D0B1584250A5AAB00E4C339 /* AppServices.swift in Sources */,
 				1AF854B31FF832AE00271B52 /* AppDelegate.swift in Sources */,
 				4D005FCA250A99B9003BF9CE /* SignInResponse.swift in Sources */,
-				4D0DF542250938E400C98D6C /* AppServices+AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		1AF854BB1FF832AE00271B52 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1AF854BC1FF832AE00271B52 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1AF854BF1FF832AE00271B52 /* Debug */ = {
