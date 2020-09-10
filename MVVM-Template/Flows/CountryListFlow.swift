@@ -39,7 +39,8 @@ extension CountryListFlow {
 private extension CountryListFlow {
 
     func navigateToCountryListScreen() -> FlowContributors {
-        let viewController = CountryListViewController.instantiate(withViewModel: CountryListViewModel(), andServices: self.services)
+        let viewController = CountryListViewController.instantiate(
+            withViewModel: CountryListViewModel(), andServices: self.services)
         viewController.title = "Country List"
         self.rootViewController.pushViewController(viewController, animated: true)
         self.rootViewController.view.backgroundColor = .white

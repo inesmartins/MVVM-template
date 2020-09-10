@@ -15,7 +15,7 @@ class AuthViewModel: ServicesViewModel, Stepper {
 
     var username = BehaviorSubject<String>(value: "")
     var password = BehaviorSubject<String>(value: "")
-    let didFailSignIn = PublishSubject<Error>()
+    let didFailSignIn = BehaviorSubject<Error?>(value: nil)
 
     var isValid: Observable<Bool> {
         return Observable.combineLatest(self.username.asObservable(),

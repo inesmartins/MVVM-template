@@ -17,8 +17,10 @@ protocol DDGServiceType {
 
 final class AppServices {
 
+    internal let authEndpoint = "https://api.duckduckgo.com/"
     internal let ddgEndpoint = "https://api.duckduckgo.com/"
-    internal let session: Session
+
+    private let session: Session
 
     init(session: Session) {
         self.session = session
@@ -35,4 +37,43 @@ extension Reactive where Base: AppServices {
             .observe(Bool.self, AppKey.authToken.rawValue)
             .map { $0 ?? false }
     }
+}
+
+extension AppServices {
+
+    internal func performGetRequest<T: Codable>(endpoint: String) -> Single<T> {
+        return Single<T>.create { single in
+
+            // TODO: improve this
+            guard let encoded = endpoint.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed),
+                let url = URL(string: encoded) else {
+                    let error = NSError(domain: "Unable to build query URL", code: 0, userInfo: nil)
+                    return single(.error(error)) as! Disposable
+            }
+
+            return self.session.rx.request(.get, url)
+                .validate(statusCode: 200 ..< 300)
+                .validate(contentType: ["text/json"])
+                .responseJSON()
+                .observeOn(MainScheduler.instance)
+                .subscribe {
+                    if let error = $0.error {
+                        single(.error(error))
+                    }
+                    guard let data = $0.element?.data else {
+                        let error = NSError(domain: "Unable to get data with type \(T.self)", code: 0, userInfo: nil)
+                        single(.error(error))
+                        return
+                    }
+                    do {
+                        let decoded = try JSONDecoder().decode(T.self, from: data)
+                        single(.success(decoded))
+                    } catch let error {
+                        single(.error(error))
+                        return
+                    }
+                }
+        }
+    }
+
 }

@@ -80,11 +80,9 @@ private extension AuthViewController {
                 self.viewModel.validateLogin()
             }).disposed(by: self.disposeBag)
         self.viewModel.didFailSignIn
-            .subscribe(onNext: { error in
-                // TODO: bind to label
-                print("Failed: \(error)")
-                // show error
-            })
+            .subscribe { error in
+                print(error.debugDescription)
+            }
             .disposed(by: self.disposeBag)
     }
 

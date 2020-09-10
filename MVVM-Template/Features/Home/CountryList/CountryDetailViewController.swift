@@ -49,9 +49,9 @@ private extension CountryDetailViewController {
         self.saveCountryButton.rx
             .tap
             .takeUntil(self.rx.deallocating)
-            .bind {
+            .subscribe(onNext: {
                 self.saveCountry()
-            }
+            })
             .disposed(by: self.disposeBag)
     }
 

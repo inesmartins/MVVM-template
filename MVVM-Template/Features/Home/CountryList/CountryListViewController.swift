@@ -62,9 +62,9 @@ private extension CountryListViewController {
         self.sendDeeplinkButton.rx
             .tap
             .takeUntil(self.rx.deallocating)
-            .bind {
+            .subscribe(onNext: {
                 self.sendDeeplink()
-            }.disposed(by: self.disposeBag)
+            }).disposed(by: self.disposeBag)
     }
 }
 

@@ -52,7 +52,9 @@ private extension AppFlow {
     func navigationToHomeScreen() -> FlowContributors {
         let homeFlow = HomeFlow(withServices: self.services)
         Flows.use(homeFlow, when: .created) { [unowned self] root in
-            self.rootViewController.pushViewController(root, animated: false)
+            DispatchQueue.main.async {
+                self.rootViewController.pushViewController(root, animated: false)
+            }
         }
         return .one(flowContributor: .contribute(
             withNextPresentable: homeFlow,
