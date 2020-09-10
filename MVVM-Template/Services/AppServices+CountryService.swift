@@ -1,7 +1,7 @@
 import RxSwift
 import RxAlamofire
 
-extension AppService: CountryServiceType {
+extension AppServices: CountryServiceType {
 
     func allCountries() -> [Country] {
         return CountriesRepository.countries

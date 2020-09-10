@@ -15,10 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
         guard let window = self.window else { return false }
 
-        let store = StoreService(coreDataStorage: CoreDataStorage(),
-                                 userDefaultsStorage: UserDefaultsStorage(userDefaults: UserDefaults.standard),
-                                 keychainStorage: KeyChainStorage())
-        let services = AppService(store: store)
+        let services = AppServices()
         let appFlow = AppFlow(services: services)
         let appStepper = AppStepper(withServices: services)
         self.configureCoordinator(flow: appFlow, stepper: appStepper)
@@ -48,7 +45,6 @@ private extension AppDelegate {
 
 }
 
-/*
 extension AppDelegate {
 
     func userNotificationCenter(_ center: UNUserNotificationCenter,
@@ -63,4 +59,3 @@ extension AppDelegate {
         self.coordinator.navigate(to: AppStep.countryWasPicked(withName: "Portugal"))
     }
 }
-*/

@@ -1,3 +1,4 @@
+import RxRelay
 import RxSwift
 
 protocol AuthServiceType {
@@ -5,31 +6,27 @@ protocol AuthServiceType {
 }
 
 protocol CountryServiceType {
-    func all() -> [Country]
+    func allCountries() -> [Country]
     func country(withName name: String) -> Country?
 }
 
-protocol DDGServiceType: AnyObject {
+protocol DDGServiceType {
     func search(withParams: SearchParams, onCompletion: @escaping (Result<SearchResult?, Error>) -> Void)
 }
 
-final class AppService {
+class AppServices {
 
     internal let ddgEndpoint = "https://api.duckduckgo.com/"
-    let store: StoreServiceType
 
-    init(store: StoreServiceType) {
-        self.store = store
-    }
 }
 
-extension AppService: ReactiveCompatible {}
+extension AppServices: ReactiveCompatible {}
+extension Reactive where Base: AppServices {
 
-extension Reactive where Base: AppService {
-    var isOnboarded: Observable<Bool> {
+    var isAuthenticated: Observable<Bool> {
         return UserDefaults.standard
             .rx
-            .observe(Bool.self, UserPreferences.onBoarded)
+            .observe(Bool.self, StoreKey.authToken.rawValue)
             .map { $0 ?? false }
     }
 }

@@ -2,7 +2,7 @@ import RxSwift
 import RxAlamofire
 import Alamofire
 
-extension AppService: DDGServiceType {
+extension AppServices: DDGServiceType {
 
     func search(withParams: SearchParams, onCompletion: @escaping (Result<SearchResult?, Error>) -> Void) {
 

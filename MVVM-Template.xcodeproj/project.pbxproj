@@ -20,10 +20,10 @@
 		1AF854BA1FF832AE00271B52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AF854B91FF832AE00271B52 /* Assets.xcassets */; };
 		1AF854BD1FF832AE00271B52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AF854BB1FF832AE00271B52 /* LaunchScreen.storyboard */; };
 		298FD427E610C6E8F58F4F21 /* Pods_MVVM_Template.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92410F693A189D289EEC58CA /* Pods_MVVM_Template.framework */; };
-		4D0B1584250A5AAB00E4C339 /* AppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0B1583250A5AAB00E4C339 /* AppService.swift */; };
-		4D0DF542250938E400C98D6C /* AppService+AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DF541250938E400C98D6C /* AppService+AuthService.swift */; };
+		4D0B1584250A5AAB00E4C339 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0B1583250A5AAB00E4C339 /* AppServices.swift */; };
+		4D0DF542250938E400C98D6C /* AppServices+AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DF541250938E400C98D6C /* AppServices+AuthService.swift */; };
 		4D26DD2925091E4200C4540F /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D26DD2825091E4200C4540F /* AuthViewModel.swift */; };
-		4D26DD2B25091EDE00C4540F /* AppService+CountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D26DD2A25091EDE00C4540F /* AppService+CountryService.swift */; };
+		4D26DD2B25091EDE00C4540F /* AppServices+CountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D26DD2A25091EDE00C4540F /* AppServices+CountryService.swift */; };
 		4DC7459A2507EAFE004A9C16 /* DDGSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745992507EAFE004A9C16 /* DDGSearchViewController.swift */; };
 		4DC745A52507EC00004A9C16 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC7459D2507EC00004A9C16 /* Country.swift */; };
 		4DC745A62507EC00004A9C16 /* SearchResultAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC7459E2507EC00004A9C16 /* SearchResultAnswer.swift */; };
@@ -43,7 +43,6 @@
 		4DC745C72507F0FB004A9C16 /* CountryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745C62507F0FB004A9C16 /* CountryDetailViewModel.swift */; };
 		4DC745C92507F25D004A9C16 /* CountryListFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745C82507F25D004A9C16 /* CountryListFlow.swift */; };
 		4DC745CC2507FF27004A9C16 /* CountryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745CB2507FF27004A9C16 /* CountryDetailViewController.swift */; };
-		4DC745CF25080BE7004A9C16 /* StoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745CE25080BE7004A9C16 /* StoreService.swift */; };
 		4DC745EA25080C33004A9C16 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745E125080C33004A9C16 /* KeychainStorage.swift */; };
 		4DC745EB25080C33004A9C16 /* KeyValueLocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745E225080C33004A9C16 /* KeyValueLocalStorage.swift */; };
 		4DC745EC25080C33004A9C16 /* AppKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745E325080C33004A9C16 /* AppKey.swift */; };
@@ -51,10 +50,9 @@
 		4DC745EE25080C33004A9C16 /* RxFlowDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745E525080C33004A9C16 /* RxFlowDemo.xcdatamodeld */; };
 		4DC745EF25080C33004A9C16 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745E725080C33004A9C16 /* Cache.swift */; };
 		4DC745F025080C33004A9C16 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745E825080C33004A9C16 /* CoreDataStorage.swift */; };
-		4DC745F125080C33004A9C16 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745E925080C33004A9C16 /* UserDefaultsStorage.swift */; };
 		4DC745F425080CFF004A9C16 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745F325080CFF004A9C16 /* Data+Extension.swift */; };
 		4DC745F92508C027004A9C16 /* DDGSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745F82508C027004A9C16 /* DDGSearchViewModel.swift */; };
-		4DC746022508C20D004A9C16 /* AppService+DDGService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC746012508C20D004A9C16 /* AppService+DDGService.swift */; };
+		4DC746022508C20D004A9C16 /* AppServices+DDGService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC746012508C20D004A9C16 /* AppServices+DDGService.swift */; };
 		4DC746042508CAE1004A9C16 /* DDGSearchFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC746032508CAE1004A9C16 /* DDGSearchFlow.swift */; };
 		4DC746062508DFE7004A9C16 /* DDGSearchResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC746052508DFE7004A9C16 /* DDGSearchResultsViewModel.swift */; };
 		4DC746082508E018004A9C16 /* DDGSearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC746072508E018004A9C16 /* DDGSearchResultsViewController.swift */; };
@@ -90,10 +88,10 @@
 		1AF854BC1FF832AE00271B52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1AF854BE1FF832AE00271B52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32DF1AFB988965A2A9C94FB4 /* Pods-RxFlowDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxFlowDemo.release.xcconfig"; path = "Target Support Files/Pods-RxFlowDemo/Pods-RxFlowDemo.release.xcconfig"; sourceTree = "<group>"; };
-		4D0B1583250A5AAB00E4C339 /* AppService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppService.swift; sourceTree = "<group>"; };
-		4D0DF541250938E400C98D6C /* AppService+AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AppService+AuthService.swift"; path = "Repositories/AppService+AuthService.swift"; sourceTree = "<group>"; };
+		4D0B1583250A5AAB00E4C339 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
+		4D0DF541250938E400C98D6C /* AppServices+AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AppServices+AuthService.swift"; path = "Repositories/AppServices+AuthService.swift"; sourceTree = "<group>"; };
 		4D26DD2825091E4200C4540F /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
-		4D26DD2A25091EDE00C4540F /* AppService+CountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AppService+CountryService.swift"; path = "MVVM-Template/Services/AppService+CountryService.swift"; sourceTree = SOURCE_ROOT; };
+		4D26DD2A25091EDE00C4540F /* AppServices+CountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AppServices+CountryService.swift"; path = "MVVM-Template/Services/AppServices+CountryService.swift"; sourceTree = SOURCE_ROOT; };
 		4DC745992507EAFE004A9C16 /* DDGSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DDGSearchViewController.swift; sourceTree = "<group>"; };
 		4DC7459D2507EC00004A9C16 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		4DC7459E2507EC00004A9C16 /* SearchResultAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultAnswer.swift; sourceTree = "<group>"; };
@@ -113,7 +111,6 @@
 		4DC745C62507F0FB004A9C16 /* CountryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailViewModel.swift; sourceTree = "<group>"; };
 		4DC745C82507F25D004A9C16 /* CountryListFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListFlow.swift; sourceTree = "<group>"; };
 		4DC745CB2507FF27004A9C16 /* CountryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailViewController.swift; sourceTree = "<group>"; };
-		4DC745CE25080BE7004A9C16 /* StoreService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreService.swift; sourceTree = "<group>"; };
 		4DC745E125080C33004A9C16 /* KeychainStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
 		4DC745E225080C33004A9C16 /* KeyValueLocalStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyValueLocalStorage.swift; sourceTree = "<group>"; };
 		4DC745E325080C33004A9C16 /* AppKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppKey.swift; sourceTree = "<group>"; };
@@ -121,10 +118,9 @@
 		4DC745E625080C33004A9C16 /* VIPER_boilerplate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VIPER_boilerplate.xcdatamodel; sourceTree = "<group>"; };
 		4DC745E725080C33004A9C16 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		4DC745E825080C33004A9C16 /* CoreDataStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
-		4DC745E925080C33004A9C16 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
 		4DC745F325080CFF004A9C16 /* Data+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		4DC745F82508C027004A9C16 /* DDGSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGSearchViewModel.swift; sourceTree = "<group>"; };
-		4DC746012508C20D004A9C16 /* AppService+DDGService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppService+DDGService.swift"; sourceTree = "<group>"; };
+		4DC746012508C20D004A9C16 /* AppServices+DDGService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppServices+DDGService.swift"; sourceTree = "<group>"; };
 		4DC746032508CAE1004A9C16 /* DDGSearchFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGSearchFlow.swift; sourceTree = "<group>"; };
 		4DC746052508DFE7004A9C16 /* DDGSearchResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGSearchResultsViewModel.swift; sourceTree = "<group>"; };
 		4DC746072508E018004A9C16 /* DDGSearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGSearchResultsViewController.swift; sourceTree = "<group>"; };
@@ -179,10 +175,10 @@
 		1A8FBE201FF847FA00389464 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				4D0B1583250A5AAB00E4C339 /* AppService.swift */,
-				4D0DF541250938E400C98D6C /* AppService+AuthService.swift */,
-				4D26DD2A25091EDE00C4540F /* AppService+CountryService.swift */,
-				4DC746012508C20D004A9C16 /* AppService+DDGService.swift */,
+				4D0B1583250A5AAB00E4C339 /* AppServices.swift */,
+				4D0DF541250938E400C98D6C /* AppServices+AuthService.swift */,
+				4D26DD2A25091EDE00C4540F /* AppServices+CountryService.swift */,
+				4DC746012508C20D004A9C16 /* AppServices+DDGService.swift */,
 				4DC745C12507EEF6004A9C16 /* Repositories */,
 				4DC745B62507ED75004A9C16 /* Store */,
 			);
@@ -310,7 +306,6 @@
 			isa = PBXGroup;
 			children = (
 				4DC745B72507ED81004A9C16 /* Store.swift */,
-				4DC745CE25080BE7004A9C16 /* StoreService.swift */,
 				4DC745E325080C33004A9C16 /* AppKey.swift */,
 				4DC745E725080C33004A9C16 /* Cache.swift */,
 				4DC745E825080C33004A9C16 /* CoreDataStorage.swift */,
@@ -318,7 +313,6 @@
 				4DC745E425080C33004A9C16 /* DBLocalStorage.swift */,
 				4DC745E125080C33004A9C16 /* KeychainStorage.swift */,
 				4DC745E225080C33004A9C16 /* KeyValueLocalStorage.swift */,
-				4DC745E925080C33004A9C16 /* UserDefaultsStorage.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -518,16 +512,14 @@
 				4DC745AB2507EC00004A9C16 /* SearchParams.swift in Sources */,
 				4DC745EE25080C33004A9C16 /* RxFlowDemo.xcdatamodeld in Sources */,
 				4DC745ED25080C33004A9C16 /* DBLocalStorage.swift in Sources */,
-				4DC745CF25080BE7004A9C16 /* StoreService.swift in Sources */,
 				4DC745A92507EC00004A9C16 /* SearchResultDefinition.swift in Sources */,
 				4DC745B82507ED81004A9C16 /* Store.swift in Sources */,
 				4DC745EF25080C33004A9C16 /* Cache.swift in Sources */,
 				1A25DE85203129F200F1C4B8 /* AuthFlow.swift in Sources */,
 				4DC745A82507EC00004A9C16 /* SearchResult.swift in Sources */,
-				4DC745F125080C33004A9C16 /* UserDefaultsStorage.swift in Sources */,
 				4DC745F92508C027004A9C16 /* DDGSearchViewModel.swift in Sources */,
-				4DC746022508C20D004A9C16 /* AppService+DDGService.swift in Sources */,
-				4D26DD2B25091EDE00C4540F /* AppService+CountryService.swift in Sources */,
+				4DC746022508C20D004A9C16 /* AppServices+DDGService.swift in Sources */,
+				4D26DD2B25091EDE00C4540F /* AppServices+CountryService.swift in Sources */,
 				4DC745F025080C33004A9C16 /* CoreDataStorage.swift in Sources */,
 				4DC745AF2507EC2D004A9C16 /* KeyboardAwareViewController.swift in Sources */,
 				4DC745A52507EC00004A9C16 /* Country.swift in Sources */,
@@ -540,9 +532,9 @@
 				1A8FBE2D1FF84B2500389464 /* ViewModelBased.swift in Sources */,
 				4DC745F425080CFF004A9C16 /* Data+Extension.swift in Sources */,
 				4DC746062508DFE7004A9C16 /* DDGSearchResultsViewModel.swift in Sources */,
-				4D0B1584250A5AAB00E4C339 /* AppService.swift in Sources */,
+				4D0B1584250A5AAB00E4C339 /* AppServices.swift in Sources */,
 				1AF854B31FF832AE00271B52 /* AppDelegate.swift in Sources */,
-				4D0DF542250938E400C98D6C /* AppService+AuthService.swift in Sources */,
+				4D0DF542250938E400C98D6C /* AppServices+AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

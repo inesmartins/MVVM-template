@@ -8,9 +8,9 @@ class CountryListFlow: Flow {
     }
 
     private let rootViewController = UINavigationController()
-    private let services: AppService
+    private let services: AppServices
 
-    init(withServices services: AppService) {
+    init(withServices services: AppServices) {
         self.services = services
     }
 
