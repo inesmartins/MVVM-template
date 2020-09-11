@@ -15,7 +15,7 @@ protocol DDGServiceType {
     func search(withParams: SearchParams) -> Single<SearchResult>
 }
 
-final class AppServices {
+class AppServices {
 
     internal let authEndpoint = "https://api.duckduckgo.com/"
     internal let ddgEndpoint = "https://api.duckduckgo.com/"

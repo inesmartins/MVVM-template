@@ -13,7 +13,7 @@ PODS:
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
-  - RxFlow (2.9.0):
+  - RxFlow (2.9.1):
     - RxCocoa (>= 5.1.1)
     - RxSwift (>= 5.1.1)
   - RxRelay (5.1.1):
@@ -44,7 +44,7 @@ SPEC CHECKSUMS:
   Reusable: 53a9acf5c536f229b31b5865782414b508252ddb
   RxAlamofire: 0531dddf378c84270e97e897333678f1cfaec3ba
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
-  RxFlow: a7f993ba4791174d414509a0ec03bfeff530a826
+  RxFlow: 029e260333ef843b349ba9cb9265929941830aee
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711

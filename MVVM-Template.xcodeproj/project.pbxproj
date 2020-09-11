@@ -25,6 +25,9 @@
 		4D0B1584250A5AAB00E4C339 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0B1583250A5AAB00E4C339 /* AppServices.swift */; };
 		4D26DD2925091E4200C4540F /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D26DD2825091E4200C4540F /* AuthViewModel.swift */; };
 		4D26DD2B25091EDE00C4540F /* AppServices+CountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D26DD2A25091EDE00C4540F /* AppServices+CountryService.swift */; };
+		4D51CDEE250B95FE001B56E6 /* AppServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D51CDED250B95FE001B56E6 /* AppServicesTests.swift */; };
+		4D51CDFE250B9703001B56E6 /* CountryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D51CDFD250B9703001B56E6 /* CountryTests.swift */; };
+		4D51CE00250B970D001B56E6 /* SearchParamsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D51CDFF250B970D001B56E6 /* SearchParamsTest.swift */; };
 		4DC7459A2507EAFE004A9C16 /* DDGSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC745992507EAFE004A9C16 /* DDGSearchViewController.swift */; };
 		4DC745A52507EC00004A9C16 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC7459D2507EC00004A9C16 /* Country.swift */; };
 		4DC745A62507EC00004A9C16 /* SearchResultAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC7459E2507EC00004A9C16 /* SearchResultAnswer.swift */; };
@@ -56,6 +59,16 @@
 		4DC746082508E018004A9C16 /* DDGSearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC746072508E018004A9C16 /* DDGSearchResultsViewController.swift */; };
 		74C6AD35227BC52B00B16A95 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74C6AD34227BC52B00B16A95 /* RxRelay.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4D51CDF0250B95FE001B56E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1AF854A71FF832AE00271B52 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1AF854AE1FF832AE00271B52;
+			remoteInfo = "MVVM-Template";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		74ED6C1D21D6D56600731736 /* Embed Frameworks */ = {
@@ -91,6 +104,11 @@
 		4D0B1583250A5AAB00E4C339 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
 		4D26DD2825091E4200C4540F /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		4D26DD2A25091EDE00C4540F /* AppServices+CountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AppServices+CountryService.swift"; path = "MVVM-Template/Services/AppServices+CountryService.swift"; sourceTree = SOURCE_ROOT; };
+		4D51CDEB250B95FE001B56E6 /* MVVM-TemplateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MVVM-TemplateTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D51CDED250B95FE001B56E6 /* AppServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServicesTests.swift; sourceTree = "<group>"; };
+		4D51CDEF250B95FE001B56E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D51CDFD250B9703001B56E6 /* CountryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTests.swift; sourceTree = "<group>"; };
+		4D51CDFF250B970D001B56E6 /* SearchParamsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchParamsTest.swift; sourceTree = "<group>"; };
 		4DC745992507EAFE004A9C16 /* DDGSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DDGSearchViewController.swift; sourceTree = "<group>"; };
 		4DC7459D2507EC00004A9C16 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		4DC7459E2507EC00004A9C16 /* SearchResultAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultAnswer.swift; sourceTree = "<group>"; };
@@ -137,6 +155,13 @@
 				1A8FBE111FF845EE00389464 /* RxSwift.framework in Frameworks */,
 				1A8FBE121FF845EE00389464 /* RxCocoa.framework in Frameworks */,
 				298FD427E610C6E8F58F4F21 /* Pods_MVVM_Template.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D51CDE8250B95FE001B56E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,7 +214,7 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		1A8FBE391FF84B7300389464 /* Models */ = {
+		1A8FBE391FF84B7300389464 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				4DC7459D2507EC00004A9C16 /* Country.swift */,
@@ -202,7 +227,7 @@
 				4DC7459F2507EC00004A9C16 /* SearchResultRelatedTopicIcon.swift */,
 				4D005FC9250A99B9003BF9CE /* SignInResponse.swift */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		1A8FBE3E1FF84B8700389464 /* Features */ = {
@@ -228,6 +253,7 @@
 			children = (
 				4D005FCD250A9B6A003BF9CE /* Default-568h@2x.png */,
 				1AF854B11FF832AE00271B52 /* MVVM-Template */,
+				4D51CDEC250B95FE001B56E6 /* MVVM-TemplateTests */,
 				1AF854B01FF832AE00271B52 /* Products */,
 				1A8FBE0C1FF845EE00389464 /* Frameworks */,
 				FE41C29559ECF2BBE62F9E76 /* Pods */,
@@ -238,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				1AF854AF1FF832AE00271B52 /* MVVM-Template.app */,
+				4D51CDEB250B95FE001B56E6 /* MVVM-TemplateTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -249,7 +276,7 @@
 				4DC745F225080CE7004A9C16 /* Extensions */,
 				1A8FBE1F1FF847EB00389464 /* Flows */,
 				1A8FBE3E1FF84B8700389464 /* Features */,
-				1A8FBE391FF84B7300389464 /* Models */,
+				1A8FBE391FF84B7300389464 /* Model */,
 				1A8FBE2B1FF84B1C00389464 /* Protocols */,
 				1A8FBE201FF847FA00389464 /* Services */,
 				4DC745AD2507EC0E004A9C16 /* UI */,
@@ -257,6 +284,33 @@
 				1AF854BE1FF832AE00271B52 /* Info.plist */,
 			);
 			path = "MVVM-Template";
+			sourceTree = "<group>";
+		};
+		4D51CDEC250B95FE001B56E6 /* MVVM-TemplateTests */ = {
+			isa = PBXGroup;
+			children = (
+				4D51CDFC250B96F5001B56E6 /* Model */,
+				4D51CDF5250B9690001B56E6 /* Services */,
+				4D51CDEF250B95FE001B56E6 /* Info.plist */,
+			);
+			path = "MVVM-TemplateTests";
+			sourceTree = "<group>";
+		};
+		4D51CDF5250B9690001B56E6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4D51CDED250B95FE001B56E6 /* AppServicesTests.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4D51CDFC250B96F5001B56E6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4D51CDFD250B9703001B56E6 /* CountryTests.swift */,
+				4D51CDFF250B970D001B56E6 /* SearchParamsTest.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		4DC745962507E5EF004A9C16 /* Auth */ = {
@@ -363,13 +417,31 @@
 			productReference = 1AF854AF1FF832AE00271B52 /* MVVM-Template.app */;
 			productType = "com.apple.product-type.application";
 		};
+		4D51CDEA250B95FE001B56E6 /* MVVM-TemplateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D51CDF2250B95FE001B56E6 /* Build configuration list for PBXNativeTarget "MVVM-TemplateTests" */;
+			buildPhases = (
+				4D51CDE7250B95FE001B56E6 /* Sources */,
+				4D51CDE8250B95FE001B56E6 /* Frameworks */,
+				4D51CDE9250B95FE001B56E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4D51CDF1250B95FE001B56E6 /* PBXTargetDependency */,
+			);
+			name = "MVVM-TemplateTests";
+			productName = "MVVM-TemplateTests";
+			productReference = 4D51CDEB250B95FE001B56E6 /* MVVM-TemplateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		1AF854A71FF832AE00271B52 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 1170;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = RxSwiftCommunity;
 				TargetAttributes = {
@@ -377,6 +449,11 @@
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
+					};
+					4D51CDEA250B95FE001B56E6 = {
+						CreatedOnToolsVersion = 11.7;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1AF854AE1FF832AE00271B52;
 					};
 				};
 			};
@@ -394,6 +471,7 @@
 			projectRoot = "";
 			targets = (
 				1AF854AE1FF832AE00271B52 /* MVVM-Template */,
+				4D51CDEA250B95FE001B56E6 /* MVVM-TemplateTests */,
 			);
 		};
 /* End PBXProject section */
@@ -406,6 +484,13 @@
 				1AF854BA1FF832AE00271B52 /* Assets.xcassets in Resources */,
 				4DC745C52507F001004A9C16 /* CountryList.json in Resources */,
 				4D005FCE250A9B6A003BF9CE /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D51CDE9250B95FE001B56E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,7 +615,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4D51CDE7250B95FE001B56E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D51CE00250B970D001B56E6 /* SearchParamsTest.swift in Sources */,
+				4D51CDFE250B9703001B56E6 /* CountryTests.swift in Sources */,
+				4D51CDEE250B95FE001B56E6 /* AppServicesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4D51CDF1250B95FE001B56E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1AF854AE1FF832AE00271B52 /* MVVM-Template */;
+			targetProxy = 4D51CDF0250B95FE001B56E6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1AF854BF1FF832AE00271B52 /* Debug */ = {
@@ -692,6 +795,45 @@
 			};
 			name = Release;
 		};
+		4D51CDF3250B95FE001B56E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M52MV3A59S;
+				INFOPLIST_FILE = "MVVM-TemplateTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "PixelmattersTest.MVVM-TemplateTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MVVM-Template.app/MVVM-Template";
+			};
+			name = Debug;
+		};
+		4D51CDF4250B95FE001B56E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M52MV3A59S;
+				INFOPLIST_FILE = "MVVM-TemplateTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "PixelmattersTest.MVVM-TemplateTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MVVM-Template.app/MVVM-Template";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -709,6 +851,15 @@
 			buildConfigurations = (
 				1AF854C21FF832AE00271B52 /* Debug */,
 				1AF854C31FF832AE00271B52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4D51CDF2250B95FE001B56E6 /* Build configuration list for PBXNativeTarget "MVVM-TemplateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D51CDF3250B95FE001B56E6 /* Debug */,
+				4D51CDF4250B95FE001B56E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

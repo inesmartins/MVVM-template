@@ -37,6 +37,16 @@
          </BuildableReference>
       </MacroExpansion>
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4D51CDCC250B9517001B56E6"
+               BuildableName = "MVVM-TemplateTests.xctest"
+               BlueprintName = "MVVM-TemplateTests"
+               ReferencedContainer = "container:MVVM-Template.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -81,7 +91,8 @@
       buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
+      customArchiveName = "MVVM-Template"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
