@@ -39,7 +39,7 @@ open class Session {
     ///
     public let session: URLSession
     /// Instance's `SessionDelegate`, which handles the `URLSessionDelegate` methods and `Request` interaction.
-    public weak var delegate: SessionDelegate?
+    public let delegate: SessionDelegate
     /// Root `DispatchQueue` for all internal callbacks and state update. **MUST** be a serial queue.
     public let rootQueue: DispatchQueue
     /// Value determining whether this instance automatically calls `resume()` on all created `Request`s.
@@ -403,7 +403,7 @@ open class Session {
                             requestModifier: RequestModifier? = nil) -> DataStreamRequest {
         let convertible = RequestEncodableConvertible(url: convertible,
                                                       method: method,
-                                                      parameters: Empty?.none,
+                                                      parameters: Optional<Empty>.none,
                                                       encoder: URLEncodedFormParameterEncoder.default,
                                                       headers: headers,
                                                       requestModifier: requestModifier)
