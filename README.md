@@ -1,7 +1,7 @@
 # MVVM-template
 Boilerplate for iOS application with MVVM architecture.
 
-Installation
+### Installation
 
 ```
 brew install swiftlint
